@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig } from '../data/content';
+---
+
+<Layout
+  title="Kebijakan Privasi - Ruang Rimba Outbound"
+  description="Kebijakan privasi Ruang Rimba Outbound terkait penggunaan data kontak dan kerahasiaan informasi pemesanan kegiatan."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumb items={[{ label: 'Kebijakan Privasi' }]} />
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-6">
+    <h1 class="text-3xl font-extrabold text-[#173D32]">Kebijakan Privasi</h1>
+    <p class="text-xs text-gray-500">Terakhir diperbarui: 24 Oktober 2026</p>
+
+    <div class="prose max-w-none text-xs sm:text-sm text-gray-700 space-y-4">
+      <p>
+        Di {siteConfig.name}, kami sangat menghargai kerahasiaan dan privasi data pribadi Anda. Dokumen Kebijakan Privasi ini menguraikan jenis informasi yang kami kumpulkan saat Anda mengunjungi situs ruangrimbaoutbound.id atau berinteraksi melalui formulir dan layanan WhatsApp kami.
+      </p>
+
+      <h2 class="text-lg font-bold text-[#173D32]">1. Pengumpulan Informasi</h2>
+      <p>
+        Kami hanya mengumpulkan informasi yang Anda berikan secara sukarela saat menghubungi kami, termasuk namun tidak terbatas pada: nama kontak (PIC), nama instansi atau perusahaan, nomor telepon WhatsApp, alamat email, dan rincian preferensi kegiatan outbound yang Anda rencanakan.
+      </p>
+
+      <h2 class="text-lg font-bold text-[#173D32]">2. Penggunaan Informasi</h2>
+      <p>
+        Informasi yang kami kumpulkan digunakan secara eksklusif untuk:
+      </p>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Menyusun rancangan penawaran dan proposal resmi kegiatan outbound.</li>
+        <li>Menghubungi Anda kembali sehubungan dengan konfirmasi ketersediaan tanggal dan venue.</li>
+        <li>Memenuhi kewajiban administratif, asuransi kegiatan, dan logistik acara.</li>
+      </ul>
+
+      <h2 class="text-lg font-bold text-[#173D32]">3. Perlindungan & Kerahasiaan Data</h2>
+      <p>
+        Kami tidak akan pernah menjual, menyewakan, atau membagikan informasi kontak maupun daftar peserta kegiatan Anda kepada pihak ketiga manapun untuk tujuan pemasaran komersial tanpa persetujuan tertulis dari Anda.
+      </p>
+
+      <h2 class="text-lg font-bold text-[#173D32]">4. Hak atas Dokumentasi Kegiatan</h2>
+      <p>
+        Dokumentasi foto dan video yang diambil oleh tim fotografer kami selama kegiatan outbound hanya akan digunakan sebagai portofolio setelah memperoleh izin dari perwakilan instansi atau panitia yang berwenang.
+      </p>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { servicePackages, getWhatsAppUrl } from '../data/content';
+
+const packages = servicePackages.filter(p => p.category === 'perusahaan');
+---
+
+<Layout
+  title="Paket Outbound Perusahaan & Corporate Gathering - Ruang Rimba Outbound"
+  description="Layanan outbound perusahaan terbaik: Team Building dinamis, Fun Games ice breaking, Leadership Camp eksekutif, dan perayaan Corporate Gathering tahunan."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumb items={[{ label: 'Paket Outbound', href: '/paket' }, { label: 'Outbound Perusahaan' }]} />
+  </div>
+
+  <section class="bg-[#173D32] text-white py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#E8DFC9] block mb-2">Corporate Solutions</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Outbound Perusahaan</h1>
+      <p class="text-sm text-[#E8DFC9] mt-2 leading-relaxed">
+        Tingkatkan sinergi organisasi, pecahkan sekat birokrasi divisi, dan bangun budaya kerja kolaboratif melalui simulasi experiential learning yang menyegarkan.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {packages.map((pkg) => (
+        <div class="bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-xl transition flex flex-col md:flex-row group">
+          <div class="md:w-1/2 h-56 md:h-auto overflow-hidden">
+            <img src={pkg.heroImage} alt={pkg.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+          <div class="md:w-1/2 p-6 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-lg text-[#173D32] mb-2 group-hover:text-[#657A50] transition">
+                <a href={`/${pkg.slug}`}>{pkg.title}</a>
+              </h3>
+              <p class="text-xs text-gray-600 line-clamp-3 mb-4 leading-relaxed">
+                {pkg.shortDesc}
+              </p>
+            </div>
+            <div class="pt-4 border-t border-[#E8DFC9] flex items-center justify-between">
+              <a href={`/${pkg.slug}`} class="text-xs font-bold text-[#173D32] hover:underline">
+                Detail Rundown &rarr;
+              </a>
+              <a
+                href={getWhatsAppUrl(`Halo Ruang Rimba, saya berminat konsultasi outbound perusahaan: ${pkg.title}`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-semibold bg-[#173D32] text-[#E8DFC9] px-3 py-1.5 rounded-lg hover:bg-[#657A50] transition"
+              >
+                Chat WA
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

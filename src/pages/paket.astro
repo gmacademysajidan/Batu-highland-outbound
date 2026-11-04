@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { servicePackages, getWhatsAppUrl } from '../data/content';
+
+const categories = [
+  { id: 'perusahaan', title: 'A. Outbound Perusahaan', desc: 'Program sinergi tim, kepemimpinan manajerial, fun games stres release, dan corporate gathering tahunan.' },
+  { id: 'family', title: 'B. Family Gathering', desc: 'Pilihan paket kebersamaan keluarga besar dan paguyuban mulai dari paket hemat hingga private resort menginap.' },
+  { id: 'sekolah', title: 'C. Outbound Sekolah', desc: 'Aktivitas motorik siswa, character building anti-bullying, LDKS OSIS, dan edukasi konservasi alam rimba.' },
+  { id: 'wisata', title: 'D. Outbound Wisata', desc: 'Petualangan memacu adrenalin: arung jeram sungai Cisadane, offroad 4x4 kebun teh, hingga camping bintang.' }
+];
+---
+
+<Layout
+  title="Daftar Paket Outbound Lengkap - Ruang Rimba Outbound"
+  description="Katalog lengkap 16 paket outbound: Team Building, Fun Games, Family Gathering, Outbound Sekolah, Rafting Cisadane, Offroad 4x4, dan Camping Pegunungan."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumb items={[{ label: 'Paket Outbound' }]} />
+  </div>
+
+  <!-- Hero Header -->
+  <section class="bg-[#173D32] text-white py-14 lg:py-18">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#E8DFC9] block mb-2">Katalog Program Lengkap</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Pilihan Paket Outbound & Petualangan
+      </h1>
+      <p class="text-sm sm:text-base text-[#E8DFC9] mt-3 leading-relaxed">
+        Temukan program yang tepat untuk mempererat kebersamaan tim, melatih kepemimpinan, dan menyegarkan semangat di alam terbuka.
+      </p>
+    </div>
+  </section>
+
+  <!-- Package Categories -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+    {categories.map((cat) => {
+      const items = servicePackages.filter(p => p.category === cat.id);
+      return (
+        <section id={cat.id} class="scroll-mt-28">
+          <div class="border-b-2 border-[#173D32] pb-4 mb-8 flex flex-col md:flex-row md:items-end justify-between">
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#173D32]">{cat.title}</h2>
+              <p class="text-xs sm:text-sm text-gray-600 mt-1 max-w-2xl">{cat.desc}</p>
+            </div>
+            <a
+              href={getWhatsAppUrl(`Halo Ruang Rimba, saya ingin berkonsultasi seputar kategori ${cat.title}`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-bold text-[#657A50] hover:text-[#173D32] transition mt-2 md:mt-0 flex items-center gap-1"
+            >
+              Konsultasi Kategori Ini &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {items.map((pkg) => (
+              <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E8DFC9] flex flex-col group">
+                <div class="relative h-44 overflow-hidden">
+                  <img
+                    src={pkg.heroImage}
+                    alt={pkg.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                  <div class="absolute top-2.5 right-2.5 bg-white/90 backdrop-blur-xs text-[#173D32] text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                    {pkg.durationOptions[0].split('(')[0]}
+                  </div>
+                </div>
+
+                <div class="p-5 flex-grow flex flex-col justify-between">
+                  <div>
+                    <h3 class="font-bold text-base text-[#173D32] group-hover:text-[#657A50] transition mb-2">
+                      <a href={`/${pkg.slug}`}>{pkg.title}</a>
+                    </h3>
+                    <p class="text-xs text-gray-600 line-clamp-3 mb-4 leading-relaxed">
+                      {pkg.shortDesc}
+                    </p>
+
+                    <!-- Bullet Highlights -->
+                    <ul class="text-[11px] text-gray-500 space-y-1 mb-4">
+                      {pkg.highlights.slice(0, 2).map((h) => (
+                        <li class="flex items-start gap-1.5">
+                          <span class="text-emerald-600 font-bold">✓</span>
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div class="pt-3 border-t border-[#E8DFC9]/70 flex items-center justify-between">
+                    <a
+                      href={`/${pkg.slug}`}
+                      class="text-xs font-bold text-[#173D32] hover:text-[#657A50] transition"
+                    >
+                      Lihat Rundown &rarr;
+                    </a>
+                    <a
+                      href={getWhatsAppUrl(`Halo Ruang Rimba, saya ingin tanya harga & info paket ${pkg.title}`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-[11px] font-semibold bg-[#173D32] text-[#E8DFC9] px-3 py-1.5 rounded-lg hover:bg-[#657A50] transition"
+                    >
+                      Tanya WA
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+    })}
+  </div>
+
+  <!-- Bottom CTA -->
+  <section class="py-14 bg-[#173D32] text-white text-center">
+    <div class="max-w-2xl mx-auto px-4 space-y-4">
+      <h2 class="text-2xl sm:text-3xl font-extrabold">Tidak Menemukan Paket yang Cocok?</h2>
+      <p class="text-xs sm:text-sm text-[#E8DFC9]">
+        Kami siap merancang itinerary kustom (custom package) sesuai anggaran, lokasi, dan target unik organisasi Anda.
+      </p>
+      <div class="pt-2">
+        <a
+          href={getWhatsAppUrl("Halo Ruang Rimba, kami ingin merancang paket outbound custom sesuai kebutuhan kami.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-[#E8DFC9] hover:bg-white text-[#173D32] font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow transition"
+        >
+          Rancang Paket Kustom via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

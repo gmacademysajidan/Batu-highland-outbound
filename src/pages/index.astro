@@ -1,11 +1,441 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import { servicePackages, destinations, galleryItems, blogPosts, siteConfig, getWhatsAppUrl } from '../data/content';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const popularPackages = [
+  servicePackages.find(p => p.id === 'team-building'),
+  servicePackages.find(p => p.id === 'corporate-gathering'),
+  servicePackages.find(p => p.id === 'outbound-rafting'),
+  servicePackages.find(p => p.id === 'paket-standard')
+].filter(Boolean);
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Ruang Rimba Outbound",
+      "url": "https://ruangrimbaoutbound.id",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ruangrimbaoutbound.id/blog?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "Ruang Rimba Outbound",
+      "telephone": siteConfig.phone,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": siteConfig.address,
+        "addressLocality": "Bogor",
+        "addressRegion": "Jawa Barat",
+        "addressCountry": "ID"
+      },
+      "description": siteConfig.description
+    }
+  ]
+};
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Ruang Rimba Outbound - Solusi Profesional Team Building & Wisata Petualangan"
+  description="Layanan outbound profesional, team building perusahaan, family gathering, LDKS sekolah, serta paket rafting dan offroad alam di Puncak Bogor & Bandung."
+  schema={homeSchema}
+>
+  <!-- 1 & 2. HERO SECTION -->
+  <section class="relative bg-[#173D32] text-white overflow-hidden py-20 lg:py-28">
+    <div class="absolute inset-0 opacity-25 mix-blend-overlay">
+      <img
+        src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1920&auto=format&fit=crop"
+        alt="Suasana Alam Rimba Outbound"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    
+    <!-- Subtle gradient glow -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#173D32] via-[#173D32]/90 to-transparent"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#657A50]/40 border border-[#657A50] text-[#E8DFC9] text-xs font-semibold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Partner Outbound & Gathering Tepercaya
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
+            Eksplorasi Kekuatan Tim Anda di Tengah Keasrian Rimba Raya.
+          </h1>
+
+          <p class="text-base sm:text-lg text-[#E8DFC9] font-normal leading-relaxed max-w-2xl">
+            Solusi komprehensif outbound perusahaan, employee gathering, pembentukan karakter sekolah, dan petualangan rafting serta offroad dengan standar keselamatan terverifikasi.
+          </p>
+
+          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a
+              href="/paket"
+              class="px-7 py-3.5 rounded-xl bg-[#E8DFC9] text-[#173D32] font-bold text-sm hover:bg-white transition text-center shadow-lg"
+            >
+              Jelajahi Pilihan Paket
+            </a>
+            <a
+              href={getWhatsAppUrl("Halo Ruang Rimba Outbound, saya ingin konsultasi kebutuhan acara perusahaan kami.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-7 py-3.5 rounded-xl bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-sm transition text-center flex items-center justify-center gap-2 shadow-lg"
+            >
+              <svg class="w-5 h-5 text-emerald-300" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              Konsultasi WhatsApp Cepat
+            </a>
+          </div>
+
+          <!-- Quick Trust Badges -->
+          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/10 text-xs text-[#E8DFC9]">
+            <div>
+              <div class="font-bold text-white text-base">Experiential</div>
+              <div class="text-[11px] opacity-80">Metodologi Reflektif Terukur</div>
+            </div>
+            <div>
+              <div class="font-bold text-white text-base">Safety First</div>
+              <div class="text-[11px] opacity-80">Prosedur P3K & Rescue Terlatih</div>
+            </div>
+            <div>
+              <div class="font-bold text-white text-base">All-In Custom</div>
+              <div class="text-[11px] opacity-80">Venue, Konsumsi & Rundown</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="relative">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#657A50]/40 relative">
+              <img
+                src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=800&auto=format&fit=crop"
+                alt="Kegiatan Team Building Ruang Rimba"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Floating Stat Box -->
+            <div class="absolute -bottom-6 -left-6 bg-white text-[#173D32] p-4 rounded-2xl shadow-xl border border-[#E8DFC9] flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-[#E8DFC9] text-[#173D32] flex items-center justify-center font-bold text-2xl">
+                ★
+              </div>
+              <div>
+                <div class="font-bold text-lg leading-tight">100% Fleksibel</div>
+                <div class="text-xs text-gray-500">Sesuaikan Anggaran & Target Tim</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TRUST INDICATORS & KEUNGGULAN -->
+  <section class="py-12 bg-white border-b border-[#E8DFC9]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-4 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9]/60">
+          <div class="text-3xl font-extrabold text-[#173D32] mb-1">16+</div>
+          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Modul Kegiatan Outbound</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9]/60">
+          <div class="text-3xl font-extrabold text-[#173D32] mb-1">5+</div>
+          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Kawasan Venue Alam Pilihan</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9]/60">
+          <div class="text-3xl font-extrabold text-[#173D32] mb-1">100%</div>
+          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Safety Standard Briefing</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9]/60">
+          <div class="text-3xl font-extrabold text-[#173D32] mb-1">24/7</div>
+          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Layanan Konsultasi Cepat</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. KATEGORI PAKET POPULER -->
+  <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Pilihan Unggulan</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight">
+        Program Outbound Paling Diminati
+      </h2>
+      <p class="text-sm sm:text-base text-gray-600 mt-3">
+        Diformulasikan secara khusus untuk menghadirkan atmosfer pembelajaran menyenangkan dan mempererat kebersamaan.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {popularPackages.map((pkg) => (
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-[#E8DFC9] flex flex-col group">
+          <div class="relative h-48 overflow-hidden">
+            <img
+              src={pkg?.heroImage}
+              alt={pkg?.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+            <div class="absolute top-3 left-3 bg-[#173D32]/85 backdrop-blur-xs text-[#E8DFC9] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
+              {pkg?.categoryLabel}
+            </div>
+          </div>
+          <div class="p-5 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-lg text-[#173D32] mb-2 group-hover:text-[#657A50] transition">
+                <a href={`/${pkg?.slug}`}>{pkg?.title}</a>
+              </h3>
+              <p class="text-xs text-gray-600 line-clamp-3 mb-4 leading-relaxed">
+                {pkg?.shortDesc}
+              </p>
+            </div>
+            <div class="pt-4 border-t border-[#E8DFC9]/60 flex items-center justify-between">
+              <a
+                href={`/${pkg?.slug}`}
+                class="text-xs font-bold text-[#173D32] hover:text-[#657A50] transition"
+              >
+                Detail Rundown &rarr;
+              </a>
+              <a
+                href={getWhatsAppUrl(`Halo Ruang Rimba, saya tertarik dengan paket ${pkg?.title}`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[11px] font-semibold bg-[#173D32] text-[#E8DFC9] px-3 py-1.5 rounded-lg hover:bg-[#657A50] transition"
+              >
+                Tanya WA
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 text-center">
+      <a
+        href="/paket"
+        class="inline-flex items-center gap-2 text-sm font-bold text-[#173D32] hover:text-[#657A50] transition underline underline-offset-4"
+      >
+        Lihat Seluruh 16 Pilihan Paket Outbound &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- 5 & 6. FILOSOFI EXPERIENTIAL LEARNING -->
+  <section class="py-16 bg-[#173D32] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#E8DFC9] block">Filosofi & Metode</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            Belajar dari Pengalaman Nyata di Alam Terbuka.
+          </h2>
+          <p class="text-sm sm:text-base text-[#E8DFC9]/90 leading-relaxed">
+            Di Ruang Rimba Outbound, kami meyakini bahwa perubahan perilaku dan kekompakan tim yang bertahan lama tidak dapat dibangun hanya melalui seminar di dalam ruangan ber-AC.
+          </p>
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-[#657A50] text-[#E8DFC9] flex items-center justify-center font-bold text-sm shrink-0">1</div>
+              <div>
+                <h3 class="font-bold text-sm text-white">Do (Aktivitas Nyata)</h3>
+                <p class="text-xs text-[#E8DFC9]/80 mt-0.5">Peserta terjun langsung dalam skenario permainan problem solving yang menantang.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-[#657A50] text-[#E8DFC9] flex items-center justify-center font-bold text-sm shrink-0">2</div>
+              <div>
+                <h3 class="font-bold text-sm text-white">Reflect (Observasi & Diskusi)</h3>
+                <p class="text-xs text-[#E8DFC9]/80 mt-0.5">Mengevaluasi dinamika interaksi, kendala komunikasi, dan emosi yang muncul.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-[#657A50] text-[#E8DFC9] flex items-center justify-center font-bold text-sm shrink-0">3</div>
+              <div>
+                <h3 class="font-bold text-sm text-white">Apply (Transformasi Kerja)</h3>
+                <p class="text-xs text-[#E8DFC9]/80 mt-0.5">Menerapkan wawasan baru tersebut ke dalam rutinitas kolaborasi di kantor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-3xl overflow-hidden shadow-2xl border-2 border-[#657A50]/50">
+            <img
+              src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
+              alt="Fasilitator Experiential Learning"
+              class="w-full h-[400px] object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PILIHAN FASILITAS & VENUE UNGGULAN -->
+  <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Sarana & Prasarana</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight">
+          Fasilitas & Venue Pilihan
+        </h2>
+      </div>
+      <a href="/fasilitas" class="text-xs font-bold text-[#173D32] hover:text-[#657A50] transition mt-4 md:mt-0">
+        Lihat Seluruh Fasilitas &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {destinations.slice(0, 3).map((dest) => (
+        <div class="bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-md transition">
+          <div class="h-48 overflow-hidden">
+            <img src={dest.image} alt={dest.name} class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+          </div>
+          <div class="p-5 space-y-3">
+            <div class="text-[10px] uppercase font-bold text-[#657A50] tracking-wider">{dest.region}</div>
+            <h3 class="font-bold text-base text-[#173D32]">{dest.name}</h3>
+            <p class="text-xs text-gray-600 line-clamp-2">{dest.description}</p>
+            <div class="text-xs font-semibold text-gray-700 pt-2 border-t border-[#E8DFC9]">
+              Kapasitas: <span class="text-[#173D32]">{dest.capacity}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 10. PREVIEW GALERI DOKUMENTASI -->
+  <section class="py-16 bg-[#F8F7F2] border-t border-[#E8DFC9]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Dokumentasi Asli</span>
+        <h2 class="text-3xl font-extrabold text-[#173D32] tracking-tight">Galeri Dokumentasi Kegiatan</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        {galleryItems.slice(0, 6).map((item) => (
+          <div class="group relative rounded-xl overflow-hidden aspect-square border border-[#E8DFC9]">
+            <img src={item.imageUrl} alt={item.title} class="w-full h-full object-cover group-hover:scale-110 transition duration-300" />
+            <div class="absolute inset-0 bg-[#173D32]/75 opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-2.5 text-white">
+              <span class="text-[9px] uppercase font-bold text-[#E8DFC9]">{item.category}</span>
+              <span class="text-[11px] font-semibold line-clamp-1">{item.title}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/galeri" class="text-xs font-bold text-[#173D32] hover:underline">
+          Buka Halaman Galeri Lengkap &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. ARTIKEL TERBARU BLOG -->
+  <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Pusat Informasi</span>
+        <h2 class="text-3xl font-extrabold text-[#173D32] tracking-tight">Artikel & Tips Outbound</h2>
+      </div>
+      <a href="/blog" class="text-xs font-bold text-[#173D32] hover:text-[#657A50] transition mt-4 md:mt-0">
+        Baca Semua Panduan &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {blogPosts.map((post) => (
+        <article class="bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-md transition flex flex-col">
+          <div class="h-44 overflow-hidden">
+            <img src={post.featuredImage} alt={post.title} class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+          </div>
+          <div class="p-5 flex-grow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-[11px] text-gray-500 mb-2">
+                <span class="font-bold text-[#657A50]">{post.category}</span>
+                <span>{post.date}</span>
+              </div>
+              <h3 class="font-bold text-sm text-[#173D32] hover:text-[#657A50] transition leading-snug mb-2">
+                <a href={`/blog/${post.slug}`}>{post.title}</a>
+              </h3>
+              <p class="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                {post.summary}
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#E8DFC9]/60">
+              <a href={`/blog/${post.slug}`} class="text-xs font-bold text-[#173D32] hover:underline">
+                Baca Selengkapnya &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- 13. FAQ SECTION -->
+  <section class="py-16 bg-white border-t border-[#E8DFC9]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Tanya Jawab</span>
+        <h2 class="text-3xl font-extrabold text-[#173D32] tracking-tight">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="border border-[#E8DFC9] rounded-xl p-5 bg-[#F8F7F2]">
+          <h3 class="font-bold text-sm text-[#173D32]">Bagaimana prosedur pemesanan paket outbound di Ruang Rimba?</h3>
+          <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+            Anda dapat menghubungi konsultan kami via WhatsApp atau form kontak. Kami akan mengonfirmasi jumlah peserta, preferensi lokasi, tujuan kegiatan, dan tanggal. Selanjutnya kami mengirimkan draft proposal resmi serta rincian biaya transparan untuk disetujui.
+          </p>
+        </div>
+
+        <div class="border border-[#E8DFC9] rounded-xl p-5 bg-[#F8F7F2]">
+          <h3 class="font-bold text-sm text-[#173D32]">Apakah biaya paket sudah termasuk akomodasi penginapan dan makan?</h3>
+          <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+            Tergantung paket yang Anda pilih. Kami menyediakan opsi paket 1 Hari (One Day) dengan makan siang + snack, maupun paket menginap (2D1N / 3D2N) yang sudah mencakup kamar resort/villa/tenda, makan 3 kali, BBQ night, serta coffee break lengkap.
+          </p>
+        </div>
+
+        <div class="border border-[#E8DFC9] rounded-xl p-5 bg-[#F8F7F2]">
+          <h3 class="font-bold text-sm text-[#173D32]">Bagaimana jika saat kegiatan berlangsung turun hujan lebat?</h3>
+          <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+            Tim kami selalu menyiapkan rencana kontingensi (contingency plan). Seluruh venue rekanan kami memiliki pendopo/aula tertutup yang representatif sehingga permainan dapat dialihkan menjadi indoor dynamic games tanpa mengurangi esensi pembelajaran.
+          </p>
+        </div>
+
+        <div class="border border-[#E8DFC9] rounded-xl p-5 bg-[#F8F7F2]">
+          <h3 class="font-bold text-sm text-[#173D32]">Apakah bisa meminta penyesuaian (custom) sesuai budget perusahaan?</h3>
+          <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+            Tentu saja. Kami sangat fleksibel dalam menyesuaikan pilihan venue, menu katering, maupun jenis aktivitas pendukung agar tepat sasaran dengan alokasi anggaran yang dimiliki panitia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. CTA KONSULTASI WHATSAPP BOTTOM -->
+  <section class="py-16 bg-[#173D32] text-white text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#E8DFC9]">Mulai Rencanakan Sekarang</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+        Siap Hadirkan Pengalaman Berkesan untuk Tim Anda?
+      </h2>
+      <p class="text-sm sm:text-base text-[#E8DFC9]/90 max-w-xl mx-auto leading-relaxed">
+        Konsultasikan tanggal dan rencana kegiatan Anda secara cuma-cuma. Dapatkan rekomendasi venue terbaik dan draft penawaran resmi dari tim profesional kami.
+      </p>
+      <div class="pt-2">
+        <a
+          href={getWhatsAppUrl("Halo Ruang Rimba, saya ingin berkonsultasi mengenai paket outbound.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-base shadow-xl transition"
+        >
+          <svg class="w-6 h-6 text-emerald-300" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          Hubungi Konsultan Kami Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>

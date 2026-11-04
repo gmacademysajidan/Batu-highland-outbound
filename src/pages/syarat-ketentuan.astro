@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig } from '../data/content';
+---
+
+<Layout
+  title="Syarat & Ketentuan Layanan - Ruang Rimba Outbound"
+  description="Ketentuan reservasi, pembayaran uang muka (DP), kebijakan pembatalan, dan standar keselamatan kegiatan di Ruang Rimba Outbound."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumb items={[{ label: 'Syarat & Ketentuan' }]} />
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-6">
+    <h1 class="text-3xl font-extrabold text-[#173D32]">Syarat & Ketentuan Layanan</h1>
+    <p class="text-xs text-gray-500">Terakhir diperbarui: 24 Oktober 2026</p>
+
+    <div class="prose max-w-none text-xs sm:text-sm text-gray-700 space-y-4">
+      <h2 class="text-lg font-bold text-[#173D32]">1. Reservasi dan Pembayaran</h2>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Pemesanan paket outbound dinyatakan resmi setelah penandatanganan konfirmasi order dan pembayaran uang muka (DP) minimal 30% dari total estimasi biaya.</li>
+        <li>Pelunasan biaya wajib diselesaikan paling lambat 3 (tiga) hari kerja sebelum hari pelaksanaan kegiatan berlangsung.</li>
+      </ul>
+
+      <h2 class="text-lg font-bold text-[#173D32]">2. Kebijakan Keselamatan & Kesehatan Peserta</h2>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Peserta wajib mengikuti seluruh instruksi keselamatan (safety briefing) yang disampaikan oleh Master Game dan instruktur lapangan.</li>
+        <li>Panitia perusahaan/sekolah wajib memberitahukan kepada tim kami apabila ada peserta yang memiliki riwayat penyakit khusus (asma akut, penyakit jantung, epilepsi, cedera tulang, atau kondisi kehamilan).</li>
+      </ul>
+
+      <h2 class="text-lg font-bold text-[#173D32]">3. Rencana Kontingensi Cuaca (Force Majeure)</h2>
+      <p>
+        Kegiatan outbound dialam terbuka sangat dipengaruhi oleh kondisi cuaca. Apabila terjadi hujan lebat atau cuaca ekstrem yang dinilai berisiko oleh tim safety officer kami, aktivitas luar ruang akan dialihkan ke aula/pendopo indoor terpadu (contingency program) demi menjaga keselamatan peserta.
+      </p>
+
+      <h2 class="text-lg font-bold text-[#173D32]">4. Pembatalan & Perubahan Jadwal (Reschedule)</h2>
+      <p>
+        Permohonan perubahan tanggal (reschedule) dapat diajukan selambat-lambatnya 14 hari sebelum tanggal kegiatan, disesuaikan dengan ketersediaan venue rekanan.
+      </p>
+    </div>
+  </div>
+</Layout>

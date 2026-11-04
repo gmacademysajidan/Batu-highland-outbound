@@ -1,0 +1,11 @@
+---
+import ServiceDetail from '../components/ServiceDetail.astro';
+import { servicePackages } from '../data/content';
+
+const pkg = servicePackages.find((p) => p.slug === 'team-building');
+if (!pkg) {
+  throw new Error('Package not found: team-building');
+}
+---
+
+<ServiceDetail pkg={pkg} />

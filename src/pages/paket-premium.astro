@@ -1,0 +1,11 @@
+---
+import ServiceDetail from '../components/ServiceDetail.astro';
+import { servicePackages } from '../data/content';
+
+const pkg = servicePackages.find((p) => p.slug === 'paket-premium');
+if (!pkg) {
+  throw new Error('Package not found: paket-premium');
+}
+---
+
+<ServiceDetail pkg={pkg} />

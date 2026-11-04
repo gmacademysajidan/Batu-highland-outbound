@@ -1,0 +1,9 @@
+---
+import BlogDetail from '../../components/BlogDetail.astro';
+import { blogPosts } from '../../data/content';
+
+const post = blogPosts.find(p => p.slug === 'panduan-lengkap-outbound-perusahaan');
+if (!post) throw new Error('Post not found');
+---
+
+<BlogDetail post={post} />

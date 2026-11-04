@@ -1,0 +1,299 @@
+---
+import { siteConfig, getWhatsAppUrl } from '../data/content';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+
+const navItems = [
+  { label: 'Beranda', href: '/' },
+  { label: 'Tentang Kami', href: '/tentang-kami' },
+  {
+    label: 'Paket Outbound',
+    href: '/paket',
+    hasDropdown: true,
+    categories: [
+      {
+        title: 'Outbound Perusahaan',
+        items: [
+          { name: 'Team Building', href: '/team-building', desc: 'Sinergi, komunikasi & problem solving' },
+          { name: 'Fun Games', href: '/fun-games', desc: 'Pelepasan stres & keakraban ceria' },
+          { name: 'Leadership Camp', href: '/leadership-camp', desc: 'Pengembangan jiwa kepemimpinan manajerial' },
+          { name: 'Corporate Gathering', href: '/corporate-gathering', desc: 'Gathering tahunan perusahaan & awarding night' }
+        ]
+      },
+      {
+        title: 'Family Gathering',
+        items: [
+          { name: 'Paket Hemat', href: '/paket-hemat', desc: 'Ramah anggaran untuk keluarga & paguyuban' },
+          { name: 'Paket Standard', href: '/paket-standard', desc: 'Fasilitas komplit makan siang & games' },
+          { name: 'Paket Premium', href: '/paket-premium', desc: 'Inap resort eksklusif dengan sajian BBQ' },
+          { name: 'Paket Custom', href: '/paket-custom', desc: 'Bebas tentukan durasi, destinasi & anggaran' }
+        ]
+      },
+      {
+        title: 'Outbound Sekolah',
+        items: [
+          { name: 'Outbound Pelajar', href: '/outbound-pelajar', desc: 'Motorik & petualangan aman siswa TK-SMP' },
+          { name: 'Character Building', href: '/character-building', desc: 'Pembentukan disiplin, adab & mental tangguh' },
+          { name: 'LDKS & Leadership', href: '/ldks-leadership', desc: 'Pelatihan dasar kepemimpinan OSIS & Pramuka' },
+          { name: 'Edukasi Alam', href: '/edukasi-alam', desc: 'Konservasi rimbawan & adopsi bibit pohon' }
+        ]
+      },
+      {
+        title: 'Outbound Wisata',
+        items: [
+          { name: 'Outbound + Wisata', href: '/outbound-wisata', desc: 'Paduan games & eksplorasi curug indah' },
+          { name: 'Outbound + Rafting', href: '/outbound-rafting', desc: 'Arung jeram seru di sungai Cisadane' },
+          { name: 'Outbound + Offroad', href: '/outbound-offroad', desc: 'Sensasi Land Rover 4x4 di jalur lumpur' },
+          { name: 'Outbound + Camping', href: '/outbound-camping', desc: 'Bermalam di tenda dengan api unggun rimba' }
+        ]
+      }
+    ]
+  },
+  { label: 'Fasilitas', href: '/fasilitas' },
+  { label: 'Galeri', href: '/galeri' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Kontak', href: '/kontak' }
+];
+---
+
+<header class="sticky top-0 z-50 bg-[#F8F7F2]/95 backdrop-blur-md border-b border-[#E8DFC9] transition-all duration-200">
+  <!-- Top Bar Contact -->
+  <div class="hidden lg:block bg-[#173D32] text-[#E8DFC9] text-xs py-2 px-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          {siteConfig.address}
+        </span>
+        <span class="flex items-center gap-2">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {siteConfig.workingHours}
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href={getWhatsAppUrl("Halo Ruang Rimba, saya ingin berkonsultasi")} target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5 font-medium">
+          <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          Konsultasi Cepat: {siteConfig.phone}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-[#173D32] text-[#E8DFC9] flex items-center justify-center font-bold text-xl shadow-md group-hover:bg-[#657A50] transition">
+          RR
+        </div>
+        <div>
+          <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-[#173D32] block leading-none">
+            RUANG RIMBA
+          </span>
+          <span class="text-[10px] tracking-widest uppercase font-semibold text-[#657A50] block mt-1">
+            OUTBOUND & ADVENTURE
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu Links -->
+      <nav class="hidden lg:flex items-center space-x-1 font-medium text-sm text-[#242824]">
+        {navItems.map((item) => {
+          if (item.hasDropdown) {
+            return (
+              <div class="relative group">
+                <a
+                  href={item.href}
+                  class={`px-3.5 py-2 rounded-lg flex items-center gap-1.5 hover:text-[#173D32] hover:bg-[#E8DFC9]/40 transition ${
+                    currentPath.startsWith(item.href) ? 'text-[#173D32] font-semibold bg-[#E8DFC9]/30' : ''
+                  }`}
+                >
+                  {item.label}
+                  <svg class="w-4 h-4 transition-transform group-hover:rotate-180 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+
+                <!-- Mega Menu Flyout -->
+                <div class="absolute left-1/2 -translate-x-1/2 top-full w-[900px] bg-white rounded-2xl shadow-2xl border border-[#E8DFC9] p-6 opacity-0 translate-y-3 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                  <div class="grid grid-cols-4 gap-6">
+                    {item.categories?.map((cat) => (
+                      <div class="space-y-3">
+                        <div class="text-xs uppercase tracking-wider font-bold text-[#173D32] border-b border-[#E8DFC9] pb-2">
+                          {cat.title}
+                        </div>
+                        <div class="space-y-2">
+                          {cat.items.map((sub) => (
+                            <a
+                              href={sub.href}
+                              class="block p-2 rounded-lg hover:bg-[#F8F7F2] transition group/item"
+                            >
+                              <div class="font-semibold text-xs text-[#242824] group-hover/item:text-[#173D32]">
+                                {sub.name}
+                              </div>
+                              <div class="text-[11px] text-gray-500 line-clamp-1 mt-0.5">
+                                {sub.desc}
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <!-- Mega Menu Footer Promo -->
+                  <div class="mt-6 pt-4 border-t border-[#E8DFC9] flex justify-between items-center text-xs text-gray-600 bg-[#F8F7F2] p-3 rounded-xl">
+                    <span class="font-medium text-[#173D32]">Butuh proposal penawaran khusus perusahaan Anda?</span>
+                    <a
+                      href={getWhatsAppUrl("Halo Ruang Rimba, kami ingin dibuatkan draft proposal outbound resmi.")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-xs font-semibold text-[#173D32] hover:underline flex items-center gap-1"
+                    >
+                      Request Proposal Custom via WA &rarr;
+                    </a>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <a
+              href={item.href}
+              class={`px-3.5 py-2 rounded-lg hover:text-[#173D32] hover:bg-[#E8DFC9]/40 transition ${
+                currentPath === item.href ? 'text-[#173D32] font-semibold bg-[#E8DFC9]/40' : ''
+              }`}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a
+          href="/paket"
+          class="text-xs font-semibold px-4 py-2.5 rounded-xl border border-[#173D32] text-[#173D32] hover:bg-[#173D32] hover:text-white transition"
+        >
+          Lihat Paket
+        </a>
+        <a
+          href={getWhatsAppUrl("Halo Ruang Rimba Outbound, saya ingin konsultasi paket outbound")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs font-semibold px-4 py-2.5 rounded-xl bg-[#173D32] text-[#E8DFC9] hover:bg-[#657A50] shadow-sm transition flex items-center gap-2"
+        >
+          <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          Konsultasi WhatsApp
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex lg:hidden">
+        <button
+          id="mobile-menu-btn"
+          aria-label="Toggle menu"
+          class="p-2.5 rounded-xl text-[#173D32] hover:bg-[#E8DFC9] transition"
+        >
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Navigation -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-[#E8DFC9] bg-[#F8F7F2] px-4 pt-4 pb-8 max-h-[85vh] overflow-y-auto">
+    <div class="space-y-2">
+      <a href="/" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#E8DFC9]/40">Beranda</a>
+      <a href="/tentang-kami" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#E8DFC9]/40">Tentang Kami</a>
+      
+      <!-- Mobile Accordion Paket -->
+      <div>
+        <button
+          id="mobile-paket-btn"
+          class="w-full flex items-center justify-between px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#E8DFC9]/40"
+        >
+          <span>Paket Outbound</span>
+          <svg class="w-4 h-4 transition-transform text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div id="mobile-paket-dropdown" class="hidden pl-4 pr-2 pt-2 pb-2 space-y-3 bg-white/60 rounded-xl my-2 border border-[#E8DFC9]/50">
+          <div>
+            <div class="text-xs font-bold text-[#173D32] px-2 py-1">Outbound Perusahaan</div>
+            <a href="/team-building" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Team Building</a>
+            <a href="/fun-games" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Fun Games & Ice Breaking</a>
+            <a href="/leadership-camp" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Leadership Camp</a>
+            <a href="/corporate-gathering" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Corporate Gathering</a>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-[#173D32] px-2 py-1">Family Gathering</div>
+            <a href="/paket-hemat" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Paket Hemat</a>
+            <a href="/paket-standard" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Paket Standard</a>
+            <a href="/paket-premium" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Paket Premium</a>
+            <a href="/paket-custom" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Paket Custom</a>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-[#173D32] px-2 py-1">Outbound Sekolah</div>
+            <a href="/outbound-pelajar" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Outbound Pelajar</a>
+            <a href="/character-building" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Character Building</a>
+            <a href="/ldks-leadership" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• LDKS & Leadership</a>
+            <a href="/edukasi-alam" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Edukasi Alam</a>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-[#173D32] px-2 py-1">Outbound Wisata</div>
+            <a href="/outbound-wisata" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Outbound + Wisata</a>
+            <a href="/outbound-rafting" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Outbound + Rafting</a>
+            <a href="/outbound-offroad" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Outbound + Offroad</a>
+            <a href="/outbound-camping" class="block px-3 py-1.5 text-xs text-gray-700 hover:text-[#173D32]">• Outbound + Camping</a>
+          </div>
+          <div class="pt-2 border-t border-[#E8DFC9]">
+            <a href="/paket" class="block px-3 py-1 text-xs font-bold text-[#173D32]">Lihat Semua Paket &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="/fasilitas" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#E8DFC9]/40">Fasilitas</a>
+      <a href="/galeri" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#E8DFC9]/40">Galeri</a>
+      <a href="/blog" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#E8DFC9]/40">Blog</a>
+      <a href="/kontak" class="block px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[#E8DFC9]/40">Hubungi Kami</a>
+
+      <div class="pt-4 border-t border-[#E8DFC9] space-y-2">
+        <a
+          href={getWhatsAppUrl("Halo Ruang Rimba, saya ingin konsultasi paket outbound via WhatsApp")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full text-center py-3 rounded-xl bg-[#173D32] text-[#E8DFC9] font-semibold text-sm flex items-center justify-center gap-2 shadow"
+        >
+          <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          Chat via WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const paketBtn = document.getElementById('mobile-paket-btn');
+  const paketDropdown = document.getElementById('mobile-paket-dropdown');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    hamburger?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+
+  paketBtn?.addEventListener('click', () => {
+    paketDropdown?.classList.toggle('hidden');
+  });
+</script>

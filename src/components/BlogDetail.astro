@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { blogPosts, getWhatsAppUrl, siteConfig, type BlogPost } from '../data/content';
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+
+const relatedPosts = blogPosts.filter(p => p.slug !== post.slug).slice(0, 2);
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.title,
+  "description": post.summary,
+  "image": post.featuredImage,
+  "author": {
+    "@type": "Organization",
+    "name": post.author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteConfig.name,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `https://${siteConfig.domain}/logo.png`
+    }
+  },
+  "datePublished": "2026-10-24"
+};
+---
+
+<Layout
+  title={`${post.title} - Blog Ruang Rimba`}
+  description={post.summary}
+  image={post.featuredImage}
+  type="article"
+  schema={articleSchema}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumb
+      items={[
+        { label: 'Blog', href: '/blog' },
+        { label: post.title }
+      ]}
+    />
+  </div>
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Header Post -->
+    <header class="space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8DFC9] text-[#173D32] text-xs font-bold uppercase tracking-wider">
+        {post.category}
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#173D32] leading-tight">
+        {post.title}
+      </h1>
+      <div class="flex items-center gap-4 text-xs text-gray-500 border-b border-[#E8DFC9] pb-4">
+        <span>Ditulis oleh: <strong class="text-[#173D32]">{post.author}</strong></span>
+        <span>•</span>
+        <span>{post.date}</span>
+        <span>•</span>
+        <span>{post.readingTime}</span>
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="rounded-3xl overflow-hidden shadow-lg border border-[#E8DFC9] aspect-[16/9]">
+      <img src={post.featuredImage} alt={post.title} class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Table of Contents (TOC) -->
+    {post.toc && post.toc.length > 0 && (
+      <div class="bg-[#F8F7F2] p-6 rounded-2xl border border-[#E8DFC9] space-y-3">
+        <div class="font-bold text-sm text-[#173D32] uppercase tracking-wider flex items-center gap-2">
+          <svg class="w-4 h-4 text-[#657A50]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+          Daftar Isi Panduan
+        </div>
+        <ul class="space-y-2 text-xs text-gray-700">
+          {post.toc.map((item, idx) => (
+            <li>
+              <a href={`#${item.id}`} class="hover:text-[#173D32] hover:underline flex items-start gap-2">
+                <span class="text-[#657A50] font-bold">{idx + 1}.</span>
+                <span>{item.text}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <!-- Main Content Body -->
+    <div class="prose prose-emerald max-w-none text-[#242824] leading-relaxed text-sm sm:text-base space-y-4" set:html={post.content}>
+    </div>
+
+    <!-- Bottom Article CTA -->
+    <div class="my-12 p-8 rounded-3xl bg-[#173D32] text-white space-y-4 text-center">
+      <h3 class="text-2xl font-bold">Rencanakan Outbound Terbaik Bersama Kami</h3>
+      <p class="text-xs sm:text-sm text-[#E8DFC9] max-w-xl mx-auto">
+        Diskusikan langsung kebutuhan tim dan perusahaan Anda dengan konsultan outbound Ruang Rimba.
+      </p>
+      <div class="pt-2">
+        <a
+          href={getWhatsAppUrl(`Halo Ruang Rimba, saya baru membaca artikel '${post.title}' dan ingin konsultasi lebih lanjut.`)}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-xs px-6 py-3 rounded-xl shadow transition"
+        >
+          Konsultasi Acara via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Related Articles -->
+    {relatedPosts.length > 0 && (
+      <div class="pt-8 border-t border-[#E8DFC9] space-y-6">
+        <h3 class="text-xl font-bold text-[#173D32]">Artikel Terkait Lainnya</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {relatedPosts.map((rel) => (
+            <a href={`/blog/${rel.slug}`} class="block p-4 rounded-xl bg-white border border-[#E8DFC9] hover:border-[#657A50] transition">
+              <span class="text-[10px] font-bold text-[#657A50] uppercase">{rel.category}</span>
+              <h4 class="font-bold text-sm text-[#173D32] mt-1">{rel.title}</h4>
+              <p class="text-xs text-gray-500 line-clamp-2 mt-1">{rel.summary}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+  </article>
+</Layout>

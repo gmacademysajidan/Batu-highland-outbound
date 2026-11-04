@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { destinations, getWhatsAppUrl } from '../data/content';
+
+const facilityCategories = [
+  {
+    title: "1. Fasilitas Lapangan & Area Kegiatan Luar Ruang",
+    desc: "Area terbuka berumput hijau alami dan luas yang terawat baik untuk seluruh simulasi team building, fun games kolosal, dan senam bersama.",
+    points: [
+      "Lapangan rumput luas berkapasitas 50 s/d 1.200 peserta bebas lumpur",
+      "Pohon-pohon pelindung alami yang rindang dan sejuk",
+      "Pencahayaan memadai untuk aktivitas malam hari",
+      "Pagar pembatas keamanan perimeter venue"
+    ],
+    image: "https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "2. Aula Serbaguna & Pendopo Tertutup (Contingency Indoor)",
+    desc: "Bangunan semi-terbuka dan aula indoor representatif sebagai jaminan kelancaran kegiatan saat cuaca hujan maupun untuk sesi evaluasi dan meeting.",
+    points: [
+      "Pendopo tradisional bernuansa kayu alami dan sirkulasi udara optimal",
+      "Kapasitas ruangan indoor mulai dari 100 hingga 800 tempat duduk",
+      "Dilengkapi meja, kursi, stage/panggung, dan proyektor presentasi",
+      "Jaminan bebas kehujanan untuk seluruh simulasi dynamic games"
+    ],
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "3. Sound System Outdoor, Audio Visual & Stage",
+    desc: "Peralatan audio profesional berkekuatan tinggi agar instruksi Master Game dan alunan musik pemompa semangat terdengar jernih di setiap sudut lapangan.",
+    points: [
+      "Outdoor active sound system 3.000 - 10.000 Watt",
+      "Microphone wireless jarak jauh anti-interferensi frekuensi",
+      "Peralatan musik panggung & lighting untuk gala dinner / malam keakraban",
+      "Operator sound terlatih siaga sepanjang rangkaian acara"
+    ],
+    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "4. Peralatan Simulasi Game & Standar Safety Tools",
+    desc: "Seluruh instrumen permainan dirawat dan diperiksa kelayakannya secara berkala dengan perlengkapan keamanan bersertifikasi.",
+    points: [
+      "Tali kernmantle, carabiner, harness, dan webbing berstandar internasional UIAA/CE",
+      "Rompi pelampung (life jacket) daya apung tinggi & helm rafting tersertifikasi",
+      "Peralatan games unik, bersih, dan higienis",
+      "First Aid Kit (P3K) medis darurat lengkap & tandu lipat rescue"
+    ],
+    image: "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "5. Sanitasi Bersih, Toilet & Kamar Bilas Berkapasitas Besar",
+    desc: "Kenyamanan peserta pasca beraktivitas fisik adalah prioritas utama kami dengan ketersediaan air pegunungan yang melimpah.",
+    points: [
+      "20 - 40 bilik toilet duduk dan jongkok terawat di setiap venue",
+      "Kamar bilas mandi air tawar bersih mengalir deras",
+      "Wastafel cuci tangan dan cermin rias yang bersih",
+      "Petugas kebersihan kebersihan siaga penuh di area sanitasi"
+    ],
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "6. Akomodasi Inap: Villa, Resort & Glamping Tenda Dome",
+    desc: "Pilihan penginapan fleksibel yang disesuaikan dengan konsep acara Anda, mulai dari nuansa petualangan rimba hingga kemewahan resort bintang.",
+    points: [
+      "Kamar resort dan villa keluarga eksklusif dengan fasilitas lengkap",
+      "Tenda camping dome berkualitas tahan angin & rembesan air hujan",
+      "Glamping mewah berfasilitas kasur spring bed empuk dan selimut tebal",
+      "Area khusus api unggun untuk malam refleksi dan BBQ bersama"
+    ],
+    image: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=800&auto=format&fit=crop"
+  }
+];
+---
+
+<Layout
+  title="Fasilitas Kegiatan Outbound - Ruang Rimba Outbound"
+  description="Standar fasilitas lengkap Ruang Rimba Outbound: lapangan terbuka luas, aula indoor cadangan hujan, sound system konser, perlengkapan safety bersertifikat, dan sanitasi bersih."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumb items={[{ label: 'Fasilitas' }]} />
+  </div>
+
+  <!-- Header Banner -->
+  <section class="bg-[#173D32] text-white py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#E8DFC9] block mb-2">Standar Layanan Berkualitas</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Fasilitas Lengkap & Standar Keselamatan</h1>
+      <p class="text-sm text-[#E8DFC9] mt-2 leading-relaxed">
+        Kami menyediakan sarana dan prasarana penunjang kelas utama untuk memastikan setiap kegiatan outbound berjalan lancar, nyaman, higienis, dan aman dari awal hingga akhir.
+      </p>
+    </div>
+  </section>
+
+  <!-- Kategori Fasilitas Utama -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {facilityCategories.map((item) => (
+        <div class="bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-xl transition flex flex-col group">
+          <div class="h-48 overflow-hidden relative">
+            <img src={item.image} alt={item.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+            <div>
+              <h2 class="font-bold text-base text-[#173D32] mb-2">{item.title}</h2>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                {item.desc}
+              </p>
+
+              <div class="bg-[#F8F7F2] p-3.5 rounded-xl border border-[#E8DFC9] space-y-2">
+                <span class="text-[11px] font-bold text-[#657A50] uppercase block">Termasuk Fasilitas:</span>
+                <ul class="space-y-1.5 text-xs text-gray-700">
+                  {item.points.map((p) => (
+                    <li class="flex items-start gap-2">
+                      <span class="text-emerald-600 font-bold shrink-0 mt-0.5">✓</span>
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Fasilitas di Lokasi Venue Rekanan -->
+    <section class="bg-white p-8 sm:p-10 rounded-3xl border border-[#E8DFC9] shadow-sm space-y-6">
+      <div class="border-b border-[#E8DFC9] pb-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block">Dukungan Venue Rekanan</span>
+        <h2 class="text-2xl font-bold text-[#173D32] mt-1">Fasilitas di Lokasi & Venue Kegiatan</h2>
+        <p class="text-xs text-gray-600 mt-1">Seluruh venue binaan kami di Bogor, Sentul, Puncak, Sukabumi, dan Bandung telah dilengkapi sarana:</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+        {destinations.map((venue) => (
+          <div class="p-4 rounded-xl bg-[#F8F7F2] border border-[#E8DFC9] space-y-2">
+            <h3 class="font-bold text-sm text-[#173D32]">{venue.name}</h3>
+            <div class="text-[11px] text-gray-500 flex items-center gap-1">
+              <span>Wilayah:</span> <strong class="text-gray-700">{venue.region}</strong>
+            </div>
+            <div class="text-[11px] text-gray-500 flex items-center gap-1">
+              <span>Kapasitas:</span> <strong class="text-[#173D32]">{venue.capacity}</strong>
+            </div>
+            <div class="pt-2 border-t border-[#E8DFC9]/70 flex flex-wrap gap-1">
+              {venue.facilities.map((fac) => (
+                <span class="text-[10px] bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded border border-emerald-200">
+                  {fac}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Bottom CTA Card -->
+    <div class="p-8 rounded-3xl bg-[#173D32] text-white text-center space-y-4">
+      <h2 class="text-2xl font-bold">Ingin Menyesuaikan Fasilitas Khusus Acara Anda?</h2>
+      <p class="text-xs sm:text-sm text-[#E8DFC9] max-w-xl mx-auto">
+        Mulai dari panggung konser, armada bus pariwisata, seragam custom, hingga hidangan prasmanan spesial dapat kami sesuaikan.
+      </p>
+      <div class="pt-2">
+        <a
+          href={getWhatsAppUrl("Halo Ruang Rimba, saya ingin menanyakan rincian fasilitas untuk acara gathering kami.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-xs px-6 py-3 rounded-xl shadow transition"
+        >
+          Konsultasi Kebutuhan Fasilitas via WA
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

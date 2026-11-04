@@ -1,0 +1,37 @@
+---
+---
+
+<!-- Floating Scroll To Top Button -->
+<button
+  id="scroll-to-top-btn"
+  type="button"
+  aria-label="Kembali ke atas"
+  class="fixed bottom-24 right-6 z-50 w-11 h-11 bg-[#173D32] hover:bg-[#657A50] text-[#E8DFC9] hover:text-white rounded-full shadow-lg border border-[#E8DFC9]/40 flex items-center justify-center transition-all duration-300 opacity-0 translate-y-4 pointer-events-none hover:scale-105 active:scale-95"
+>
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+  </svg>
+</button>
+
+<script>
+  const scrollBtn = document.getElementById('scroll-to-top-btn');
+
+  function toggleScrollBtn() {
+    if (window.scrollY > 300) {
+      scrollBtn?.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      scrollBtn?.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+    } else {
+      scrollBtn?.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+      scrollBtn?.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+    }
+  }
+
+  window.addEventListener('scroll', toggleScrollBtn, { passive: true });
+
+  scrollBtn?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>

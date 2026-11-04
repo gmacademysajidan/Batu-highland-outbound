@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { servicePackages, destinations, blogPosts } from '../data/content';
+---
+
+<Layout
+  title="Peta Situs (Sitemap) - Ruang Rimba Outbound"
+  description="Daftar struktur halaman lengkap website Ruang Rimba Outbound untuk mempermudah navigasi dan penelusuran."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumb items={[{ label: 'Sitemap' }]} />
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+    <h1 class="text-3xl font-extrabold text-[#173D32]">Peta Situs (Sitemap Info)</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs text-gray-700">
+      <div class="space-y-4">
+        <div>
+          <h2 class="text-sm font-bold text-[#173D32] uppercase tracking-wider mb-2">Halaman Utama</h2>
+          <ul class="space-y-1.5 list-disc list-inside">
+            <li><a href="/" class="hover:underline">Beranda (Homepage)</a></li>
+            <li><a href="/tentang-kami" class="hover:underline">Tentang Kami (Profil Perusahaan)</a></li>
+            <li><a href="/paket" class="hover:underline">Daftar Paket Outbound</a></li>
+            <li><a href="/fasilitas" class="hover:underline">Fasilitas & Venue</a></li>
+            <li><a href="/galeri" class="hover:underline">Galeri Dokumentasi</a></li>
+            <li><a href="/blog" class="hover:underline">Blog & Panduan Outbound</a></li>
+            <li><a href="/kontak" class="hover:underline">Hubungi Kami (Kontak Resmi)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-bold text-[#173D32] uppercase tracking-wider mb-2">Kategori Utama</h2>
+          <ul class="space-y-1.5 list-disc list-inside">
+            <li><a href="/outbound-perusahaan" class="hover:underline">Outbound Perusahaan</a></li>
+            <li><a href="/family-gathering" class="hover:underline">Family Gathering</a></li>
+            <li><a href="/outbound-sekolah" class="hover:underline">Outbound Sekolah</a></li>
+            <li><a href="/outbound-wisata" class="hover:underline">Outbound Wisata</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <h2 class="text-sm font-bold text-[#173D32] uppercase tracking-wider mb-2">16 Layanan & Paket Outbound</h2>
+          <ul class="space-y-1 list-disc list-inside">
+            {servicePackages.map(pkg => (
+              <li><a href={`/${pkg.slug}`} class="hover:underline">{pkg.title}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-bold text-[#173D32] uppercase tracking-wider mb-2">Artikel Panduan Blog</h2>
+          <ul class="space-y-1 list-disc list-inside">
+            {blogPosts.map(post => (
+              <li><a href={`/blog/${post.slug}`} class="hover:underline">{post.title}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

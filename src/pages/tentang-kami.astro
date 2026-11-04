@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig, getWhatsAppUrl } from '../data/content';
+---
+
+<Layout
+  title="Tentang Kami - Ruang Rimba Outbound"
+  description="Mengenal Ruang Rimba Outbound: profil fasilitator profesional, nilai perusahaan, metodologi experiential learning, dan dedikasi pada keselamatan kegiatan outdoor."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumb items={[{ label: 'Tentang Kami' }]} />
+  </div>
+
+  <!-- Hero Profil -->
+  <section class="bg-[#173D32] text-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#E8DFC9]">Profil Perusahaan</span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          Menghubungkan Manusia, Tim, dan Kearifan Alam Raya.
+        </h1>
+        <p class="text-base sm:text-lg text-[#E8DFC9] leading-relaxed">
+          Ruang Rimba Outbound hadir sebagai mitra profesional bagi organisasi, perusahaan, dan institusi pendidikan dalam membangun sinergi tim serta pengembangan karakter melalui pembelajaran luar ruang yang terstruktur dan aman.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nilai & Keunggulan -->
+  <section class="py-16 bg-white border-b border-[#E8DFC9]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Nilai Inti Bisnis</span>
+        <h2 class="text-3xl font-extrabold text-[#173D32]">Prinsip yang Kami Junjung Tinggi</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9] space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-[#173D32] text-[#E8DFC9] flex items-center justify-center font-bold text-xl">
+            01
+          </div>
+          <h3 class="text-lg font-bold text-[#173D32]">Safety First Standard</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Keselamatan adalah prioritas yang tidak dapat ditawar. Seluruh modul kegiatan, wahana permainan, dan jalur petualangan kami telah melalui asesmen risiko ketat dengan dukungan tim paramedis.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9] space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-[#173D32] text-[#E8DFC9] flex items-center justify-center font-bold text-xl">
+            02
+          </div>
+          <h3 class="text-lg font-bold text-[#173D32]">Reflective Learning</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Outbound bukan semata-mata berlari atau tertawa. Kami menekankan sesi debriefing terarah agar setiap peserta mampu memetik nilai reflektif yang relevan dengan dinamika kerja tim nyata.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9] space-y-3">
+          <div class="w-12 h-12 rounded-xl bg-[#173D32] text-[#E8DFC9] flex items-center justify-center font-bold text-xl">
+            03
+          </div>
+          <h3 class="text-lg font-bold text-[#173D32]">Ecological Respect</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Menjunjung etika <em>Leave No Trace</em>. Kami mendidik setiap peserta untuk menjaga kebersihan alam hutan rimba, meminimalkan sampah plastik, dan menghargai ekosistem lokal.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visi & Misi -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block">Visi & Misi</span>
+        <h2 class="text-3xl font-extrabold text-[#173D32] leading-tight">
+          Menjadi Katalis Pertumbuhan Sumber Daya Manusia Indonesia.
+        </h2>
+        <div class="space-y-4">
+          <div class="p-4 bg-white rounded-xl border border-[#E8DFC9]">
+            <h3 class="font-bold text-sm text-[#173D32] mb-1">Visi Kami</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              Menjadi penyedia jasa outbound dan wisata petualangan terkemuka di Indonesia yang diakui atas profesionalisme fasilitator, keaslian konten edukatif, serta standar operasional keselamatan kelas utama.
+            </p>
+          </div>
+          <div class="p-4 bg-white rounded-xl border border-[#E8DFC9]">
+            <h3 class="font-bold text-sm text-[#173D32] mb-1">Misi Kami</h3>
+            <ul class="text-xs text-gray-600 space-y-1.5 list-disc list-inside leading-relaxed">
+              <li>Merancang program outdoor learning yang menyenangkan, bermakna, dan berdampak nyata.</li>
+              <li>Menyediakan pelayanan terpadu (all-in) yang mempermudah panitia acara perusahaan.</li>
+              <li>Mengembangkan jejaring destinasi wisata alam yang memberdayakan masyarakat lokal.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-3xl overflow-hidden shadow-xl border border-[#E8DFC9]">
+        <img
+          src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800&auto=format&fit=crop"
+          alt="Tim Fasilitator Ruang Rimba"
+          class="w-full h-[420px] object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Prosedur Pemesanan -->
+  <section class="py-16 bg-[#F8F7F2] border-t border-[#E8DFC9]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Alur Kerjasama</span>
+        <h2 class="text-3xl font-extrabold text-[#173D32]">Langkah Mudah Merancang Kegiatan Anda</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-5 rounded-2xl border border-[#E8DFC9] space-y-2">
+          <span class="text-2xl font-black text-[#657A50]">01</span>
+          <h3 class="font-bold text-sm text-[#173D32]">Konsultasi Awal</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Sampaikan perkiraan jumlah peserta, tanggal tentatif, target kegiatan, dan preferensi lokasi.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-[#E8DFC9] space-y-2">
+          <span class="text-2xl font-black text-[#657A50]">02</span>
+          <h3 class="font-bold text-sm text-[#173D32]">Proposal & Penawaran</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Kami menyusun rancangan rundown detail, pilihan paket, dan kalkulasi anggaran transparan.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-[#E8DFC9] space-y-2">
+          <span class="text-2xl font-black text-[#657A50]">03</span>
+          <h3 class="font-bold text-sm text-[#173D32]">Survei & Finalisasi</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Dampingan survei venue lokasi bila diperlukan, penandatanganan kesepakatan, dan DP operasional.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-[#E8DFC9] space-y-2">
+          <span class="text-2xl font-black text-[#657A50]">04</span>
+          <h3 class="font-bold text-sm text-[#173D32]">Eksekusi & Evaluasi</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">Pelaksanaan event oleh Master Game terlatih, serah terima dokumentasi foto/video, dan feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Hubungi Kami -->
+  <section class="py-16 bg-[#173D32] text-white text-center">
+    <div class="max-w-2xl mx-auto px-4 space-y-5">
+      <h2 class="text-2xl sm:text-3xl font-extrabold">Ingin Diskusi Langsung dengan Tim Kami?</h2>
+      <p class="text-xs sm:text-sm text-[#E8DFC9]">
+        Kami siap mendengarkan visi kegiatan Anda dan memberikan solusi terbaik tanpa biaya konsultasi.
+      </p>
+      <div>
+        <a
+          href={getWhatsAppUrl("Halo Ruang Rimba, saya ingin berkonsultasi mengenai profil layanan dan paket acara kami.")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow transition"
+        >
+          Chat WhatsApp Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

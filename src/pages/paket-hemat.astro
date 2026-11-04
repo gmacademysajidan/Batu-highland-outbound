@@ -1,0 +1,11 @@
+---
+import ServiceDetail from '../components/ServiceDetail.astro';
+import { servicePackages } from '../data/content';
+
+const pkg = servicePackages.find((p) => p.slug === 'paket-hemat');
+if (!pkg) {
+  throw new Error('Package not found: paket-hemat');
+}
+---
+
+<ServiceDetail pkg={pkg} />
