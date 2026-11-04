@@ -17,25 +17,25 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "Ruang Rimba Outbound",
-  tagline: "Partner Profesional untuk Kegiatan Outbound & Petualangan Alam",
-  description: "Penyedia jasa outbound profesional, team building korporat, family gathering, outbound sekolah, dan wisata petualangan alam terbuka yang berorientasi pada keselamatan dan experiential learning.",
-  domain: "ruangrimbaoutbound.id",
+  name: "Batu Highland Outbound",
+  tagline: "Partner Profesional untuk Kegiatan Outbound & Petualangan Alam Kota Batu Malang",
+  description: "Penyedia jasa outbound profesional, team building korporat, family gathering, outbound sekolah, rafting Sahabat Air / Kasembon, offroad Coban Talun, dan camping alam Kota Batu Malang yang berorientasi pada keselamatan dan experiential learning.",
+  domain: "batu-highland-outbound.vercel.app",
   phone: "+62 812-3456-7890",
   whatsappNumber: "6281234567890",
-  email: "halo@ruangrimbaoutbound.id",
-  address: "Jl. Rimba Asri No. 88, Puncak - Bogor, Jawa Barat, Indonesia",
+  email: "halo@batuhighlandoutbound.id",
+  address: "Jl. Oro-Oro Ombo No. 88, Kota Wisata Batu, Jawa Timur, Indonesia",
   workingHours: "Senin - Minggu: 08.00 - 20.00 WIB",
   socials: {
-    instagram: "https://instagram.com/ruangrimbaoutbound",
-    facebook: "https://facebook.com/ruangrimbaoutbound",
-    youtube: "https://youtube.com/@ruangrimbaoutbound",
-    tiktok: "https://tiktok.com/@ruangrimbaoutbound"
+    instagram: "https://instagram.com/batuhighlandoutbound",
+    facebook: "https://facebook.com/batuhighlandoutbound",
+    youtube: "https://youtube.com/@batuhighlandoutbound",
+    tiktok: "https://tiktok.com/@batuhighlandoutbound"
   }
 };
 
 export function getWhatsAppUrl(message?: string): string {
-  const defaultMsg = "Halo Ruang Rimba Outbound, saya ingin berkonsultasi mengenai paket outbound kegiatan kami.";
+  const defaultMsg = "Halo Batu Highland Outbound, saya ingin berkonsultasi mengenai paket outbound di Kota Batu.";
   const text = encodeURIComponent(message || defaultMsg);
   return `https://wa.me/${siteConfig.whatsappNumber}?text=${text}`;
 }
@@ -66,21 +66,21 @@ export const servicePackages: ServicePackage[] = [
   {
     id: "team-building",
     slug: "team-building",
-    title: "Team Building Outbound",
+    title: "Team Building Outbound Batu",
     category: "perusahaan",
     categoryLabel: "Outbound Perusahaan",
-    shortDesc: "Program dinamis berbasis experiential learning untuk meningkatkan sinergi, komunikasi, dan kolaborasi antar divisi.",
-    fullDesc: "Program Team Building Ruang Rimba Outbound dirancang khusus untuk memecah silo mentality antar departemen, mengasah keterampilan problem solving kolektif, dan mempererat ikatan emosional tim melalui simulasi tantangan alam terbuka yang aman dan terukur.",
+    shortDesc: "Program dinamis berbasis experiential learning di hawa sejuk pegunungan Kota Batu untuk meningkatkan sinergi dan kolaborasi tim.",
+    fullDesc: "Program Team Building Batu Highland Outbound dirancang khusus untuk memecah silo mentality antar departemen, mengasah keterampilan problem solving kolektif, dan mempererat ikatan emosional tim melalui simulasi tantangan alam terbuka berlatar pemandangan Gunung Panderman dan Gunung Arjuno.",
     heroImage: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1200&auto=format&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
     ],
-    targetAudience: ["Karyawan Perusahaan & BUMN", "Divisi / Unit Kerja", "Manajemen & Eksekutif", "Startup & Tech Teams"],
-    durationOptions: ["1 Day Intensive (08.00 - 17.00)", "2 Days 1 Night (Menginap Villa / Resort)", "3 Days 2 Nights (Full Experiential)"],
-    pricingNote: "Investasi fleksibel disesuaikan dengan jumlah peserta, venue pilihan, dan modul kegiatan.",
-    highlights: ["Fasilitator Berpengalaman", "Simulasi Ice Breaking & Problem Solving", "Debriefing & Action Plan Pasca Kegiatan", "Standar Safety Prosedur Ketat"],
+    targetAudience: ["Karyawan Perusahaan & BUMN", "Divisi / Unit Kerja", "Manajemen & Eksekutif", "Instansi Pemerintahan"],
+    durationOptions: ["1 Day Intensive (08.00 - 17.00)", "2 Days 1 Night (Menginap Villa / Resort Batu)", "3 Days 2 Nights (Full Experiential Retreat)"],
+    pricingNote: "Investasi fleksibel disesuaikan dengan jumlah peserta, venue pilihan di Kota Batu, dan modul kegiatan.",
+    highlights: ["Fasilitator Berpengalaman Kota Batu", "Simulasi Ice Breaking & Problem Solving", "Debriefing & Action Plan Pasca Kegiatan", "Standar Safety Prosedur Ketat"],
     objectives: [
       "Meningkatkan rasa saling percaya (trust building) antar rekan kerja",
       "Mengasah efektivitas komunikasi dua arah dan resolusi konflik",
@@ -88,77 +88,77 @@ export const servicePackages: ServicePackage[] = [
       "Membangun komitmen bersama terhadap target kinerja perusahaan"
     ],
     rundown: [
-      { time: "08.00 - 09.00", activity: "Kedatangan & Welcome Drink", desc: "Registrasi peserta, refreshment lokal, dan orientasi area kegiatan." },
-      { time: "09.00 - 10.30", activity: "Ice Breaking & Grouping", desc: "Pemanasan interaktif, pencairan suasana, dan pembentukan sindikat tim kerja." },
+      { time: "08.00 - 09.00", activity: "Kedatangan & Welcome Drink", desc: "Registrasi peserta di venue Kota Batu, sajian sari apel lokal, dan orientasi area." },
+      { time: "09.00 - 10.30", activity: "Ice Breaking & Grouping", desc: "Pemanasan interaktif, pencairan suasana hawa sejuk Batu, dan pembentukan tim sindikat." },
       { time: "10.30 - 12.30", activity: "Effective Communication Challenge", desc: "Serangkaian games rotasi fokus pada instruksi akurat dan sinergi." },
-      { time: "12.30 - 13.30", activity: "Makan Siang & Istirahat", desc: "Buffet menu nusantara bernutrisi dan waktu rehat santai." },
+      { time: "12.30 - 13.30", activity: "Makan Siang & Istirahat", desc: "Buffet menu khas Jawa Timuran bernutrisi dan waktu rehat santai." },
       { time: "13.30 - 15.30", activity: "High Impact Team Challenge", desc: "Simulasi strategi kolaboratif tingkat lanjut & sinergi kelompok besar." },
       { time: "15.30 - 16.30", activity: "Final Project & Insight Debrief", desc: "Refleksi pembelajaran experiential, komitmen bersama, dan penutupan hangat." },
-      { time: "16.30 - 17.00", activity: "Coffee Break & Sayonara", desc: "Snack sore, sesi foto bersama, dan persiapan kepulangan." }
+      { time: "16.30 - 17.00", activity: "Coffee Break & Sayonara", desc: "Snack sore jajanan khas Batu, sesi foto bersama, dan kepulangan." }
     ],
     facilities: [
-      "Fasilitator & Master Game profesional",
+      "Fasilitator & Master Game profesional Kota Batu",
       "Peralatan lengkap seluruh games & safety tools",
       "Sound system outdoor & wireless microphone",
       "First Aid Kit & tim paramedis pendamping",
       "Banner kegiatan selamat datang (custom logo perusahaan)",
       "Dokumentasi foto & video dokumenter HD"
     ],
-    recommendedVenues: ["Puncak Bogor Resort", "Camp Sukabumi Riverside", "Lembang Pine Forest Bandung"],
+    recommendedVenues: ["Coban Rondo Pine Valley Batu", "Kusuma Agrowisata Resort Batu", "Tirta Nirwana Songgoriti"],
     faqs: [
-      { question: "Berapa minimal peserta untuk program Team Building?", answer: "Minimal peserta ideal adalah 25 orang. Untuk grup di bawah 25 orang tetap dapat dilayani dengan penyesuaian paket." },
+      { question: "Berapa minimal peserta untuk program Team Building di Kota Batu?", answer: "Minimal peserta ideal adalah 25 orang. Untuk grup di bawah 25 orang tetap dapat dilayani dengan penyesuaian paket." },
       { question: "Apakah kegiatan aman untuk peserta segala usia?", answer: "Sangat aman. Seluruh simulasi telah dirancang low-to-medium risk dan kami menyesuaikan intensitas fisik dengan demografi peserta Anda." }
     ]
   },
   {
     id: "fun-games",
     slug: "fun-games",
-    title: "Fun Games & Ice Breaking",
+    title: "Fun Games & Ice Breaking Batu",
     category: "perusahaan",
     categoryLabel: "Outbound Perusahaan",
-    shortDesc: "Aktivitas permainan outdoor yang segar, penuh tawa, dan menyegarkan pikiran untuk memulihkan energi positif tim.",
-    fullDesc: "Bebaskan kepenatan rutinitas kantor dengan modul Fun Games Ruang Rimba. Fokus utama adalah kegembiraan, pelepasan stres, dan keakraban santai tanpa kompetisi yang memberatkan.",
+    shortDesc: "Aktivitas permainan outdoor ceria di hawa sejuk Kota Batu untuk melepas penat rutinitas kantor dan memulihkan energi positif tim.",
+    fullDesc: "Bebaskan kepenatan rutinitas kerja dengan modul Fun Games Batu Highland. Diwarnai udara sejuk khas perbukitan Kota Batu, fokus utama program ini adalah gelak tawa, kegembiraan, dan keakraban santai tanpa beban kompetisi berlebih.",
     heroImage: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1200&auto=format&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop"
     ],
-    targetAudience: ["Keluarga Besar Kantor", "Divisi Operasional", "Komunitas & Asosiasi", "Acara Temu Tahunan"],
+    targetAudience: ["Keluarga Besar Kantor", "Divisi Operasional", "Komunitas & Paguyuban", "Acara Temu Tahunan"],
     durationOptions: ["Half Day (3 - 4 Jam)", "Full Day (6 - 7 Jam)"],
-    pricingNote: "Tersedia opsi paket ekonomis mulai dari konsumsi ringan hingga all-in venue.",
-    highlights: ["MC & Game Master energik dan komunikatif", "Ragam games unik yang tidak pasaran", "Hadiah fun doorprize (opsional)", "Atmosfer riang gembira"],
+    pricingNote: "Tersedia opsi paket ekonomis mulai dari konsumsi ringan hingga all-in venue resort Batu.",
+    highlights: ["MC & Game Master energik dan komunikatif", "Ragam games unik yang tidak pasaran", "Hadiah fun doorprize (opsional)", "Atmosfer riang gembira pegunungan"],
     objectives: [
-      "Pelepasan stres kerja secara sehat di alam terbuka",
+      "Pelepasan stres kerja secara sehat di alam terbuka Kota Batu",
       "Menciptakan memori positif dan tawa bersama rekan kerja",
       "Menghilangkan jarak strata formal antara pimpinan dan staf",
       "Menumbuhkan antusiasme dan semangat baru saat kembali bekerja"
     ],
     rundown: [
-      { time: "09.00 - 09.30", activity: "Energizer & Ice Breaking", desc: "Pemanasan tawa, joget ceria, dan yel-yel kelompok." },
+      { time: "09.00 - 09.30", activity: "Energizer & Ice Breaking", desc: "Pemanasan tawa, joget ceria, dan yel-yel kelompok di lapangan hijau Batu." },
       { time: "09.30 - 11.30", activity: "Fun Relay & Group Challenge", desc: "5 - 6 station permainan santai yang mengundang gelak tawa." },
       { time: "11.30 - 12.00", activity: "Water Fun War / Finale Game", desc: "Permainan penutup seru yang menyatukan seluruh partisipan." },
-      { time: "12.00 - 13.30", activity: "Makan Siang & Hiburan Musik", desc: "Santap siang bersama dengan hiburan live akustik." }
+      { time: "12.00 - 13.30", activity: "Makan Siang & Hiburan Musik", desc: "Santap siang prasmanan bersama dengan hiburan live akustik." }
     ],
     facilities: [
       "Host & Master Game berpengalaman",
       "Seluruh properti games unik dan aman",
       "Outdoor speaker & mic",
       "Dokumentasi foto digital",
-      "Air mineral free flow selama acara"
+      "Air mineral & welcome drink sari apel Batu free flow"
     ],
-    recommendedVenues: ["Taman Wisata Sentul", "Area Terbuka Puncak", "Danau Situ Gunung Sukabumi"],
+    recommendedVenues: ["Taman Rekreasi Selecta Batu", "Songgoriti Nature Park", "Kusuma Agrowisata"],
     faqs: [
-      { question: "Apakah bisa dikombinasikan dengan sesi meeting internal?", answer: "Bisa, Anda dapat menggunakan pagi hari untuk internal meeting dan siang/sore untuk Fun Games." }
+      { question: "Apakah bisa dikombinasikan dengan wisata petik apel di Batu?", answer: "Bisa, paket Fun Games kami sangat fleksibel dikombinasikan dengan sesi petik apel langsung di kebun." }
     ]
   },
   {
     id: "leadership-camp",
     slug: "leadership-camp",
-    title: "Leadership Camp & Executive Retreat",
+    title: "Leadership Camp & Executive Retreat Batu",
     category: "perusahaan",
     categoryLabel: "Outbound Perusahaan",
-    shortDesc: "Pengembangan kepemimpinan tangguh dan pengambilan keputusan strategis dalam skenario alam menantang.",
-    fullDesc: "Program intensif yang menggabungkan retret alam dengan simulasi kepemimpinan mendalam. Dirancang untuk para manajer, supervisor, dan talenta pemimpin masa depan perusahaan.",
+    shortDesc: "Pengembangan kepemimpinan tangguh dan pengambilan keputusan strategis dalam retret alam sejuk Kota Batu.",
+    fullDesc: "Program intensif yang menggabungkan retret alam pegunungan Kota Batu dengan simulasi kepemimpinan mendalam. Dirancang untuk para manajer, supervisor, dan talenta pemimpin masa depan perusahaan.",
     heroImage: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1200&auto=format&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop",
@@ -166,27 +166,27 @@ export const servicePackages: ServicePackage[] = [
     ],
     targetAudience: ["Level Manajer & Supervisor", "Future Leaders / Management Trainee", "Direksi & Board of Management"],
     durationOptions: ["2 Hari 1 Malam", "3 Hari 2 Malam"],
-    pricingNote: "Paket kustom dengan akomodasi glamping premium atau lodge pegunungan.",
-    highlights: ["Fasilitator Senior & Coach Kepemimpinan", "Simulasi Navigasi & Crisis Management", "Sesi Refleksi Api Unggun Malam", "Individual Feedback Report"],
+    pricingNote: "Paket kustom dengan akomodasi glamping premium atau resort pegunungan Kota Batu.",
+    highlights: ["Fasilitator Senior & Coach Kepemimpinan", "Simulasi Navigasi & Crisis Management", "Sesi Refleksi Api Unggun Dingin Batu", "Individual Feedback Report"],
     objectives: [
       "Mengasah ketajaman decision making di bawah tekanan ketidakpastian",
       "Memperkuat empati dan gaya komunikasi situasional",
       "Membentuk karakter kepemimpinan adaptif dan berintegritas"
     ],
     rundown: [
-      { time: "Hari 1 - 09.00", activity: "Opening & Mindset Alignment", desc: "Penyamaan visi kepemimpinan dan komitmen camp." },
-      { time: "Hari 1 - 13.00", activity: "Outdoor Survival & Resource Allocation", desc: "Simulasi alokasi sumber daya terbatas di hutan pinus." },
-      { time: "Hari 1 - 19.30", activity: "Campfire Leadership Circle", desc: "Refleksi mendalam, sharing pengalaman kepemimpinan intim." },
-      { time: "Hari 2 - 06.00", activity: "Morning Endurance & Strategic Walk", desc: "Trekking pagi ringan berorientasi observasi tim." },
+      { time: "Hari 1 - 09.00", activity: "Opening & Mindset Alignment", desc: "Penyamaan visi kepemimpinan dan komitmen camp di Batu." },
+      { time: "Hari 1 - 13.00", activity: "Outdoor Survival & Resource Allocation", desc: "Simulasi alokasi sumber daya terbatas di hutan pinus Coban Rondo." },
+      { time: "Hari 1 - 19.30", activity: "Campfire Leadership Circle", desc: "Refleksi mendalam di kehangatan api unggun Kota Batu." },
+      { time: "Hari 2 - 06.00", activity: "Morning Endurance & Strategic Walk", desc: "Trekking pagi ringan menghirup udara segar perbukitan Panderman." },
       { time: "Hari 2 - 10.00", activity: "Action Plan Presentation & Wrap Up", desc: "Penyusunan komitmen kepemimpinan individual." }
     ],
     facilities: [
       "Instruktur senior spesialis leadership outdoor",
-      "Tenda glamping mewah / Kamar resort representatif",
+      "Tenda glamping mewah / Kamar resort representatif di Batu",
       "Meals komplit, coffee break, & BBQ night",
       "Peralatan navigasi & briefing book eksklusif"
     ],
-    recommendedVenues: ["Highland Puncak", "Lodge Maribaya Bandung", "Glamping Sukabumi"],
+    recommendedVenues: ["Batu Highland Pine Retreat", "Royal Caravan Glamping Batu", "Kusuma Resort Batu"],
     faqs: [
       { question: "Apakah ada tes psikologi pendamping?", answer: "Kami menyediakan opsi asesmen kepemimpinan tambahan jika dibutuhkan oleh divisi HRD." }
     ]
@@ -194,11 +194,11 @@ export const servicePackages: ServicePackage[] = [
   {
     id: "corporate-gathering",
     slug: "corporate-gathering",
-    title: "Corporate Gathering & Company Outing",
+    title: "Corporate Gathering & Company Outing Batu",
     category: "perusahaan",
     categoryLabel: "Outbound Perusahaan",
-    shortDesc: "Acara perayaan tahunan korporasi lengkap dengan gala dinner, games apresiasi, dan hiburan spektakuler.",
-    fullDesc: "Solusi end-to-end event management untuk acara gathering tahunan perusahaan Anda. Menyatukan elemen hiburan, rekreasi, apresiasi karyawan, dan kekompakan keluarga besar korporasi.",
+    shortDesc: "Acara perayaan tahunan korporasi di Kota Wisata Batu lengkap dengan gala dinner, games apresiasi, dan hiburan spektakuler.",
+    fullDesc: "Solusi end-to-end event management untuk acara gathering tahunan perusahaan Anda di Kota Wisata Batu. Menyatukan elemen hiburan, rekreasi wisata apel, apresiasi karyawan, dan kekompakan keluarga besar korporasi.",
     heroImage: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=800&auto=format&fit=crop",
@@ -206,25 +206,25 @@ export const servicePackages: ServicePackage[] = [
     ],
     targetAudience: ["Seluruh Karyawan Perusahaan", "Mitra Bisnis & Vendor", "Grup Perusahaan Multi-Cabang"],
     durationOptions: ["Full Day Event", "2 Hari 1 Malam", "3 Hari 2 Malam"],
-    pricingNote: "Dihitung custom berdasarkan venue bintang 3-5, artis/hiburan, dan konsep dekorasi.",
-    highlights: ["Event Organizer full-service", "Panggung, lighting & sound system konser", "Gala dinner & awarding night", "Tema acara kreatif"],
+    pricingNote: "Dihitung custom berdasarkan resort bintang 3-5 di Batu, artis/hiburan, dan konsep panggung.",
+    highlights: ["Event Organizer full-service Kota Batu", "Panggung, lighting & sound system profesional", "Gala dinner & awarding night", "Tema acara kreatif"],
     objectives: [
       "Memberikan apresiasi nyata atas kerja keras seluruh tim",
       "Mempererat rasa memiliki (sense of belonging) terhadap perusahaan",
-      "Meluncurkan target & resolusi baru dalam atmosfer penuh semangat"
+      "Meluncurkan target & resolusi baru dalam atmosfer penuh semangat di Kota Batu"
     ],
     rundown: [
-      { time: "Siang", activity: "Check-in & Fun Outdoor Activity", desc: "Aktivitas games keakraban ringan di halaman terbuka." },
-      { time: "Sore", activity: "Free Time & Refreshment", desc: "Menikmati fasilitas venue kolam renang atau spa." },
-      { time: "Malam", activity: "Gala Dinner & Corporate Awarding", desc: "Makan malam formal, awarding, doorprize, dan live band." }
+      { time: "Siang", activity: "Check-in & Fun Outdoor Activity", desc: "Aktivitas games keakraban ringan di halaman resort Batu." },
+      { time: "Sore", activity: "Free Time & Refreshment", desc: "Menikmati fasilitas resort, kolam renang air hangat, atau pemandangan bukit." },
+      { time: "Malam", activity: "Gala Dinner & Corporate Awarding", desc: "Makan malam formal, awarding, doorprize, dan live band di ballroom/outdoor." }
     ],
     facilities: [
-      "Tim Event Planner & Show Director",
+      "Tim Event Planner & Show Director berpengalaman",
       "Panggung megah, backdrop, sound & lighting",
       "Dokumentasi multi-kamera & drone cinema",
-      "Souvenir kit & custom merchandise"
+      "Souvenir kit & custom merchandise khas Batu"
     ],
-    recommendedVenues: ["Resort Bintang 4 Puncak", "Hotel Konvensi Bogor", "Lembang Resort Bandung"],
+    recommendedVenues: ["Golden Tulip Holland Resort Batu", "Amarta Hills Hotel & Resort Batu", "Kusuma Agrowisata Resort"],
     faqs: [
       { question: "Apakah bisa membawa keluarga karyawan?", answer: "Sangat bisa, rundown akan disesuaikan dengan aktivitas yang ramah anak dan pasangan." }
     ]
@@ -234,200 +234,200 @@ export const servicePackages: ServicePackage[] = [
   {
     id: "paket-hemat",
     slug: "paket-hemat",
-    title: "Family Gathering Paket Hemat",
+    title: "Family Gathering Paket Hemat Batu",
     category: "family",
     categoryLabel: "Family Gathering",
-    shortDesc: "Pilihan ekonomis ramah anggaran untuk kumpul keluarga besar atau paguyuban tanpa mengurangi keceriaan.",
-    fullDesc: "Paket kumpul keluarga yang didesain efisien namun tetap menghadirkan momen hangat dan tawa ceria. Sangat tepat untuk paguyuban RT/RW, arisan keluarga besar, dan komunitas alumni.",
+    shortDesc: "Pilihan ekonomis ramah anggaran untuk kumpul keluarga besar atau paguyuban di venue asri Kota Batu.",
+    fullDesc: "Paket kumpul keluarga yang didesain efisien namun tetap menghadirkan momen hangat dan tawa ceria di Kota Wisata Batu. Sangat tepat untuk paguyuban RT/RW, arisan keluarga besar, dan komunitas alumni.",
     heroImage: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1200&auto=format&fit=crop",
     galleryImages: ["https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=800&auto=format&fit=crop"],
     targetAudience: ["Keluarga Besar", "Arisan / Paguyuban", "Komunitas Lingkungan"],
     durationOptions: ["1 Day Gathering (09.00 - 15.00)"],
     pricingNote: "Harga hemat mulai Rp 150.000 / orang (minimal 35 orang).",
-    highlights: ["Venue asri sejuk terjangkau", "Games ramah lintas generasi (kakek hingga cucu)", "Makan siang masakan sunda prasmanan"],
-    objectives: ["Menyambung tali silaturahmi", "Rekreasi santai keluarga di akhir pekan", "Dokumentasi foto kenangan bersama"],
+    highlights: ["Venue asri sejuk terjangkau di Batu", "Games ramah lintas generasi (kakek hingga cucu)", "Makan siang prasmanan masakan Jawa Timur"],
+    objectives: ["Menyambung tali silaturahmi", "Rekreasi santai keluarga di akhir pekan", "Dokumentasi foto kenangan bersama di Kota Batu"],
     rundown: [
-      { time: "09.00 - 10.00", activity: "Kumpul & Silaturahmi", desc: "Sambutan perwakilan keluarga dan ramah tamah." },
+      { time: "09.00 - 10.00", activity: "Kumpul & Silaturahmi", desc: "Sambutan perwakilan keluarga dan ramah tamah di saung Songgoriti." },
       { time: "10.00 - 12.00", activity: "Games Santai Keluarga", desc: "Permainan estafet bola, tebak kata, dan kekompakan keluarga." },
-      { time: "12.00 - 13.30", activity: "Makan Siang Bersama", desc: "Santap prasmanan khas sunda dengan lalapan & sambal." },
-      { time: "13.30 - 15.00", activity: "Bagi Doorprize & Sesi Foto", desc: "Foto keluarga besar berlatar alam dan penutupan." }
+      { time: "12.00 - 13.30", activity: "Makan Siang Bersama", desc: "Santap prasmanan khas Jawa Timuran dengan lalapan & sambal segar." },
+      { time: "13.30 - 15.00", activity: "Bagi Doorprize & Sesi Foto", desc: "Foto keluarga besar berlatar alam pegunungan Batu dan penutupan." }
     ],
-    facilities: ["Saung kumpul / pendopo", "Fasilitator games", "Makan siang prasmanan 1x", "Sound system sederhana"],
-    recommendedVenues: ["Sentul Eco Park", "Wisata Alam Katulampa Bogor"],
+    facilities: ["Saung kumpul / pendopo di Batu", "Fasilitator games", "Makan siang prasmanan 1x", "Sound system sederhana"],
+    recommendedVenues: ["Tirta Nirwana Songgoriti Batu", "Taman Rekreasi Selecta"],
     faqs: [{ question: "Apakah anak di bawah 5 tahun dihitung bayar?", answer: "Anak usia di bawah 3 tahun gratis (free of charge)." }]
   },
   {
     id: "paket-standard",
     slug: "paket-standard",
-    title: "Family Gathering Paket Standard",
+    title: "Family Gathering Paket Standard Batu",
     category: "family",
     categoryLabel: "Family Gathering",
-    shortDesc: "Pilihan terpopuler dengan fasilitas lengkap, menu makan siang variatif, dan dokumentasi foto.",
-    fullDesc: "Paket favorit bagi perusahaan atau keluarga besar yang menginginkan kenyamanan seimbang. Dilengkapi tenda dekorasi mini, games master profesional, konsumsi lengkap, serta dokumentasi digital.",
+    shortDesc: "Pilihan terpopuler dengan fasilitas lengkap, menu makan siang variatif, dan dokumentasi foto di Kota Batu.",
+    fullDesc: "Paket favorit bagi perusahaan atau keluarga besar yang menginginkan kenyamanan seimbang di Kota Wisata Batu. Dilengkapi games master profesional, konsumsi lengkap, serta dokumentasi digital berlatar pemandangan bukit.",
     heroImage: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=1200&auto=format&fit=crop",
     galleryImages: ["https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800&auto=format&fit=crop"],
     targetAudience: ["Keluarga Karyawan Perusahaan", "Alumni Angkatan", "Komunitas Hobi"],
     durationOptions: ["1 Day Gathering Lengkap (08.30 - 16.00)"],
-    pricingNote: "Mulai dari Rp 225.000 / orang dengan fasilitas makan siang + 1x coffee break.",
-    highlights: ["Venue eksklusif semi-private", "Modul games berhadiah", "Coffee break & kelapa muda segar", "Dokumentasi foto terkurasi"],
+    pricingNote: "Mulai dari Rp 225.000 / orang dengan fasilitas makan siang + 1x coffee break snack khas Batu.",
+    highlights: ["Venue eksklusif semi-private di Batu", "Modul games berhadiah", "Coffee break sari apel & ketan", "Dokumentasi foto terkurasi"],
     objectives: ["Kenyamanan maksimal seluruh anggota keluarga", "Pemberian doorprize tertata apik", "Membangun kehangatan hubungan"],
     rundown: [
-      { time: "08.30 - 09.30", activity: "Welcome & Snack Pagi", desc: "Coffee break, kue tradisional, dan pembagian gelang peserta." },
-      { time: "09.30 - 12.00", activity: "Family Fun Olympiad", desc: "Games kompetisi ceria ramah anak dan orang tua." },
-      { time: "12.00 - 13.30", activity: "Makan Siang Prasmanan Istimewa", desc: "Menu lengkap nusantara dengan live cooking stall." },
+      { time: "08.30 - 09.30", activity: "Welcome & Snack Pagi", desc: "Coffee break, ketan bubuk / jajanan tradisional, dan pembagian gelang peserta." },
+      { time: "09.30 - 12.00", activity: "Family Fun Olympiad", desc: "Games kompetisi ceria ramah anak dan orang tua di rumput hijau Batu." },
+      { time: "12.00 - 13.30", activity: "Makan Siang Prasmanan Istimewa", desc: "Menu lengkap ayam bakar, gurami, sayur asem & live cooking stall." },
       { time: "13.30 - 15.30", activity: "Panggung Gembira & Doorprize", desc: "Pemberian apresiasi, karaoke keluarga, dan foto bersama." }
     ],
-    facilities: ["Venue area eksklusif", "Game master & kru lapangan", "Prasmanan + snack break", "Banner sambutan custom", "Dokumentasi fotografer"],
-    recommendedVenues: ["Kebun Wisata Cisarua", "Camp Hulu Cai Ciawi"],
-    faqs: [{ question: "Apakah ada fasilitas kolam renang?", answer: "Sebagian besar venue rekanan kami di kategori ini memiliki kolam renang yang dapat digunakan bebas." }]
+    facilities: ["Venue area eksklusif di Batu", "Game master & kru lapangan", "Prasmanan + snack break", "Banner sambutan custom", "Dokumentasi fotografer"],
+    recommendedVenues: ["Coban Rondo Pine Park Batu", "Kusuma Agrowisata Batu"],
+    faqs: [{ question: "Apakah bisa sekaligus tiket masuk wahana Selecta?", answer: "Bisa, paket dapat di-bundling langsung dengan tiket terusan wahana wisata di Kota Batu." }]
   },
   {
     id: "paket-premium",
     slug: "paket-premium",
-    title: "Family Gathering Paket Premium",
+    title: "Family Gathering Paket Premium Batu",
     category: "family",
     categoryLabel: "Family Gathering",
-    shortDesc: "Pengalaman gathering menginap bintang di villa/resort privat dengan BBQ night dan atraksi api unggun.",
-    fullDesc: "Hadirkan liburan keluarga tak terlupakan dengan kemewahan suasana resort alam sejuk, santap malam barbeque di bawah taburan bintang, dan fasilitas eksklusif tanpa gangguan pengunjung lain.",
+    shortDesc: "Pengalaman gathering menginap bintang di resort privat Kota Batu dengan BBQ night dan pemandangan gemerlap lampu kota.",
+    fullDesc: "Hadirkan liburan keluarga tak terlupakan dengan kemewahan suasana resort alam sejuk Kota Batu, santap malam barbeque di bawah dinginnya malam pegunungan, dan panorama citylight Kota Malang dari ketinggian.",
     heroImage: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop",
     galleryImages: ["https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=800&auto=format&fit=crop"],
     targetAudience: ["Family Gathering Direksi", "Private Reunion", "Exclusive Corporate Outing"],
-    durationOptions: ["2 Hari 1 Malam (Menginap Resort)"],
-    pricingNote: "Investasi all-in termasuk penginapan, makan 3x, BBQ, dan seluruh aktivitas.",
-    highlights: ["Akomodasi resort / villa privat berkelas", "BBQ kambing guling / sate & jagung bakar", "Live organ tunggal / acoustic band", "Kids playground & mini games area"],
-    objectives: ["Relaksasi mewah di alam pegunungan", "Keakraban mendalam malam hari", "Layanan ramah VIP untuk seluruh tamu"],
+    durationOptions: ["2 Hari 1 Malam (Menginap Resort Batu)"],
+    pricingNote: "Investasi all-in termasuk penginapan, makan 3x, BBQ kambing guling / sate, dan seluruh aktivitas.",
+    highlights: ["Akomodasi resort / villa privat berkelas di Batu", "BBQ kambing guling / jagung bakar manis Batu", "Live acoustic band", "Kids playground & kolam renang"],
+    objectives: ["Relaksasi mewah di alam pegunungan Kota Batu", "Keakraban mendalam malam hari", "Layanan ramah VIP untuk seluruh tamu"],
     rundown: [
-      { time: "Hari 1 - 14.00", activity: "Check-in Resort & Tea Time", desc: "Penyambutan tamu dengan afternoon tea & pastry." },
+      { time: "Hari 1 - 14.00", activity: "Check-in Resort & Tea Time", desc: "Penyambutan tamu dengan afternoon tea & apel pastry khas Batu." },
       { time: "Hari 1 - 16.00", activity: "Sunset Garden Games", desc: "Aktivitas santai di halaman berumput hijau resort." },
-      { time: "Hari 1 - 19.00", activity: "Barbeque Night & Acoustic Live", desc: "Santap malam panggangan spesial dengan alunan musik akustik." },
-      { time: "Hari 2 - 07.00", activity: "Sarapan & Morning Walk", desc: "Jalan pagi menyusuri perkebunan teh atau sungai jernih." },
-      { time: "Hari 2 - 11.00", activity: "Closing Session & Check-out", desc: "Pemberian cenderamata dan kembali ke kota." }
+      { time: "Hari 1 - 19.00", activity: "Barbeque Night & Acoustic Live", desc: "Santap malam panggangan spesial dengan pemandangan citylight." },
+      { time: "Hari 2 - 07.00", activity: "Sarapan & Morning Walk", desc: "Jalan pagi menyusuri perkebunan apel atau taman pinus sejuk." },
+      { time: "Hari 2 - 11.00", activity: "Closing Session & Check-out", desc: "Pemberian cenderamata oleh-oleh khas Batu dan kepulangan." }
     ],
-    facilities: ["Villa privat / Kamar hotel berbintang", "Makan 3x + 2x Coffee Break", "Pesta BBQ Night", "Hiburan musik profesional", "Drone & video cinematic"],
-    recommendedVenues: ["Puncak Pass Resort", "Jambuluwuk Resort Ciawi", "Glamping Riverside Ciwidey"],
+    facilities: ["Villa privat / Kamar resort bintang di Batu", "Makan 3x + 2x Coffee Break", "Pesta BBQ Night", "Hiburan musik profesional", "Drone & video cinematic"],
+    recommendedVenues: ["Amarta Hills Resort Batu", "Golden Tulip Holland Resort Batu", "The Singhasari Resort Batu"],
     faqs: [{ question: "Bisakah memilih menu BBQ khusus?", answer: "Bisa, pilihan menu seperti kambing guling, tenderloin steak, atau seafood dapat disesuaikan." }]
   },
   {
     id: "paket-custom",
     slug: "paket-custom",
-    title: "Family Gathering Paket Custom",
+    title: "Family Gathering Paket Custom Batu",
     category: "family",
     categoryLabel: "Family Gathering",
-    shortDesc: "Rancang itinerary, pilihan menu, dan destinasi sesuai preferensi unik dan anggaran keluarga Anda.",
-    fullDesc: "Setiap keluarga memiliki kebiasaan dan impian liburan yang berbeda. Paket custom memberikan keleluasaan penuh menentukan lokasi (pantai/gunung), durasi, konsep dekorasi, dan aktivitas khusus.",
+    shortDesc: "Rancang itinerary, pilihan destinasi wisata Kota Batu, dan anggaran sesuai impian keluarga Anda.",
+    fullDesc: "Setiap keluarga memiliki preferensi unik. Paket custom memberikan keleluasaan penuh menentukan destinasi wisata di Kota Batu (Jatim Park, Museum Angkut, Bromo tour), durasi, konsep dekorasi, dan aktivitas khusus.",
     heroImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
     galleryImages: ["https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800&auto=format&fit=crop"],
     targetAudience: ["Keluarga Multigenerasi", "Klub Komunitas Hobi", "Panitia Gathering Spesifik"],
     durationOptions: ["Fleksibel (1 Hari hingga 4 Hari)"],
-    pricingNote: "Rancangan anggaran disesuaikan secara transparan per item.",
-    highlights: ["Konsultasi gratis dengan event specialist", "Pilihan destinasi Jabodetabek, Bandung, Sukabumi, Anyer", "Penyesuaian kebutuhan lansia dan balita"],
-    objectives: ["Mewujudkan konsep acara impian", "Efisiensi alokasi biaya keluarga", "Kenyamanan total tanpa aturan paket kaku"],
+    pricingNote: "Rancangan anggaran disesuaikan secara transparan per item kebutuhan.",
+    highlights: ["Konsultasi gratis dengan event specialist Kota Batu", "Kombinasi outbound + tiket wisata Jawa Timur Park Group", "Penyesuaian kebutuhan lansia dan anak"],
+    objectives: ["Mewujudkan konsep acara impian di Kota Batu", "Efisiensi alokasi biaya keluarga", "Kenyamanan total tanpa aturan paket kaku"],
     rundown: [
-      { time: "Sesuai Request", activity: "Itinerary Fleksibel", desc: "Rundown dirancang khusus bersama panitia keluarga Anda." }
+      { time: "Sesuai Request", activity: "Itinerary Fleksibel", desc: "Rundown dirancang khusus bersama panitia keluarga Anda di seputar Malang Raya." }
     ],
-    facilities: ["Semua kebutuhan fasilitas dapat dicustomize (transportasi bus, penginapan, seragam polo shirt, dll.)"],
-    recommendedVenues: ["Puncak, Anyer, Sukabumi, Bandung, Kepulauan Seribu"],
-    faqs: [{ question: "Bagaimana cara menyusun paket custom?", answer: "Cukup hubungi tim konsultan kami via WhatsApp, sampaikan jumlah peserta, estimasi tanggal, dan budget yang diinginkan." }]
+    facilities: ["Semua kebutuhan fasilitas dapat dicustomize (transportasi bus pariwisata, penginapan villa/hotel, seragam kaos, dll.)"],
+    recommendedVenues: ["Seluruh kawasan Kota Wisata Batu, Pujon, dan Malang Raya"],
+    faqs: [{ question: "Bagaimana cara menyusun paket custom di Batu?", answer: "Cukup hubungi tim konsultan kami via WhatsApp, sampaikan perkiraan jumlah peserta, tanggal, dan rencana kunjungan." }]
   },
 
   // C. OUTBOUND SEKOLAH
   {
     id: "outbound-pelajar",
     slug: "outbound-pelajar",
-    title: "Outbound Pelajar & Kids Fun",
+    title: "Outbound Pelajar & Kids Fun Batu",
     category: "sekolah",
     categoryLabel: "Outbound Sekolah",
-    shortDesc: "Aktivitas motorik dan sosialisasi ceria untuk siswa TK, SD, dan SMP di alam terbuka yang aman.",
-    fullDesc: "Mengajak siswa belajar langsung di alam lewat aneka permainan interaktif yang melatih motorik kasar, keberanian, kemandirian, dan empati pertemanan dalam pengawasan ketat fasilitator ramah anak.",
+    shortDesc: "Aktivitas motorik dan edukasi pertanian ceria untuk siswa TK, SD, dan SMP di alam terbuka Kota Batu.",
+    fullDesc: "Mengajak siswa belajar langsung di laboratorium alam Kota Batu lewat aneka permainan interaktif yang melatih motorik kasar, keberanian, kemandirian, dan edukasi petik apel/sayur dalam pengawasan fasilitator ramah anak.",
     heroImage: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?q=80&w=1200&auto=format&fit=crop",
     galleryImages: ["https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop"],
-    targetAudience: ["TK & Playgroup", "Siswa SD Kelas 1-6", "Siswa SMP", "Santri Pesantren"],
+    targetAudience: ["TK & Playgroup", "Siswa SD Kelas 1-6", "Siswa SMP", "Santri Pondok Pesantren"],
     durationOptions: ["1 Day Camp (08.00 - 14.30)"],
     pricingNote: "Mulai Rp 125.000 / siswa (sudah termasuk tiket wahana, konsumsi & pendampingan).",
-    highlights: ["Rasio fasilitator tinggi (1 fasilitator : 10 anak)", "Wahana halang rintang aman ramah anak", "Edukasi sains alam sederhana"],
+    highlights: ["Rasio fasilitator tinggi (1 fasilitator : 10 anak)", "Wahana halang rintang aman ramah anak", "Edukasi pertanian apel & stroberi Batu"],
     objectives: ["Meningkatkan kemandirian anak", "Melatih ketangkasan fisik & keseimbangan", "Menumbuhkan rasa cinta flora dan fauna"],
     rundown: [
-      { time: "08.00 - 08.45", activity: "Tiba di Lokasi & Senam Ceria", desc: "Pemanasan lagu anak gembira dan briefing keselamatan." },
-      { time: "08.45 - 11.30", activity: "Jalur Petualangan Cilik", desc: "Jembatan tali, labirin bambu, tangkap ikan, dan menanam padi." },
+      { time: "08.00 - 08.45", activity: "Tiba di Lokasi & Senam Ceria", desc: "Pemanasan lagu gembira di hawa segar Kota Batu dan briefing safety." },
+      { time: "08.45 - 11.30", activity: "Jalur Petualangan Cilik", desc: "Jembatan tali rendah, labirin mini, tangkap ikan, dan petik apel." },
       { time: "11.30 - 12.30", activity: "Mandi Bersih & Makan Siang Sehat", desc: "Pembersihan diri dipandu guru & santap siang bernutrisi." },
-      { time: "12.30 - 14.00", activity: "Edukasi Satwa / Pertanian & Pulang", desc: "Melihat peternakan kelinci / kebun sayur organik." }
+      { time: "12.30 - 14.00", activity: "Edukasi Tani & Sayonara", desc: "Membawa pulang hasil panen buah apel dan persiapan pulang." }
     ],
-    facilities: ["Instruktur berpengalaman ramah anak", "Tiket area & fasilitas mandi bersih", "Makan siang anak & snack", "Free tiket pendamping guru (kuota khusus)"],
-    recommendedVenues: ["Kuntum Farmfield Bogor", "Sentul Fresh Edufarm", "Taman Wisata Matahari"],
+    facilities: ["Instruktur berpengalaman ramah anak", "Tiket area & fasilitas bilas bersih", "Makan siang anak & snack", "Free tiket pendamping guru (kuota khusus)"],
+    recommendedVenues: ["Kusuma Agrowisata Batu", "Taman Rekreasi Selecta", "Coban Rondo Nature Park"],
     faqs: [{ question: "Apakah guru pendamping dikenakan biaya?", answer: "Untuk setiap 15 siswa, kami berikan 1 kuota gratis tiket masuk untuk guru pendamping." }]
   },
   {
     id: "character-building",
     slug: "character-building",
-    title: "Character Building Siswa",
+    title: "Character Building Siswa Batu",
     category: "sekolah",
     categoryLabel: "Outbound Sekolah",
-    shortDesc: "Membentuk disiplin, mental pantang menyerah, empati, dan adab santun generasi muda masa depan.",
-    fullDesc: "Program pembentukan karakter remaja untuk menangkal kenakalan remaja, ketergantungan gawai digital, dan rasa kurang percaya diri melalui pendekatan experiential learning yang menggugah nurani.",
+    shortDesc: "Membentuk disiplin, mental pantang menyerah, empati, dan adab santun generasi muda di pegunungan Kota Batu.",
+    fullDesc: "Program pembentukan karakter remaja di lingkungan sejuk perbukitan Kota Batu untuk menangkal ketergantungan gawai digital, kenakalan remaja, dan krisis empati melalui pendekatan experiential learning yang menggugah nurani.",
     heroImage: "https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=1200&auto=format&fit=crop",
     galleryImages: ["https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?q=80&w=800&auto=format&fit=crop"],
     targetAudience: ["Siswa SMP & MTs", "Siswa SMA, SMK & MA", "Organisasi Ekstrakulikuler"],
-    durationOptions: ["1 Day Intensive", "2 Hari 1 Malam (Inap Barak / Tenda)"],
+    durationOptions: ["1 Day Intensive", "2 Hari 1 Malam (Inap Barak / Tenda di Batu)"],
     pricingNote: "Paket edukatif terjangkau dengan modul tersertifikasi fasilitator outbound.",
     highlights: ["Sesi kontemplasi malam & renungan bakti orang tua", "Simulasi kemandirian tanpa smartphone", "Game disiplin dan integritas"],
     objectives: ["Menumbuhkan rasa hormat kepada orang tua & guru", "Meningkatkan resiliensi (daya tahan banting mental)", "Membangun rasa persaudaraan anti-bullying"],
     rundown: [
-      { time: "Hari 1 - 08.00", activity: "Upacara Pembukaan & Komitmen Siswa", desc: "Penyerahan siswa dari kepala sekolah ke instruktur." },
-      { time: "Hari 1 - 10.00", activity: "Simulasi Integritas & Disiplin", desc: "Latihan baris berbaris dasar outdoor & dinamika tim." },
-      { time: "Hari 1 - 19.30", activity: "Malam Kontemplasi & Refleksi Diri", desc: "Muhasabah / renungan motivasi spiritual dan bakti anak." },
-      { time: "Hari 2 - 05.00", activity: "Ibadah Pagi & Mental Endurance Walk", desc: "Lari pagi dan olah napas di hawa sejuk pegunungan." }
+      { time: "Hari 1 - 08.00", activity: "Upacara Pembukaan & Komitmen Siswa", desc: "Penyerahan siswa dari pihak sekolah ke instruktur lapangan di Batu." },
+      { time: "Hari 1 - 10.00", activity: "Simulasi Integritas & Disiplin", desc: "Latihan baris berbaris dasar outdoor & dinamika kepemimpinan tim." },
+      { time: "Hari 1 - 19.30", activity: "Malam Kontemplasi & Refleksi Diri", desc: "Muhasabah / renungan motivasi spiritual di keheningan malam pegunungan Batu." },
+      { time: "Hari 2 - 05.00", activity: "Ibadah Pagi & Mental Endurance Walk", desc: "Olahraga pagi dan olah napas menghirup hawa murni pegunungan." }
     ],
-    facilities: ["Trainer kepribadian & fasilitator militer/sipil", "Akomodasi barak / tenda dome", "Konsumsi 3x & medik kit", "Sertifikat keikutsertaan"],
-    recommendedVenues: ["Pusdiklat Gadog Bogor", "Bumi Perkemahan Cibubur", "Pondok Halimun Sukabumi"],
+    facilities: ["Trainer kepribadian & fasilitator berpengalaman", "Akomodasi barak / tenda dome di Batu", "Konsumsi 3x & medik kit", "Sertifikat keikutsertaan"],
+    recommendedVenues: ["Bumi Perkemahan Coban Rondo Batu", "Pusdiklat Wiyata Mandala Batu", "Songgoriti Camp"],
     faqs: [{ question: "Apakah ada unsur kekerasan fisik?", answer: "Sama sekali tidak ada. Semua metode berlandaskan psikologi kepemudaan yang mendidik dan aman." }]
   },
   {
     id: "ldks-leadership",
     slug: "ldks-leadership",
-    title: "LDKS & Leadership Pelajar",
+    title: "LDKS & Leadership Pelajar Batu",
     category: "sekolah",
     categoryLabel: "Outbound Sekolah",
-    shortDesc: "Latihan Dasar Kepemimpinan Siswa untuk pengurus OSIS, MPK, Pramuka, dan calon ketua angkatan.",
-    fullDesc: "Pelatihan manajemen organisasi, teknik public speaking, manajemen rapat, dan pemecahan masalah yang dikemas interaktif di alam terbuka untuk melahirkan calon pemimpin masa depan.",
+    shortDesc: "Latihan Dasar Kepemimpinan Siswa untuk pengurus OSIS, MPK, Pramuka, dan organisasi kepemudaan di Kota Batu.",
+    fullDesc: "Pelatihan manajemen organisasi, teknik public speaking, manajemen rapat, dan pemecahan masalah yang dikemas interaktif di hutan pinus Kota Batu untuk melahirkan calon pemimpin masa depan.",
     heroImage: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1200&auto=format&fit=crop",
     galleryImages: ["https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=800&auto=format&fit=crop"],
     targetAudience: ["Pengurus OSIS & MPK Baru", "Bantara Pramuka", "Remaja Masjid / Rohis / Rohkris", "BEM Kampus"],
     durationOptions: ["2 Hari 1 Malam", "3 Hari 2 Malam"],
-    pricingNote: "Investasi berjenjang sesuai kebutuhan akomodasi barak atau villa penginapan.",
-    highlights: ["Modul persidangan dan pembuatan proposal event", "Simulasi problem solving kepengurusan", "Survival camp dan jelajah alam"],
+    pricingNote: "Investasi berjenjang sesuai kebutuhan akomodasi barak atau penginapan villa di Batu.",
+    highlights: ["Modul persidangan dan pembuatan proposal event", "Simulasi problem solving kepengurusan", "Survival camp dan jelajah alam pinus"],
     objectives: ["Mampu menyusun strategi kerja organisasi yang solid", "Memahami seni delegasi tugas", "Kecakapan diplomasi dan mitigasi konflik siswa"],
     rundown: [
-      { time: "Hari 1 - 09.00", activity: "Materi Organisasi & Kepemimpinan", desc: "Dasar kepemimpinan modern dan etika organisasi." },
-      { time: "Hari 1 - 14.00", activity: "Leadership Trail Adventure", desc: "Pos rintangan pemecahan masalah dengan batas waktu." },
-      { time: "Hari 2 - 08.00", activity: "Simulasi Sidang & Presentasi Program Kerja", desc: "Penyusunan action plan OSIS masa bakti baru." }
+      { time: "Hari 1 - 09.00", activity: "Materi Organisasi & Kepemimpinan", desc: "Dasar kepemimpinan modern dan etika organisasi di aula Batu." },
+      { time: "Hari 1 - 14.00", activity: "Leadership Trail Adventure", desc: "Pos rintangan pemecahan masalah dengan batas waktu di alam terbuka." },
+      { time: "Hari 2 - 08.00", activity: "Simulasi Sidang & Presentasi Program", desc: "Penyusunan action plan OSIS masa bakti baru." }
     ],
-    facilities: ["Instruktur kepemimpinan berlisensi", "Tenda kemah / asrama", "Makan lengkap & snack", "Buku panduan LDKS & modul"],
-    recommendedVenues: ["Gunung Geulis Camp Area Bogor", "Cikole Lembang", "Curug Cilember"],
+    facilities: ["Instruktur kepemimpinan berlisensi", "Tenda kemah / asrama penginapan Batu", "Makan lengkap & snack", "Buku panduan LDKS & modul"],
+    recommendedVenues: ["Coban Rondo Camping Ground Batu", "Songgoriti Park Batu"],
     faqs: [{ question: "Bisakah materi LDKS diselaraskan dengan kurikulum sekolah?", answer: "Tentu, kami dapat menyesuaikan poin materi dengan arahan pembina kesiswaan sekolah." }]
   },
   {
     id: "edukasi-alam",
     slug: "edukasi-alam",
-    title: "Edukasi Alam & Konservasi Rimba",
+    title: "Edukasi Alam & Konservasi Rimba Batu",
     category: "sekolah",
     categoryLabel: "Outbound Sekolah",
-    shortDesc: "Mengenal ekosistem hutan, keanekaragaman hayati, daur ulang sampah, dan penanaman bibit pohon.",
-    fullDesc: "Belajar sains di laboratorium hidup terbesar: alam rimba raya. Siswa diajak mengamati jenis-jenis pepohonan langka, serangga penyerbuk, sumber mata air, serta praktik menanam bibit pohon asuh.",
+    shortDesc: "Mengenal ekosistem hutan lindung lereng Arjuno, keanekaragaman hayati, dan penanaman bibit pohon di Kota Batu.",
+    fullDesc: "Belajar sains langsung di alam rimba lereng Gunung Panderman dan Arjuno Kota Batu. Siswa diajak mengamati jenis pepohonan hutan pegunungan, sumber mata air Brantas, serta praktik menanam bibit pohon asuh.",
     heroImage: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop",
     galleryImages: ["https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=800&auto=format&fit=crop"],
     targetAudience: ["Siswa SD, SMP, SMA", "Eskul Pecinta Alam (Sispala)", "Program Green School"],
     durationOptions: ["1 Day Nature Walk (08.00 - 15.00)"],
-    pricingNote: "Termasuk donasi bibit pohon atas nama sekolah untuk ditanam di kawasan konservasi.",
-    highlights: ["Pemandu rimbawan lokal", "Praktik menanam pohon dan pelabelan nama", "Observasi flora fauna endemik"],
-    objectives: ["Menumbuhkan kesadaran ekologis jangka panjang", "Aksi nyata pencegahan pemanasan global", "Praktik sains biologi lapangan"],
+    pricingNote: "Termasuk donasi bibit pohon atas nama sekolah untuk ditanam di kawasan konservasi Batu.",
+    highlights: ["Pemandu rimbawan lokal Kota Batu", "Praktik menanam pohon dan pelabelan nama", "Observasi flora fauna endemik"],
+    objectives: ["Menumbuhkan kesadaran ekologis jangka panjang", "Aksi nyata konservasi mata air", "Praktik sains biologi lapangan"],
     rundown: [
-      { time: "08.30 - 09.30", activity: "Briefing Ekologi Rimba", desc: "Mengenal bentang alam dan etika 'Leave No Trace'." },
-      { time: "09.30 - 12.00", activity: "Forest Canopy Trek & Flora Hunting", desc: "Mengidentifikasi tanaman herbal hutan dan jenis pohon." },
+      { time: "08.30 - 09.30", activity: "Briefing Ekologi Rimba Batu", desc: "Mengenal bentang alam pegunungan dan etika 'Leave No Trace'." },
+      { time: "09.30 - 12.00", activity: "Pine Forest Canopy Trek", desc: "Mengidentifikasi tanaman herbal hutan dan jenis pohon pinus/damar." },
       { time: "12.00 - 13.00", activity: "Makan Siang Daun Pisang (Zero Plastic)", desc: "Edukasi makan ramah lingkungan tanpa sampah plastik." },
-      { time: "13.00 - 14.30", activity: "Sesi Penanaman Bibit Pohon", desc: "Setiap siswa menanam 1 bibit pohon endemik." }
+      { time: "13.00 - 14.30", activity: "Sesi Penanaman Bibit Pohon", desc: "Setiap siswa menanam 1 bibit pohon konservasi di lereng Batu." }
     ],
     facilities: ["Rimbawan / Ranger pendamping", "1 bibit pohon per siswa + sertifikat adopsi bibit", "Konsumsi ramah lingkungan", "First Aid Kit"],
-    recommendedVenues: ["Hutan Konservasi Bodogol Gn Gede Pangrango", "Sentul Eco Hutan Babakan Madang", "Taman Hutan Raya Djuanda"],
+    recommendedVenues: ["Kawasan Hutan Lindung Coban Talun Batu", "Tahura R. Soerjo Cangar Batu", "Coban Rondo"],
     faqs: [{ question: "Apakah medannya berat untuk anak-anak?", answer: "Jalur yang dipilih adalah jalur ramah pejalan dengan kontur landai dan anak tangga aman." }]
   },
 
@@ -435,98 +435,98 @@ export const servicePackages: ServicePackage[] = [
   {
     id: "outbound-wisata",
     slug: "outbound-wisata",
-    title: "Outbound + Wisata Alam Terpadu",
+    title: "Outbound + Wisata Kota Batu Terpadu",
     category: "wisata",
     categoryLabel: "Outbound Wisata",
-    shortDesc: "Paduan harmonis kegiatan outbound fun games dengan kunjungan ke destinasi air terjun dan kebun teh.",
-    fullDesc: "Kombinasi ideal antara penguatan keakraban tim dan wisata rekreasi populer. Pagi hari diisi dengan games interaktif, dilanjutkan dengan kunjungan santai ke air terjun (curug) atau perkebunan teh yang instagramable.",
+    shortDesc: "Paduan harmonis kegiatan outbound fun games dengan kunjungan ke air terjun Coban Rondo dan kebun apel legendaris.",
+    fullDesc: "Kombinasi ideal antara penguatan keakraban tim dan wisata rekreasi populer Kota Batu. Pagi hari diisi dengan games interaktif di lapangan rumput sejuk, dilanjutkan dengan kunjungan santai ke air terjun Coban Rondo atau agrowisata petik apel.",
     heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop",
     galleryImages: ["https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800&auto=format&fit=crop"],
     targetAudience: ["Rombongan Wisata Perusahaan", "Komunitas Traveling", "Family Group"],
     durationOptions: ["1 Day Tour", "2 Hari 1 Malam"],
-    pricingNote: "Termasuk tiket masuk obyek wisata, fun outbound, dan pemandu lokal.",
-    highlights: ["Kombinasi game & sight seeing destinasi hits", "Spot foto pemandangan spektakuler", "Makan siang hidangan lokal otentik"],
-    objectives: ["Mendapatkan liburan menyegarkan pikiran", "Mengunjungi destinasi alam populer tanpa repot urus tiket", "Koleksi foto dokumentasi estetik"],
+    pricingNote: "Termasuk tiket masuk obyek wisata alam Batu, fun outbound, dan pemandu lokal.",
+    highlights: ["Kombinasi game & sight seeing destinasi hits Kota Batu", "Spot foto alam pegunungan spektakuler", "Makan siang hidangan lokal otentik"],
+    objectives: ["Mendapatkan liburan menyegarkan pikiran", "Mengunjungi destinasi alam populer Kota Batu tanpa repot", "Koleksi foto dokumentasi estetik"],
     rundown: [
-      { time: "08.30 - 11.30", activity: "Outbound Fun & Team Games", desc: "Aktivitas outbound di lapangan terbuka dekat venue wisata." },
-      { time: "11.30 - 13.00", activity: "Makan Siang Kuliner Khas", desc: "Menikmati sajian ayam bakar / liwet lokal di tepi perbukitan." },
-      { time: "13.00 - 16.00", activity: "Eksplorasi Curug / Wisata Alam", desc: "Bermain air di air terjun jernih dipandu lifeguard dan tour guide." }
+      { time: "08.30 - 11.30", activity: "Outbound Fun & Team Games", desc: "Aktivitas outbound di lapangan terbuka hijau Coban Rondo Batu." },
+      { time: "11.30 - 13.00", activity: "Makan Siang Kuliner Khas Batu", desc: "Menikmati sajian ayam bakar / gurami di tepi perbukitan." },
+      { time: "13.00 - 16.00", activity: "Eksplorasi Coban Rondo & Labirin", desc: "Menikmati air terjun dan serunya labirin hijau dipandu guide." }
     ],
-    facilities: ["Tiket masuk obyek wisata alam", "Instruktur outbound", "Konsumsi lengkap", "Dokumentasi fotografi", "Air mineral"],
-    recommendedVenues: ["Curug Leuwi Hejo Sentul", "Curug Cilember Puncak", "Wisata Kawah Putih Ciwidey"],
-    faqs: [{ question: "Apakah aman bagi peserta yang tidak bisa berenang?", answer: "Sangat aman, kami menyediakan pelampung (life jacket) dan tim pemandu siap siaga di tepi air." }]
+    facilities: ["Tiket masuk obyek wisata alam Batu", "Instruktur outbound", "Konsumsi lengkap", "Dokumentasi fotografi", "Air mineral"],
+    recommendedVenues: ["Kawasan Wisata Coban Rondo Batu", "Taman Rekreasi Selecta", "Coban Rais Flower Garden"],
+    faqs: [{ question: "Apakah tiket wisata sudah termasuk di dalam paket?", answer: "Ya, seluruh tiket masuk objek wisata yang ada di rundown sudah termasuk." }]
   },
   {
     id: "outbound-rafting",
     slug: "outbound-rafting",
-    title: "Outbound + Rafting (Arung Jeram)",
+    title: "Outbound + Rafting Batu Malang (Sahabat Air / Kasembon)",
     category: "wisata",
     categoryLabel: "Outbound Wisata",
-    shortDesc: "Adrenalin memacu di jeram sungai Cisadane / Citatih berpadu dengan kekompakan mendayung perahu karet.",
-    fullDesc: "Paket petualangan paling dicari! Menantang derasnya arus jeram sungai kelas II-III dengan standar keselamatan internasional. Latihan nyata kepatuhan pada komando kapten perahu dan kerja tim mendayung seirama.",
+    shortDesc: "Adrenalin memacu di jeram sungai Sahabat Air Batu / Kasembon berpadu dengan kekompakan mendayung perahu karet.",
+    fullDesc: "Paket petualangan terfavorit di Kota Batu! Menantang derasnya arus jeram sungai Sahabat Air Batu atau Kasembon Rafting dengan standar keselamatan internasional. Latihan nyata kepatuhan komando skiper dan kekompakan mendayung seirama diapit tebing alam eksotis.",
     heroImage: "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=1200&auto=format&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop"
     ],
     targetAudience: ["Pencinta Adrenalin", "Corporate Team Building", "Kelompok Mahasiswa & Pemuda"],
-    durationOptions: ["1 Day Adventure (Rafting 7km - 11km)"],
-    pricingNote: "All-in perahu karet, helm, dayung, life jacket, asuransi & sajian kelapa muda.",
-    highlights: ["Jeram menantang grade II-III (aman untuk pemula)", "Instruktur skiper berlisensi federasi arung jeram", "Bonus kelapa muda & snack di rest point jeram"],
-    objectives: ["Membangun keberanian melangkah keluar dari zona nyaman", "Kekompakan mendayung serempak di arus deras", "Pelepasan stres kerja yang luar biasa"],
+    durationOptions: ["1 Day Adventure (Rafting 7.5km - 12km)"],
+    pricingNote: "All-in perahu karet, helm, dayung, life jacket, asuransi & sajian teh hangat/snack khas Batu.",
+    highlights: ["Jeram menantang grade II-III (sangat aman untuk pemula)", "Instruktur skiper berlisensi federasi arung jeram", "Bonus snack tradisional & minuman hangat di rest point"],
+    objectives: ["Membangun keberanian melangkah keluar dari zona nyaman", "Kekompakan mendayung serempak di arus deras", "Pelepasan stres kerja yang luar biasa di sungai Batu"],
     rundown: [
-      { time: "09.00 - 11.00", activity: "Ice Breaking & Low Impact Games", desc: "Pemanasan fisik dan membangun ritme tim sebelum ke sungai." },
-      { time: "11.00 - 12.30", activity: "Makan Siang Tenaga", desc: "Isi energi dengan menu prasmanan khas sunda." },
-      { time: "12.30 - 13.00", activity: "Safety Briefing & Fitting Gear", desc: "Pemasangan helm, pelampung, serta instruksi rescue kapten." },
-      { time: "13.00 - 15.30", activity: "Pengarungan Jeram Sungai (9 Km)", desc: "Mendayung melewati puluhan jeram deras dan tebing alam eksotis." },
-      { time: "15.30 - 16.30", activity: "Mandi Bersih & Kelapa Muda Segar", desc: "Bilas badan, menikmati kelapa muda dan pisang goreng panas." }
+      { time: "09.00 - 11.00", activity: "Ice Breaking & Low Impact Games", desc: "Pemanasan fisik dan membangun ritme tim sebelum menuju sungai." },
+      { time: "11.00 - 12.30", activity: "Makan Siang Tenaga", desc: "Isi energi dengan menu prasmanan khas Jawa Timuran." },
+      { time: "12.30 - 13.00", activity: "Safety Briefing & Fitting Gear", desc: "Pemasangan helm, pelampung, serta instruksi rescue kapten perahu." },
+      { time: "13.00 - 15.30", activity: "Pengarungan Jeram Sungai (8 Km)", desc: "Mendayung melewati puluhan jeram deras dan pemandangan tebing asri Batu." },
+      { time: "15.30 - 16.30", activity: "Mandi Bersih & Rehat Hangat", desc: "Bilas badan di kamar bilas bersih dan menikmati wedang jahe / pisang goreng panas." }
     ],
     facilities: [
       "Perahu karet berstandar internasional & dayung",
       "Life jacket pelampung & helm keselamatan",
       "Skiper / River Guide profesional di tiap perahu",
       "Tim rescue darat dan air",
-      "Transportasi lokal dari finish ke start point",
+      "Transportasi lokal dari finish ke basecamp",
       "Asuransi kecelakaan diri",
-      "Makan siang + 1x kelapa muda & snack"
+      "Makan siang + sajian minuman hangat & snack"
     ],
-    recommendedVenues: ["Sungai Cisadane Caringin Bogor", "Sungai Citatih Sukabumi", "Sungai Palayangan Pangalengan"],
+    recommendedVenues: ["Basecamp Sahabat Air Rafting Batu", "Kasembon Rafting", "Kaliwatu Rafting Bumiaji Batu"],
     faqs: [
-      { question: "Apakah yang tidak bisa berenang boleh ikut rafting?", answer: "Boleh! Rompi pelampung berdaya apung tinggi menjamin peserta tetap mengapung aman di permukaan air." },
+      { question: "Apakah yang tidak bisa berenang boleh ikut rafting di Batu?", answer: "Boleh! Rompi pelampung berdaya apung tinggi menjamin peserta tetap mengapung aman di permukaan air." },
       { question: "Berapa usia minimum untuk arung jeram?", answer: "Usia minimum 7 tahun untuk jeram keluarga, dan maksimal 60 tahun dalam kondisi fisik sehat." }
     ]
   },
   {
     id: "outbound-offroad",
     slug: "outbound-offroad",
-    title: "Outbound + Offroad Adventure 4x4",
+    title: "Outbound + Offroad Adventure 4x4 Coban Talun Batu",
     category: "wisata",
     categoryLabel: "Outbound Wisata",
-    shortDesc: "Jelajahi medan becek, lumpur berbatu, dan perbukitan kebun teh dengan armada mobil Land Rover 4x4.",
-    fullDesc: "Merasakan sensasi guncangan adrenalin di atas kendaraan 4x4 legendaris menyusuri trek offroad ekstrem di tengah kabut pegunungan dan hamparan kebun teh yang menakjubkan.",
+    shortDesc: "Jelajahi medan becek, kubangan lumpur hutan pinus, dan jalur perbukitan lereng Arjuno dengan armada Jeep 4x4 legendaris.",
+    fullDesc: "Merasakan sensasi guncangan adrenalin di atas kendaraan 4x4 legendaris menyusuri trek offroad Coban Talun Kota Batu di tengah hawa dingin pegunungan dan lebatnya hutan pinus yang menakjubkan.",
     heroImage: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
     galleryImages: ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop"],
     targetAudience: ["Pencinta Tantangan Otomotif", "Corporate Outing Eksekutif", "Rombongan Komunitas"],
-    durationOptions: ["1 Day Offroad Tour", "2 Hari 1 Malam + Menginap"],
-    pricingNote: "Kapasitas 1 mobil Land Rover untuk 6-7 orang penumpang.",
-    highlights: ["Armada 4WD terawat dengan supir berpengalaman", "Trek lumpur perbukitan Puncak / Sukawana Lembang", "Spot foto eksklusif puncak bukit berkabut"],
-    objectives: ["Merasakan petualangan luar ruang yang tak biasa", "Menghirup udara bersih perbukitan kebun teh", "Momen tawa dan adrenalin saat mobil melibas kubangan lumpur"],
+    durationOptions: ["1 Day Offroad Tour", "2 Hari 1 Malam + Menginap Resort Batu"],
+    pricingNote: "Kapasitas 1 mobil Jeep / Land Rover untuk 4-6 orang penumpang.",
+    highlights: ["Armada 4WD terawat dengan driver lokal Kota Batu berpengalaman", "Trek lumpur hutan pinus Coban Talun & kebun apel", "Spot foto eksklusif bukit berkabut"],
+    objectives: ["Merasakan petualangan luar ruang yang tak biasa", "Menghirup udara bersih perbukitan Kota Batu", "Momen tawa dan adrenalin saat mobil melibas kubangan lumpur"],
     rundown: [
-      { time: "08.30 - 10.30", activity: "Outbound Fun Games di Meeting Point", desc: "Pemanasan tim sebelum meluncur ke medan petualangan." },
-      { time: "10.30 - 13.30", activity: "Offroad Expedition 4x4", desc: "Melintasi jalur becek, tanjakan terjal, dan kebun teh berangin sejuk." },
-      { time: "13.30 - 15.00", activity: "Makan Siang di Puncak Bukit & Sayonara", desc: "Makan liwet hangat dengan pemandangan pegunungan 360 derajat." }
+      { time: "08.30 - 10.30", activity: "Outbound Fun Games di Meeting Point", desc: "Pemanasan tim sebelum meluncur ke medan petualangan offroad." },
+      { time: "10.30 - 13.30", activity: "Offroad Expedition 4x4 Coban Talun", desc: "Melintasi jalur becek, tanjakan terjal, dan hutan pinus berangin sejuk." },
+      { time: "13.30 - 15.00", activity: "Makan Siang di Area Perbukitan Batu & Sayonara", desc: "Makan liwet hangat dengan pemandangan pegunungan 360 derajat Kota Batu." }
     ],
-    facilities: ["Armada mobil 4x4 Land Rover / Jeep + Driver terlatih", "Bahan bakar mobil offroad", "Tiket masuk jalur offroad & perkebunan", "Makan siang nusantara & air mineral", "Asuransi kegiatan"],
-    recommendedVenues: ["Trek Puncak Telaga Saat Bogor", "Trek Sukawana Lembang Bandung", "Trek Citeko Cisarua"],
+    facilities: ["Armada mobil 4x4 Jeep / Land Cruiser + Driver terlatih", "Bahan bakar mobil offroad", "Tiket masuk jalur offroad Coban Talun", "Makan siang prasmanan & air mineral", "Asuransi kegiatan"],
+    recommendedVenues: ["Trek Offroad Coban Talun Batu", "Trek Lereng Panderman", "Trek Brakseng Cangar"],
     faqs: [{ question: "Apakah aman bagi wanita dan anak-anak?", answer: "Sangat aman selama mematuhi panduan pegangan dan memakai seat belt sesuai arahan driver kami." }]
   },
   {
     id: "outbound-camping",
     slug: "outbound-camping",
-    title: "Outbound + Camping & Glamping Rimba",
+    title: "Outbound + Camping & Glamping Rimba Batu",
     category: "wisata",
     categoryLabel: "Outbound Wisata",
-    shortDesc: "Bermalam di bawah langit bertabur bintang dengan fasilitas tenda dome nyaman atau glamping mewah tepi sungai.",
-    fullDesc: "Kembali menyatu dengan kedamaian alam rimba. Dengarkan gemercik air sungai dan desir angin pinus sambil menikmati hangatnya api unggun bersama sahabat dan rekan sejawat.",
+    shortDesc: "Bermalam di bawah langit bertabur bintang dengan fasilitas tenda dome nyaman atau glamping mewah di perbukitan Kota Batu.",
+    fullDesc: "Kembali menyatu dengan kedamaian alam pegunungan Kota Batu. Dengarkan desir angin di antara pohon pinus sambil menikmati hangatnya api unggun dan santap barbeque bersama sahabat dan rekan sejawat.",
     heroImage: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1200&auto=format&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=800&auto=format&fit=crop",
@@ -534,19 +534,19 @@ export const servicePackages: ServicePackage[] = [
     ],
     targetAudience: ["Keluarga Muda", "Komunitas Pecinta Alam", "Tim Kerja Perusahaan", "Grup Sahabat"],
     durationOptions: ["2 Hari 1 Malam"],
-    pricingNote: "Tersedia pilihan Camp Standar (dome tent) hingga Luxury Glamping berfasilitas kasur empuk.",
-    highlights: ["Sensasi tidur di alam dengan fasilitas higienis", "Api unggun & BBQ jagung bakar malam hari", "Pemandangan sunrise memukau di balik gunung"],
+    pricingNote: "Tersedia pilihan Camp Standar (dome tent) hingga Luxury Glamping berfasilitas kasur empuk di Kota Batu.",
+    highlights: ["Sensasi tidur di alam dingin Batu dengan fasilitas higienis", "Api unggun & BBQ jagung bakar malam hari", "Pemandangan sunrise memukau di balik Gunung Arjuno"],
     objectives: ["Detoksifikasi dari hiruk pikuk kebisingan kota", "Menumbuhkan rasa syukur dan kecintaan pada alam", "Menciptakan obrolan mendalam di kehangatan api unggun"],
     rundown: [
-      { time: "Hari 1 - 13.00", activity: "Check-in Tenda & Orientasi Camp", desc: "Menempati tenda yang telah terpasang rapi dengan matras & sleeping bag." },
-      { time: "Hari 1 - 15.00", activity: "River Walk & Outbound Santai", desc: "Jalan santai menyusuri aliran sungai jernih berbatu." },
-      { time: "Hari 1 - 19.00", activity: "Campfire & Barbeque Night", desc: "Nyalakan api unggun, bernyanyi bersama, bakar jagung & sosis." },
-      { time: "Hari 2 - 06.00", activity: "Sunrise Hunting & Morning Coffee", desc: "Secangkir kopi panas / teh hangat sambil menikmati matahari terbit." },
+      { time: "Hari 1 - 13.00", activity: "Check-in Tenda & Orientasi Camp", desc: "Menempati tenda yang telah terpasang rapi dengan matras & sleeping bag di Batu." },
+      { time: "Hari 1 - 15.00", activity: "Pine Forest Walk & Outbound Santai", desc: "Jalan santai menyusuri hutan pinus sejuk Coban Rondo." },
+      { time: "Hari 1 - 19.00", activity: "Campfire & Barbeque Night", desc: "Nyalakan api unggun, bernyanyi bersama, bakar jagung & sosis di hawa dingin Batu." },
+      { time: "Hari 2 - 06.00", activity: "Sunrise Hunting & Morning Coffee", desc: "Secangkir kopi hangat sambil menikmati matahari terbit di sela pegunungan." },
       { time: "Hari 2 - 10.00", activity: "Sayonara Camp & Kembali Pulang", desc: "Foto bersama seluruh peserta camp dan kepulangan." }
     ],
-    facilities: ["Tenda berkapasitas 4 orang + kasur/matras + sleeping bag", "Toilet & kamar mandi bersih dengan air pegunungan", "Lampu penerangan camp & colokan listrik", "Makan 3x + Snack api unggun", "Kayu bakar api unggun"],
-    recommendedVenues: ["Camp Sukamantri Gunung Salak", "Highland Camp Megamendung Puncak", "Ranca Upas Ciwidey Bandung"],
-    faqs: [{ question: "Apakah ada fasilitas toilet bersih?", answer: "Pasti. Area camp rekanan kami memiliki fasilitas toilet duduk/jongkok bersih yang terawat dengan pasokan air lancar." }]
+    facilities: ["Tenda berkapasitas 4 orang + kasur/matras + sleeping bag hangat", "Toilet & kamar mandi bersih dengan air pegunungan Batu", "Lampu penerangan camp & colokan listrik", "Makan 3x + Snack api unggun", "Kayu bakar api unggun"],
+    recommendedVenues: ["Coban Rondo Pine Camping Ground Batu", "Batu Highland Camp Bumiaji", "Songgoriti Nature Camp"],
+    faqs: [{ question: "Apakah ada fasilitas toilet bersih?", answer: "Pasti. Area camp rekanan kami di Kota Batu memiliki fasilitas toilet bersih yang terawat dengan pasokan air lancar." }]
   }
 ];
 
@@ -565,64 +565,64 @@ export interface Destination {
 
 export const destinations: Destination[] = [
   {
-    id: "puncak-bogor-resort",
-    name: "Highland Pine Forest Resort Puncak",
-    region: "Puncak, Bogor",
-    description: "Venue outbound premier yang berada di ketinggian 1.100 mdpl dengan latar belakang hutan pinus alami, udara berkabut sejuk, dan hamparan rumput hijau luas.",
+    id: "coban-rondo-batu",
+    name: "Coban Rondo Pine Valley & Camp Ground",
+    region: "Pujon - Kota Batu",
+    description: "Venue outbound premier legendaris di ketinggian 1.135 mdpl dengan latar belakang hutan pinus lebat, air terjun megah, udara sejuk 18°C, dan hamparan rumput hijau bebas lumpur.",
     image: "https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=1000&auto=format&fit=crop",
-    address: "Jl. Raya Puncak KM 84, Cisarua, Bogor, Jawa Barat",
-    capacity: "50 - 1.000 Peserta",
-    accessInfo: "Akses bus pariwisata besar sampai langsung ke area parkir venue tanpa repot langsir.",
-    facilities: ["Lapangan Utama Berumput Luas", "Pendopo & Aula Semi Terbuka", "Toilet Higienis 20 Pintu", "Kolam Renang Alam", "Villa & Barak Penginapan", "Area Api Unggun Khusus"],
-    suitableFor: ["Team Building Perusahaan", "Corporate Gathering", "Family Gathering", "Leadership Camp"]
+    address: "Jl. Coban Rondo, Pandesari, Kec. Pujon, Kab. Malang (Kawasan Wisata Kota Batu)",
+    capacity: "50 - 1.500 Peserta",
+    accessInfo: "Akses bus pariwisata besar langsung sampai ke area parkir utama venue tanpa repot langsir.",
+    facilities: ["Lapangan Rumput Luas 3 Titik", "Pendopo & Aula Tertutup Kapasitas Besar", "Toilet Bersih 30 Pintu", "Labirin Hijau Raksasa", "Area Api Unggun Khusus", "Keamanan 24 Jam"],
+    suitableFor: ["Team Building Perusahaan", "Corporate Gathering", "Family Gathering", "Leadership Camp OSIS"]
   },
   {
-    id: "cisadane-caringin",
-    name: "Riverside Adventure Camp Cisadane",
-    region: "Caringin, Bogor",
-    description: "Lokasi terbaik untuk aktivitas kombinasi outbound dan rafting dengan titik start langsung di tepi Sungai Cisadane yang berarus jeram eksotis.",
+    id: "kaliwatu-sahabat-air",
+    name: "Riverside Adventure Basecamp Sahabat Air Batu",
+    region: "Bumiaji, Kota Batu",
+    description: "Lokasi terbaik untuk aktivitas kombinasi outbound fun games dan rafting dengan titik start langsung di aliran sungai berarus jeram eksotis berlatar bukit apel.",
     image: "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=1000&auto=format&fit=crop",
-    address: "Jl. Kolonel Bustomi, Caringin, Bogor, Jawa Barat (Exit Tol Bocimi Caringin)",
+    address: "Jl. Raya Mojorejo / Bumiaji, Kota Wisata Batu, Jawa Timur",
     capacity: "30 - 500 Peserta",
-    accessInfo: "Hanya 10 menit dari gerbang tol Caringin (Bocimi), jalur bebas ganjil genap Puncak.",
-    facilities: ["Dermaga Start Rafting Privat", "Gazebo Tepi Sungai", "Restoran Prasmanan Kapasitas Besar", "Kamar Mandi Bilas 35 Bilik", "Area Flying Fox Menyeberang Sungai"],
-    suitableFor: ["Outbound + Rafting", "One Day Team Building", "Outing Mahasiswa / Komunitas"]
+    accessInfo: "Hanya 10 menit dari Alun-Alun Kota Batu, jalan aspal mulus dapat diakses bus besar.",
+    facilities: ["Dermaga Start Rafting Privat", "Gazebo Bambu Tepi Sungai", "Restoran Prasmanan Kapasitas 300 Pax", "Kamar Mandi Bilas 35 Bilik", "Area Paintball Khusus"],
+    suitableFor: ["Outbound + Rafting Batu", "One Day Team Building", "Outing Mahasiswa / Komunitas"]
   },
   {
-    id: "sentul-eco-hills",
-    name: "Sentul Eco Hills Park",
-    region: "Sentul, Bogor",
-    description: "Destinasi outbound ramah keluarga dan anak dengan suasana perbukitan hijau asri yang bebas dari kemacetan jalur puncak.",
+    id: "kusuma-agrowisata-batu",
+    name: "Kusuma Agrowisata & Resort Batu",
+    region: "Batu Highland",
+    description: "Destinasi outbound ramah keluarga dan gathering eksekutif dengan perpaduan kebun apel luas, lapangan hijau asri, dan fasilitas resort bintang berhawa sejuk.",
     image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1000&auto=format&fit=crop",
-    address: "Kawasan Babakan Madang, Sentul Selatan, Bogor, Jawa Barat",
-    capacity: "25 - 600 Peserta",
-    accessInfo: "15 menit dari gerbang Tol Sentul Selatan / Sentul City.",
-    facilities: ["Trekking Trail ke Curug Alami", "Kolam Tangkap Ikan & Sawah Edukasi", "Area Paintball Khusus", "Resto Sunda View Lembah", "Musholla & Parkir Luas"],
-    suitableFor: ["Outbound Sekolah / Kids Fun", "Family Gathering Hemat & Standard", "Trekking Wisata Leuwi Hejo"]
+    address: "Jl. Abdul Gani Atas, Ngaglik, Kec. Batu, Kota Batu, Jawa Timur",
+    capacity: "30 - 1.000 Peserta",
+    accessInfo: "Terletak di kawasan atas Kota Batu, akses bus sangat mudah dengan parkir luas.",
+    facilities: ["Area Petik Apel & Jeruk", "Waterpark & Kolam Renang Hangat", "Convention Hall / Ballroom", "Resto View Pegunungan", "Musholla & Penginapan Hotel"],
+    suitableFor: ["Outbound Sekolah & Petik Apel", "Corporate Gathering Tahunan", "Family Gathering Premium"]
   },
   {
-    id: "lembang-pine-reserve",
-    name: "Cikole Pine Reserve Lembang",
-    region: "Lembang, Bandung Barat",
-    description: "Kawasan rimba pinus legendaris dengan suhu 18°C yang menyajikan trek offroad menantang dan lokasi perkemahan modern terpadu.",
+    id: "coban-talun-offroad",
+    name: "Coban Talun Pine Reserve & Offroad Camp",
+    region: "Bumiaji, Kota Batu",
+    description: "Kawasan hutan pinus alami di lereng Gunung Arjuno yang menjadi pusat petualangan offroad Jeep 4x4, air terjun indah, dan deretan tenda glamping unik.",
     image: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1000&auto=format&fit=crop",
-    address: "Jl. Tangkuban Perahu KM 28, Cikole, Lembang, Jawa Barat",
-    capacity: "40 - 1.200 Peserta",
-    accessInfo: "Dapat diakses bus pariwisata via Tol Pasteur / Subang.",
-    facilities: ["Trek Offroad Land Rover Ekstrem", "Tenda Dome & Glamping VIP", "Resto Tengah Hutan Pinus", "Wahana High Ropes & Flying Fox 200m", "Keamanan 24 Jam"],
-    suitableFor: ["Outbound + Offroad 4x4", "Executive Leadership Retreat", "Camping & Glamping Rimba"]
+    address: "Dusun Wonorejo, Desa Tulungrejo, Kec. Bumiaji, Kota Batu, Jawa Timur",
+    capacity: "40 - 800 Peserta",
+    accessInfo: "Akses bus pariwisata medium hingga rest area utama Coban Talun.",
+    facilities: ["Trek Offroad Jeep 4x4 Menantang", "Tenda Glamping Apache & Pagupon", "Kafe Tengah Hutan Pinus", "Wahana Flying Fox", "Toilet Higienis"],
+    suitableFor: ["Outbound + Offroad 4x4", "Camping & Glamping Rimba", "Executive Leadership Retreat"]
   },
   {
-    id: "sukabumi-selabintana",
-    name: "Selabintana Green Valley Sukabumi",
-    region: "Sukabumi, Jawa Barat",
-    description: "Hamparan padang rumput hijau peninggalan era kolonial di kaki Gunung Gede dengan udara sangat murni dan pemandangan hutan lindung.",
+    id: "songgoriti-nature-park",
+    name: "Songgoriti Nature Valley Park Batu",
+    region: "Songgokerto, Kota Batu",
+    description: "Lembah hijau bersejarah di kaki bukit dengan sumber air panas alami, pepohonan rindang, dan saung-saung santai ramah untuk kumpul keluarga besar.",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop",
-    address: "Jl. Selabintana KM 7, Sukabumi Utara, Jawa Barat",
+    address: "Kawasan Wisata Songgoriti, Kel. Songgokerto, Kec. Batu, Kota Batu, Jawa Timur",
     capacity: "50 - 800 Peserta",
-    accessInfo: "Akses mudah via Tol Bocimi Seksi 2 Cibadak / Sukabumi.",
-    facilities: ["Halaman Rumput Golf Luas", "Hotel & Villa Penginapan", "Akses Jalur Pendakian Ringan", "Aula Serbaguna 500 Pax", "Area Barbeque Outdoor"],
-    suitableFor: ["Corporate Gathering", "LDKS & Character Building", "Family Gathering Premium"]
+    accessInfo: "5 menit dari pusat Kota Batu, jalan aspal lebar untuk rombongan keluarga dan bus.",
+    facilities: ["Padang Rumput Hijau Rindang", "Pendopo Tradisional Luas", "Kolam Pemandian Air Hangat", "Pasar Wisata Buah & Sayur", "Area Games Terbuka"],
+    suitableFor: ["Family Gathering Hemat & Standard", "Character Building Pelajar", "Fun Games Komunitas"]
   }
 ];
 
@@ -637,66 +637,66 @@ export interface GalleryItem {
 export const galleryItems: GalleryItem[] = [
   {
     id: "gal-1",
-    title: "Sinergi Tim Eksekutif PT Karya Mandiri",
+    title: "Sinergi Tim Eksekutif PT Petrokimia Nusantara",
     category: "Team Building",
     imageUrl: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=800&auto=format&fit=crop",
-    location: "Highland Pine Forest Puncak"
+    location: "Coban Rondo Pine Valley Batu"
   },
   {
     id: "gal-2",
-    title: "Tawa Riang Family Gathering Bank Syariah",
+    title: "Tawa Riang Family Gathering Bank Mandiri",
     category: "Family Gathering",
     imageUrl: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800&auto=format&fit=crop",
-    location: "Camp Hulu Cai Bogor"
+    location: "Kusuma Agrowisata Kota Batu"
   },
   {
     id: "gal-3",
-    title: "Arung Jeram Menantang Sungai Cisadane",
+    title: "Arung Jeram Menantang Sungai Sahabat Air",
     category: "Adventure",
     imageUrl: "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=800&auto=format&fit=crop",
-    location: "Caringin Bogor"
+    location: "Sungai Bumiaji Kota Batu"
   },
   {
     id: "gal-4",
-    title: "LDKS Siswa SMA Karakter Bangsa",
+    title: "LDKS Siswa SMA Unggulan Jawa Timur",
     category: "Outbound Sekolah",
     imageUrl: "https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=800&auto=format&fit=crop",
-    location: "Cibubur Camp Ground"
+    location: "Bumi Perkemahan Coban Rondo"
   },
   {
     id: "gal-5",
-    title: "Malam Kehangatan Api Unggun & Glamping",
+    title: "Malam Kehangatan Api Unggun & Glamping Rimba",
     category: "Camping",
     imageUrl: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=800&auto=format&fit=crop",
-    location: "Cikole Lembang"
+    location: "Coban Talun Pine Camp Batu"
   },
   {
     id: "gal-6",
-    title: "Gala Dinner Gathering Nusantara Corp",
+    title: "Gala Dinner Gathering BUMN di Kota Batu",
     category: "Corporate Gathering",
     imageUrl: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop",
-    location: "Resort Puncak"
+    location: "Amarta Hills Resort Batu"
   },
   {
     id: "gal-7",
-    title: "Aksi Melibas Jalur Lumpur Land Rover 4x4",
+    title: "Aksi Melibas Jalur Lumpur Jeep 4x4",
     category: "Adventure",
     imageUrl: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800&auto=format&fit=crop",
-    location: "Trek Offroad Sukawana"
+    location: "Trek Offroad Coban Talun Batu"
   },
   {
     id: "gal-8",
-    title: "Edukasi Tanam Padi Siswa SD Pelita",
+    title: "Edukasi Petik Buah Apel Siswa SD",
     category: "Outbound Sekolah",
     imageUrl: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?q=80&w=800&auto=format&fit=crop",
-    location: "Sentul Eco Hills"
+    location: "Kebun Apel Agro Kota Batu"
   },
   {
     id: "gal-9",
     title: "Simulasi Spider Web Problem Solving",
     category: "Team Building",
     imageUrl: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800&auto=format&fit=crop",
-    location: "Highland Pine Forest Puncak"
+    location: "Songgoriti Nature Park Batu"
   }
 ];
 
@@ -716,99 +716,103 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "panduan-lengkap-outbound-perusahaan",
-    title: "Panduan Lengkap Merencanakan Outbound Perusahaan yang Efektif & Sukses",
+    title: "Panduan Lengkap Merencanakan Outbound Perusahaan di Kota Batu Malang",
     category: "Corporate Gathering",
     date: "24 Oktober 2026",
-    author: "Tim Konsultan Ruang Rimba",
+    author: "Tim Konsultan Batu Highland Outbound",
     readingTime: "6 Menit Baca",
     featuredImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
-    summary: "Ketahui tahapan penting menyusun corporate outbound, mulai dari penentuan target kompetensi tim, pemilihan lokasi yang tepat, estimasi anggaran terukur, hingga pemilihan vendor profesional.",
+    summary: "Ketahui tahapan penting menyusun corporate outbound di Kota Wisata Batu, mulai dari penentuan target kompetensi tim, pemilihan venue alam sejuk, estimasi anggaran terukur, hingga pemilihan vendor profesional.",
     toc: [
-      { id: "definisi", text: "Mengapa Outbound Tetap Relevan Bagi Korporasi Modern" },
+      { id: "definisi", text: "Mengapa Kota Batu Menjadi Destinasi Outbound Favorit" },
       { id: "identifikasi", text: "1. Identifikasi Masalah & Sasaran Tim Kerja" },
-      { id: "lokasi", text: "2. Menentukan Lokasi yang Strategis & Fasilitas Lengkap" },
-      { id: "rundown", text: "3. Merancang Rundown yang Seimbang antara Materi & Rekreasi" },
-      { id: "vendor", text: "4. Kriteria Memilih Partner Vendor Outbound Terpercaya" }
+      { id: "lokasi", text: "2. Menentukan Venue Strategis di Kota Batu & Akses Bus" },
+      { id: "rundown", text: "3. Merancang Rundown yang Seimbang antara Materi & Wisata Apel" },
+      { id: "vendor", text: "4. Kriteria Memilih Partner Vendor Outbound Kota Batu" }
     ],
     content: `
-<p>Dalam lanskap dunia kerja modern yang serba cepat dan menuntut, interaksi antar divisi kerap terbatasi oleh sekat-sekat formalitas layar kaca. Outbound perusahaan hadir bukan sekadar liburan kantor biasa, melainkan instrumen strategis Human Resource untuk merekatkan kembali tali koordinasi dan empati kolektif.</p>
+<p>Dalam lanskap dunia kerja modern yang serba cepat dan menuntut, interaksi antar divisi kerap terbatasi oleh sekat-sekat formalitas kantor. Outbound perusahaan di Kota Wisata Batu hadir bukan sekadar liburan kantor biasa, melainkan instrumen strategis Human Resource untuk merekatkan kembali tali koordinasi dan empati kolektif di tengah segarnya hawa pegunungan.</p>
 
-<h3 id="definisi">Mengapa Outbound Tetap Relevan Bagi Korporasi Modern</h3>
-<p>Metode <em>experiential learning</em> (belajar melalui pengalaman nyata) yang diusung oleh Ruang Rimba Outbound terbukti mempercepat proses pembongkaran ego sektoral. Ketika seorang manajer dan staf operasional sama-sama dihadapkan pada tantangan memecahkan teka-teki tali di hutan pinus, hierarki formal runtuh berganti dengan solidaritas kemanusiaan.</p>
+<h3 id="definisi">Mengapa Kota Batu Menjadi Destinasi Outbound Favorit</h3>
+<p>Metode <em>experiential learning</em> (belajar melalui pengalaman nyata) yang diusung oleh Batu Highland Outbound terbukti mempercepat proses pembongkaran ego sektoral. Berada di ketinggian 800 - 1.200 mdpl dengan latar Gunung Panderman dan Arjuno, hawa sejuk Kota Batu seketika meredakan stres kerja dan membangun keterbukaan hati antar rekan kerja.</p>
 
 <h3 id="identifikasi">1. Identifikasi Masalah & Sasaran Tim Kerja</h3>
-<p>Sebelum memilih tempat atau memesan seragam kaos, panitia HRD wajib merumuskan apa yang sesungguhnya dibutuhkan tim. Apakah ada penurunan semangat pasca pergantian struktur manajemen? Ataukah banyak karyawan baru yang belum mengenal rekan kerja dari unit lain? Kejelasan tujuan akan menentukan modul permainan yang dipilih, apakah Fun Games santai atau Team Building intensif.</p>
+<p>Sebelum memilih tempat atau memesan seragam kaos, panitia HRD wajib merumuskan apa yang sesungguhnya dibutuhkan tim. Apakah ada penurunan semangat pasca pergantian struktur manajemen? Ataukah banyak karyawan baru yang belum mengenal rekan kerja dari divisi lain? Kejelasan tujuan akan menentukan modul permainan yang dipilih, apakah Fun Games santai atau Team Building intensif.</p>
 
-<h3 id="lokasi">2. Menentukan Lokasi yang Strategis & Fasilitas Lengkap</h3>
-<p>Pilihlah venue yang memiliki aksesibilitas bus yang baik, lapangan berumput bebas becek, aula tertutup sebagai rencana cadangan (contingency plan) saat hujan turun, serta sanitasi kamar mandi yang memadai. Kawasan seperti Puncak Bogor, Sentul, dan Lembang tetap menjadi magnet favorit karena udara sejuknya yang seketika meredakan ketegangan mental karyawan.</p>
+<h3 id="lokasi">2. Menentukan Venue Strategis di Kota Batu & Akses Bus</h3>
+<p>Pilihlah venue di Kota Batu yang memiliki aksesibilitas bus pariwisata yang baik (seperti Coban Rondo, Kusuma Agrowisata, atau Songgoriti), lapangan rumput bebas becek, aula tertutup sebagai rencana cadangan (contingency plan) saat kabut/hujan turun, serta sanitasi kamar mandi yang bersih melimpah.</p>
 
-<h3 id="rundown">3. Merancang Rundown yang Seimbang antara Materi & Rekreasi</h3>
-<p>Kesalahan fatal yang sering dilakukan adalah memadatkan jadwal dari subuh hingga tengah malam. Berikan ruang bernapas yang cukup bagi peserta untuk sekadar menikmati secangkir teh hangat, berbincang santai di tepi kolam, atau beristirahat di kamar. Rundown yang ideal memberikan 60% aktivitas interaktif terarah dan 40% waktu personal yang fleksibel.</p>
+<h3 id="rundown">3. Merancang Rundown yang Seimbang antara Materi & Wisata Apel</h3>
+<p>Kesalahan fatal yang sering dilakukan adalah memadatkan jadwal dari subuh hingga tengah malam. Berikan ruang bernapas yang cukup bagi peserta untuk sekadar menikmati secangkir teh hangat, mencicipi apel segar langsung dari pohon, atau menikmati pemandangan perbukitan. Rundown yang ideal memberikan 60% aktivitas interaktif terarah dan 40% waktu rekreasi santai.</p>
 
-<h3 id="vendor">4. Kriteria Memilih Partner Vendor Outbound Terpercaya</h3>
-<p>Pastikan vendor pilihan Anda memiliki fasilitator lapangan yang berpengalaman, prosedur keselamatan operasional yang jelas, sertifikasi P3K darurat, serta transparansi rincian biaya tanpa pungutan tersembunyi. Ruang Rimba Outbound siap mendampingi Anda merancang kegiatan perusahaan yang berkesan dan berdampak nyata bagi produktivitas tim kerja.</p>
+<h3 id="vendor">4. Kriteria Memilih Partner Vendor Outbound Kota Batu</h3>
+<p>Pastikan vendor pilihan Anda memiliki fasilitator lapangan lokal berpengalaman yang hafal karakter medan Kota Batu, prosedur keselamatan operasional yang jelas, sertifikasi P3K darurat, serta transparansi rincian biaya tanpa pungutan tersembunyi. Batu Highland Outbound siap mendampingi Anda merancang kegiatan perusahaan yang berkesan dan berdampak nyata bagi produktivitas tim kerja.</p>
 `
   },
   {
     slug: "tips-memilih-paket-team-building",
-    title: "7 Kriteria Memilih Paket Team Building yang Sesuai dengan Karakter Karyawan",
+    title: "7 Kriteria Memilih Paket Team Building di Kota Batu yang Tepat Sasaran",
     category: "Team Building",
     date: "18 Oktober 2026",
-    author: "Rizky Pratama (Lead Facilitator)",
+    author: "Rizky Pratama (Lead Facilitator Batu)",
     readingTime: "5 Menit Baca",
     featuredImage: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200&auto=format&fit=crop",
-    summary: "Jangan salah pilih program! Simak panduan memilih jenis modul team building yang selaras dengan usia rata-rata peserta, budaya perusahaan, dan ekspektasi manajemen.",
+    summary: "Jangan salah pilih program! Simak panduan memilih jenis modul team building di Kota Batu yang selaras dengan usia rata-rata peserta, budaya perusahaan, dan ekspektasi manajemen.",
     toc: [
       { id: "demografi", text: "Menyesuaikan Modul dengan Demografi Usia Peserta" },
-      { id: "durasi", text: "Menentukan Durasi: 1 Hari vs Menginap (2D1N)" },
+      { id: "durasi", text: "Menentukan Durasi: 1 Hari vs Menginap Resort Batu (2D1N)" },
       { id: "keselamatan", text: "Standar Keselamatan dan Rasio Fasilitator" },
       { id: "debrief", text: "Kualitas Sesi Refleksi (Debriefing)" }
     ],
     content: `
-<p>Program team building yang sukses bukanlah yang paling menguras keringat hingga peserta kelelahan, melainkan yang meninggalkan pemahaman mendalam tentang pentingnya sinergi dan komunikasi efektif.</p>
+<p>Program team building yang sukses bukanlah yang paling menguras keringat hingga peserta kelelahan, melainkan yang meninggalkan pemahaman mendalam tentang pentingnya sinergi dan komunikasi efektif di bawah sejuknya alam Kota Batu.</p>
 
 <h3 id="demografi">Menyesuaikan Modul dengan Demografi Usia Peserta</h3>
-<p>Jika mayoritas karyawan Anda adalah generasi muda (Gen Z & Milenial), pilihlah modul yang sarat tantangan kreatif, teknologi interaktif, atau petualangan alam seperti arung jeram dan offroad. Namun jika kelompok didominasi level senior, modul fun games bernuansa kebersamaan santai dengan kontur medan datar akan jauh lebih dinikmati.</p>
+<p>Jika mayoritas karyawan Anda adalah generasi muda (Gen Z & Milenial), pilihlah modul yang sarat tantangan kreatif, petualangan alam seperti rafting Sahabat Air Batu atau ekspedisi Jeep 4x4 Coban Talun. Namun jika kelompok didominasi level senior, modul fun games bernuansa kebersamaan santai dengan kontur medan datar di Songgoriti akan jauh lebih dinikmati.</p>
 
-<h3 id="durasi">Menentukan Durasi: 1 Hari vs Menginap (2D1N)</h3>
-<p>Paket One Day sangat cocok bagi perusahaan dengan mobilitas tinggi dan waktu libur terbatas di akhir pekan. Sementara itu, paket 2D1N membuka peluang lebih luas untuk menyisipkan sesi malam keakraban, gala dinner, atau diskusi komitmen tahunan di hadapan api unggun yang hangat.</p>
+<h3 id="durasi">Menentukan Durasi: 1 Hari vs Menginap Resort Batu (2D1N)</h3>
+<p>Paket One Day sangat cocok bagi perusahaan dari Surabaya, Malang, Sidoarjo, atau Pasuruan yang ingin efisiensi waktu. Sementara itu, paket menginap 2D1N membuka peluang lebih luas untuk menyisipkan sesi malam keakraban, gala dinner, atau diskusi komitmen tahunan di hadapan api unggun dengan panorama lampu kota Malang.</p>
 
 <h3 id="keselamatan">Standar Keselamatan dan Rasio Fasilitator</h3>
 <p>Rasio ideal adalah minimal 1 fasilitator untuk setiap 15-20 peserta. Ini memastikan seluruh individu terawasi dengan aman, dinamika kelompok termonitor secara seksama, serta penanganan medis cepat tanggap apabila terjadi insiden fisik ringan di lapangan.</p>
 
 <h3 id="debrief">Kualitas Sesi Refleksi (Debriefing)</h3>
-<p>Permainan tanpa debriefing hanyalah sekadar hiburan lewat. Fasilitator Ruang Rimba terlatih memandu sesi tanya-jawab reflektif setelah tiap simulasi berakhir: Apa hambatan komunikasi yang tadi dirasakan? Bagaimana cara tim mengambil keputusan saat waktu hampir habis? Insight inilah yang kemudian ditransformasikan ke meja kerja nyata.</p>
+<p>Permainan tanpa debriefing hanyalah sekadar hiburan lewat. Fasilitator Batu Highland Outbound terlatih memandu sesi tanya-jawab reflektif setelah tiap simulasi berakhir: Apa hambatan komunikasi yang tadi dirasakan? Bagaimana cara tim mengambil keputusan saat waktu hampir habis? Insight inilah yang kemudian ditransformasikan ke meja kerja nyata.</p>
 `
   },
   {
-    slug: "rekomendasi-lokasi-outbound-bogor-puncak",
-    title: "5 Rekomendasi Lokasi Outbound Terbaik di Bogor & Puncak Bebas Jalur Macet",
+    slug: "rekomendasi-lokasi-outbound-batu-malang",
+    title: "5 Rekomendasi Lokasi Outbound Terbaik di Kota Batu Malang Berhawa Sejuk",
     category: "Destinasi Outbound",
     date: "10 Oktober 2026",
-    author: "Tim Destinasi Rimba",
+    author: "Tim Destinasi Batu Highland",
     readingTime: "4 Menit Baca",
     featuredImage: "https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=1200&auto=format&fit=crop",
-    summary: "Temukan venue outbound sejuk dengan lanskap pemandangan indah di sekitar Bogor dan Puncak yang memiliki akses tol alternatif untuk menghindari buka-tutup jalur.",
+    summary: "Temukan venue outbound terbaik di Kota Wisata Batu dengan pemandangan pegunungan indah, pohon pinus rindang, dan akses bus pariwisata yang sangat mudah.",
     toc: [
-      { id: "sentul", text: "1. Kawasan Lembah Sentul Selatan" },
-      { id: "caringin", text: "2. Koridor Caringin Sungai Cisadane" },
-      { id: "cisarua", text: "3. Highland Pines Cisarua Puncak" },
-      { id: "tips-akses", text: "Tips Akses Rombongan Bus Besar" }
+      { id: "coban-rondo", text: "1. Kawasan Wisata Hutan Pinus Coban Rondo" },
+      { id: "kusuma-agro", text: "2. Kusuma Agrowisata & Resort Batu" },
+      { id: "sahabat-air", text: "3. Basecamp Sahabat Air Rafting Bumiaji" },
+      { id: "coban-talun", text: "4. Coban Talun Pine Reserve & Offroad" },
+      { id: "songgoriti", text: "5. Songgoriti Nature Valley Park" }
     ],
     content: `
-<p>Kawasan Bogor dan Puncak masih menjadi primadona destinasi wisata outbound bagi korporasi asal Jabodetabek. Namun, kendala sistem satu arah (one way) seringkali menjadi kekhawatiran tersendiri bagi panitia acara.</p>
+<p>Kota Wisata Batu selalu menjadi magnet utama tujuan kegiatan outbound dan gathering perusahaan di Jawa Timur. Terkenal dengan udaranya yang dingin menyegarkan, panorama pegunungan yang megah, serta ragam pilihan resort bintang berfasilitas lengkap.</p>
 
-<h3 id="sentul">1. Kawasan Lembah Sentul Selatan</h3>
-<p>Hanya 45 menit dari Jakarta via Tol Jagorawi tanpa melewati jalur Puncak. Sentul menawarkan banyak resort alam tersembunyi dengan pemandangan perbukitan hijau, fasilitas air terjun privat, dan sungai dangkal berbatu yang sangat ramah untuk outbound keluarga dan anak sekolah.</p>
+<h3 id="coban-rondo">1. Kawasan Wisata Hutan Pinus Coban Rondo</h3>
+<p>Berada di ketinggian 1.135 mdpl, Coban Rondo memiliki lapangan rumput hijau luas yang mampu menampung hingga 1.500 peserta. Udara berkabut sejuk, jajaran pohon pinus tinggi, labirin raksasa, dan air terjun ikonik menjadikannya primadona utama untuk team building dan camping.</p>
 
-<h3 id="caringin">2. Koridor Caringin Sungai Cisadane</h3>
-<p>Dengan dibukanya Tol Bocimi, kawasan Caringin kini dapat ditempuh hanya dalam waktu 50 menit dari Cawang Jakarta. Di sini, Anda dapat mengombinasikan kegiatan team building di padang rumput tepi sungai dengan pengalaman arung jeram (rafting) kelas dunia yang memacu denyut jantung.</p>
+<h3 id="kusuma-agro">2. Kusuma Agrowisata & Resort Batu</h3>
+<p>Pilihan terbaik untuk corporate outing dan family gathering yang menginginkan kenyamanan terpadu. Terletak di lereng Gunung Panderman, peserta dapat menikmati outbound interaktif yang dipadukan langsung dengan pengalaman memetik buah apel dan jeruk segar dari pohonnya.</p>
 
-<h3 id="cisarua">3. Highland Pines Cisarua Puncak</h3>
-<p>Bagi yang tetap merindukan suasana hawa dingin menusuk tulang dan kabut teh legendaris, kawasan Cisarua bagian atas menyediakan resort-resort privat eksklusif. Tips kami: berangkatlah pada Jumat siang atau pagi subuh pada hari Sabtu untuk menghindari jam buka-tutup jalur Puncak.</p>
+<h3 id="sahabat-air">3. Basecamp Sahabat Air Rafting Bumiaji</h3>
+<p>Bagi tim yang mencari sensasi pemacu adrenalin, aliran sungai di kawasan Bumiaji Kota Batu menawarkan jeram arung jeram kelas dunia yang seru namun tetap aman untuk pemula, dipadukan dengan permainan ice breaking di tepi sungai.</p>
 
-<h3 id="tips-akses">Tips Akses Rombongan Bus Besar</h3>
-<p>Selalu konfirmasi lebar jalan masuk dan radius putar bus ke venue tujuan. Tim Ruang Rimba selalu melakukan survei kelayakan rute terlebih dahulu serta menyediakan tim voorijder lokal jika rombongan membutuhkan pendampingan khusus.</p>
+<h3 id="coban-talun">4. Coban Talun Pine Reserve & Offroad</h3>
+<p>Kawasan eksotis di utara Kota Batu yang menyajikan petualangan melibas jalur becek dan hutan pinus dengan armada Jeep 4x4 Land Rover, serta area perkemahan glamping unik bernuansa suku Indian (Apache Camp).</p>
+
+<h3 id="songgoriti">5. Songgoriti Nature Valley Park</h3>
+<p>Lembah hijau asri berhawa tenang yang sangat cocok untuk gathering keluarga dan paguyuban santai. Dilengkapi pemandian air hangat alami untuk relaksasi pasca beraktivitas fisik seharian.</p>
 `
   }
 ];

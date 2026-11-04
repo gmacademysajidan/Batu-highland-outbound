@@ -41,7 +41,7 @@ const packagePages = [
 const blogPages = [
   "/blog/panduan-lengkap-outbound-perusahaan",
   "/blog/tips-memilih-paket-team-building",
-  "/blog/rekomendasi-lokasi-outbound-bogor-puncak"
+  "/blog/rekomendasi-lokasi-outbound-batu-malang"
 ];
 
 const allPages = Array.from(new Set([...staticPages, ...packagePages, ...blogPages]));
