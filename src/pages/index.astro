@@ -9,22 +9,57 @@ const popularPackages = [
   servicePackages.find(p => p.id === 'paket-standard')
 ].filter(Boolean);
 
+const testimonials = [
+  {
+    name: "Hendra Wijaya",
+    role: "HRD Director",
+    company: "PT Karya Abadi Nusantara",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+    quote: "Program Team Building bersama Ruang Rimba benar-benar memecah sekat birokrasi antar divisi kantor kami. Rundown tertata rapi, Master Game sangat komunikatif dan sesi debriefing-nya memberikan wawasan nyata bagi kepemimpinan tim.",
+    rating: 5
+  },
+  {
+    name: "Ratna Kusuma Dewi",
+    role: "Ketua Panitia Family Gathering",
+    company: "Paguyuban Bank Mandiri Syariah",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
+    quote: "Keluarga besar kami sangat menikmati seluruh rangkaian games dari anak-anak hingga kakek nenek. Fasilitas aula tertutup membuat kami merasa tenang saat sempat gerimis turun sore hari. Makanan liwetnya juga sangat lezat!",
+    rating: 5
+  },
+  {
+    name: "Drs. Ahmad Fauzi, M.Pd",
+    role: "Pembina Kesiswaan OSIS",
+    company: "SMA Cendekia Bangsa",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+    quote: "LDKS siswa kami dipandu dengan kedisiplinan tinggi tanpa ada unsur perpeloncoan. Anak-anak belajar mandiri, empati sosial dan cinta alam. Sertifikasi keselamatan instrukturnya terbukti sangat profesional.",
+    rating: 5
+  },
+  {
+    name: "Bambang Sudirjo",
+    role: "General Affair Manager",
+    company: "Logistik Prima Express",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
+    quote: "Kombinasi Outbound dan Rafting di Cisadane memberikan suntikan adrenalin yang luar biasa bagi 120 staf logistik kami. Urusan perizinan, bus, makan dan foto diselesaikan beres tanpa kami repot.",
+    rating: 5
+  }
+];
+
 const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
-      "name": "Ruang Rimba Outbound",
-      "url": "https://ruangrimbaoutbound.id",
+      "name": siteConfig.name,
+      "url": `https://${siteConfig.domain}`,
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://ruangrimbaoutbound.id/blog?q={search_term_string}",
+        "target": `https://${siteConfig.domain}/blog?q={search_term_string}`,
         "query-input": "required name=search_term_string"
       }
     },
     {
       "@type": "LocalBusiness",
-      "name": "Ruang Rimba Outbound",
+      "name": siteConfig.name,
       "telephone": siteConfig.phone,
       "address": {
         "@type": "PostalAddress",
@@ -40,11 +75,11 @@ const homeSchema = {
 ---
 
 <Layout
-  title="Ruang Rimba Outbound - Solusi Profesional Team Building & Wisata Petualangan"
-  description="Layanan outbound profesional, team building perusahaan, family gathering, LDKS sekolah, serta paket rafting dan offroad alam di Puncak Bogor & Bandung."
+  title={`${siteConfig.name} - ${siteConfig.tagline}`}
+  description={siteConfig.description}
   schema={homeSchema}
 >
-  <!-- 1 & 2. HERO SECTION -->
+  <!-- 1. HERO BANNER -->
   <section class="relative bg-[#173D32] text-white overflow-hidden py-20 lg:py-28">
     <div class="absolute inset-0 opacity-25 mix-blend-overlay">
       <img
@@ -54,7 +89,6 @@ const homeSchema = {
       />
     </div>
     
-    <!-- Subtle gradient glow -->
     <div class="absolute inset-0 bg-gradient-to-r from-[#173D32] via-[#173D32]/90 to-transparent"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,22 +125,6 @@ const homeSchema = {
               Konsultasi WhatsApp Cepat
             </a>
           </div>
-
-          <!-- Quick Trust Badges -->
-          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/10 text-xs text-[#E8DFC9]">
-            <div>
-              <div class="font-bold text-white text-base">Experiential</div>
-              <div class="text-[11px] opacity-80">Metodologi Reflektif Terukur</div>
-            </div>
-            <div>
-              <div class="font-bold text-white text-base">Safety First</div>
-              <div class="text-[11px] opacity-80">Prosedur P3K & Rescue Terlatih</div>
-            </div>
-            <div>
-              <div class="font-bold text-white text-base">All-In Custom</div>
-              <div class="text-[11px] opacity-80">Venue, Konsumsi & Rundown</div>
-            </div>
-          </div>
         </div>
 
         <div class="lg:col-span-5">
@@ -118,7 +136,6 @@ const homeSchema = {
                 class="w-full h-full object-cover"
               />
             </div>
-            <!-- Floating Stat Box -->
             <div class="absolute -bottom-6 -left-6 bg-white text-[#173D32] p-4 rounded-2xl shadow-xl border border-[#E8DFC9] flex items-center gap-4">
               <div class="w-12 h-12 rounded-xl bg-[#E8DFC9] text-[#173D32] flex items-center justify-center font-bold text-2xl">
                 ★
@@ -135,39 +152,160 @@ const homeSchema = {
     </div>
   </section>
 
-  <!-- 3. TRUST INDICATORS & KEUNGGULAN -->
-  <section class="py-12 bg-white border-b border-[#E8DFC9]">
+  <!-- 2. TENTANG WEBSITE / BRAND OVERVIEW -->
+  <section class="py-16 lg:py-20 bg-white border-b border-[#E8DFC9]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="p-4 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9]/60">
-          <div class="text-3xl font-extrabold text-[#173D32] mb-1">16+</div>
-          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Modul Kegiatan Outbound</div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 relative">
+          <div class="rounded-3xl overflow-hidden shadow-xl border border-[#E8DFC9]">
+            <img
+              src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
+              alt="Profil Fasilitator Ruang Rimba"
+              class="w-full h-[380px] object-cover"
+            />
+          </div>
+          <div class="absolute -bottom-5 -right-5 bg-[#173D32] text-white p-5 rounded-2xl shadow-xl border border-[#657A50]/50 max-w-xs hidden sm:block">
+            <div class="text-xs font-bold text-[#E8DFC9] uppercase">Metode Reflektif</div>
+            <div class="text-sm font-semibold mt-1">Experiential Learning: Do, Reflect, Apply.</div>
+          </div>
         </div>
-        <div class="p-4 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9]/60">
-          <div class="text-3xl font-extrabold text-[#173D32] mb-1">5+</div>
-          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Kawasan Venue Alam Pilihan</div>
-        </div>
-        <div class="p-4 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9]/60">
-          <div class="text-3xl font-extrabold text-[#173D32] mb-1">100%</div>
-          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Safety Standard Briefing</div>
-        </div>
-        <div class="p-4 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9]/60">
-          <div class="text-3xl font-extrabold text-[#173D32] mb-1">24/7</div>
-          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Layanan Konsultasi Cepat</div>
+
+        <div class="lg:col-span-6 space-y-5">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block">Tentang Ruang Rimba</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight leading-tight">
+            Partner Terpercaya Penyelenggaraan Outbound & Pengembangan Tim.
+          </h2>
+          <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+            Ruang Rimba Outbound merupakan platform penyedia jasa outbound profesional, team building, family gathering korporasi, kepemimpinan siswa, serta wisata petualangan alam terbuka. Kami memadukan keindahan lanskap pegunungan dengan kurikulum simulasi luar ruang yang dirancang terstruktur dan berorientasi pada keselamatan.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-4 items-center">
+            <a
+              href="/tentang-kami"
+              class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#173D32] hover:text-[#657A50] underline underline-offset-4 transition"
+            >
+              Pelajari Profil & Legalitas Kami &rarr;
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. KATEGORI PAKET POPULER -->
+  <!-- 3. STATS SECTION -->
+  <section class="py-12 bg-[#F8F7F2] border-b border-[#E8DFC9]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-5 rounded-2xl bg-white border border-[#E8DFC9]/80 shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-[#173D32] mb-1">16+</div>
+          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Pilihan Modul Outbound</div>
+        </div>
+        <div class="p-5 rounded-2xl bg-white border border-[#E8DFC9]/80 shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-[#173D32] mb-1">5+</div>
+          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Kawasan Venue Terverifikasi</div>
+        </div>
+        <div class="p-5 rounded-2xl bg-white border border-[#E8DFC9]/80 shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-[#173D32] mb-1">100%</div>
+          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Standard Safety & P3K</div>
+        </div>
+        <div class="p-5 rounded-2xl bg-white border border-[#E8DFC9]/80 shadow-sm">
+          <div class="text-3xl sm:text-4xl font-extrabold text-[#173D32] mb-1">24/7</div>
+          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Konsultasi Respon Cepat</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. KEUNGGULAN WEB / NILAI BISNIS -->
+  <section class="py-16 lg:py-20 bg-white border-b border-[#E8DFC9]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Mengapa Memilih Kami</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight">
+          Keunggulan Layanan Ruang Rimba
+        </h2>
+        <p class="text-sm text-gray-600 mt-2">
+          Dedikasi kami adalah menghadirkan ketenangan bagi panitia dan kepuasan maksimal bagi seluruh peserta.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9] space-y-3 hover:border-[#657A50] transition">
+          <div class="w-12 h-12 rounded-xl bg-[#173D32] text-[#E8DFC9] flex items-center justify-center font-bold text-xl">
+            01
+          </div>
+          <h3 class="text-lg font-bold text-[#173D32]">Safety First Standard</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Seluruh wahana, tali karmantel, helm rafting, dan jalur petualangan telah melalui uji kelayakan dengan rasio fasilitator aman dan tim medis lapangan siaga penuh.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9] space-y-3 hover:border-[#657A50] transition">
+          <div class="w-12 h-12 rounded-xl bg-[#173D32] text-[#E8DFC9] flex items-center justify-center font-bold text-xl">
+            02
+          </div>
+          <h3 class="text-lg font-bold text-[#173D32]">Experiential Learning Insight</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Bukan sekadar hiburan fisik. Fasilitator kami terlatih memandu sesi tanya-jawab reflektif (*debriefing*) agar nilai kerjasama tim langsung berdampak pada produktivitas kerja nyata.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#F8F7F2] border border-[#E8DFC9] space-y-3 hover:border-[#657A50] transition">
+          <div class="w-12 h-12 rounded-xl bg-[#173D32] text-[#E8DFC9] flex items-center justify-center font-bold text-xl">
+            03
+          </div>
+          <h3 class="text-lg font-bold text-[#173D32]">All-In One Management</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Mulai dari booking venue, aula indoor cadangan hujan, katering prasmanan lezat, dokumentasi foto drone, hingga seragam kaos kami kelola rapi dalam satu pintu.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FASILITAS & LAYANAN -->
+  <section class="py-16 lg:py-20 bg-[#F8F7F2] border-b border-[#E8DFC9]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Sarana & Prasarana</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight">
+            Fasilitas & Layanan Pendukung
+          </h2>
+        </div>
+        <a href="/fasilitas" class="text-xs font-bold text-[#173D32] hover:text-[#657A50] transition mt-4 md:mt-0">
+          Lihat Seluruh Fasilitas &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {destinations.slice(0, 3).map((dest) => (
+          <div class="bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-md transition">
+            <div class="h-48 overflow-hidden">
+              <img src={dest.image} alt={dest.name} class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-5 space-y-3">
+              <div class="text-[10px] uppercase font-bold text-[#657A50] tracking-wider">{dest.region}</div>
+              <h3 class="font-bold text-base text-[#173D32]">{dest.name}</h3>
+              <p class="text-xs text-gray-600 line-clamp-2">{dest.description}</p>
+              <div class="text-xs font-semibold text-gray-700 pt-2 border-t border-[#E8DFC9]">
+                Kapasitas: <span class="text-[#173D32]">{dest.capacity}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PROGRAM OUTBOUND DIMINATI -->
   <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-14">
-      <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Pilihan Unggulan</span>
+      <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Katalog Terfavorit</span>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight">
         Program Outbound Paling Diminati
       </h2>
-      <p class="text-sm sm:text-base text-gray-600 mt-3">
-        Diformulasikan secara khusus untuk menghadirkan atmosfer pembelajaran menyenangkan dan mempererat kebersamaan.
+      <p class="text-sm text-gray-600 mt-2">
+        Pilihan paket populer yang terbukti sukses membangun antusiasme ribuan peserta.
       </p>
     </div>
 
@@ -186,7 +324,7 @@ const homeSchema = {
           </div>
           <div class="p-5 flex-grow flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-lg text-[#173D32] mb-2 group-hover:text-[#657A50] transition">
+              <h3 class="font-bold text-base text-[#173D32] mb-2 group-hover:text-[#657A50] transition">
                 <a href={`/${pkg?.slug}`}>{pkg?.title}</a>
               </h3>
               <p class="text-xs text-gray-600 line-clamp-3 mb-4 leading-relaxed">
@@ -224,90 +362,7 @@ const homeSchema = {
     </div>
   </section>
 
-  <!-- 5 & 6. FILOSOFI EXPERIENTIAL LEARNING -->
-  <section class="py-16 bg-[#173D32] text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6">
-          <span class="text-xs font-bold uppercase tracking-widest text-[#E8DFC9] block">Filosofi & Metode</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-            Belajar dari Pengalaman Nyata di Alam Terbuka.
-          </h2>
-          <p class="text-sm sm:text-base text-[#E8DFC9]/90 leading-relaxed">
-            Di Ruang Rimba Outbound, kami meyakini bahwa perubahan perilaku dan kekompakan tim yang bertahan lama tidak dapat dibangun hanya melalui seminar di dalam ruangan ber-AC.
-          </p>
-          <div class="space-y-4 pt-2">
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-[#657A50] text-[#E8DFC9] flex items-center justify-center font-bold text-sm shrink-0">1</div>
-              <div>
-                <h3 class="font-bold text-sm text-white">Do (Aktivitas Nyata)</h3>
-                <p class="text-xs text-[#E8DFC9]/80 mt-0.5">Peserta terjun langsung dalam skenario permainan problem solving yang menantang.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-[#657A50] text-[#E8DFC9] flex items-center justify-center font-bold text-sm shrink-0">2</div>
-              <div>
-                <h3 class="font-bold text-sm text-white">Reflect (Observasi & Diskusi)</h3>
-                <p class="text-xs text-[#E8DFC9]/80 mt-0.5">Mengevaluasi dinamika interaksi, kendala komunikasi, dan emosi yang muncul.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-[#657A50] text-[#E8DFC9] flex items-center justify-center font-bold text-sm shrink-0">3</div>
-              <div>
-                <h3 class="font-bold text-sm text-white">Apply (Transformasi Kerja)</h3>
-                <p class="text-xs text-[#E8DFC9]/80 mt-0.5">Menerapkan wawasan baru tersebut ke dalam rutinitas kolaborasi di kantor.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative">
-          <div class="rounded-3xl overflow-hidden shadow-2xl border-2 border-[#657A50]/50">
-            <img
-              src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
-              alt="Fasilitator Experiential Learning"
-              class="w-full h-[400px] object-cover"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. PILIHAN FASILITAS & VENUE UNGGULAN -->
-  <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-      <div>
-        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Sarana & Prasarana</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight">
-          Fasilitas & Venue Pilihan
-        </h2>
-      </div>
-      <a href="/fasilitas" class="text-xs font-bold text-[#173D32] hover:text-[#657A50] transition mt-4 md:mt-0">
-        Lihat Seluruh Fasilitas &rarr;
-      </a>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {destinations.slice(0, 3).map((dest) => (
-        <div class="bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-md transition">
-          <div class="h-48 overflow-hidden">
-            <img src={dest.image} alt={dest.name} class="w-full h-full object-cover hover:scale-105 transition duration-500" />
-          </div>
-          <div class="p-5 space-y-3">
-            <div class="text-[10px] uppercase font-bold text-[#657A50] tracking-wider">{dest.region}</div>
-            <h3 class="font-bold text-base text-[#173D32]">{dest.name}</h3>
-            <p class="text-xs text-gray-600 line-clamp-2">{dest.description}</p>
-            <div class="text-xs font-semibold text-gray-700 pt-2 border-t border-[#E8DFC9]">
-              Kapasitas: <span class="text-[#173D32]">{dest.capacity}</span>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- 10. PREVIEW GALERI DOKUMENTASI -->
+  <!-- 7. GALERI DOKUMENTASI -->
   <section class="py-16 bg-[#F8F7F2] border-t border-[#E8DFC9]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-12">
@@ -333,7 +388,7 @@ const homeSchema = {
     </div>
   </section>
 
-  <!-- 11. ARTIKEL TERBARU BLOG -->
+  <!-- 8. ARTIKEL & TIPS -->
   <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
       <div>
@@ -375,8 +430,60 @@ const homeSchema = {
     </div>
   </section>
 
-  <!-- 13. FAQ SECTION -->
-  <section class="py-16 bg-white border-t border-[#E8DFC9]">
+  <!-- 9. TESTIMONI (AUTO-SLIDE PADA MOBILE) -->
+  <section class="py-16 bg-[#173D32] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#E8DFC9] block mb-2">Ulasan Klien</span>
+        <h2 class="text-3xl font-extrabold text-white tracking-tight">Apa Kata Klien Kami</h2>
+      </div>
+
+      <!-- Testimonial Slider / Carousel -->
+      <div class="relative overflow-hidden">
+        <div
+          id="testimonial-track"
+          class="flex transition-transform duration-500 ease-in-out md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6"
+        >
+          {testimonials.map((t) => (
+            <div class="w-full shrink-0 px-2 md:px-0 md:w-auto">
+              <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-2xl h-full flex flex-col justify-between space-y-4">
+                <div>
+                  <div class="flex items-center gap-1 text-amber-400 text-sm mb-3">
+                    {"★".repeat(t.rating)}
+                  </div>
+                  <p class="text-xs text-gray-200 leading-relaxed italic">
+                    "{t.quote}"
+                  </p>
+                </div>
+                <div class="pt-4 border-t border-white/15 flex items-center gap-3">
+                  <img src={t.avatar} alt={t.name} class="w-10 h-10 rounded-full object-cover border border-white/40" />
+                  <div>
+                    <h3 class="font-bold text-xs text-white leading-tight">{t.name}</h3>
+                    <div class="text-[10px] text-[#E8DFC9]">{t.role}</div>
+                    <div class="text-[10px] text-gray-300">{t.company}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Slider Dots for Mobile Indicator -->
+        <div class="flex justify-center items-center gap-2 mt-6 md:hidden" id="testimonial-dots">
+          {testimonials.map((_, i) => (
+            <button
+              class={`w-2.5 h-2.5 rounded-full transition-all ${i === 0 ? 'bg-[#E8DFC9] w-6' : 'bg-white/40'}`}
+              aria-label={`Slide ke-${i + 1}`}
+              data-index={i}
+            ></button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ SECTION -->
+  <section class="py-16 bg-white border-b border-[#E8DFC9]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Tanya Jawab</span>
@@ -401,7 +508,7 @@ const homeSchema = {
         <div class="border border-[#E8DFC9] rounded-xl p-5 bg-[#F8F7F2]">
           <h3 class="font-bold text-sm text-[#173D32]">Bagaimana jika saat kegiatan berlangsung turun hujan lebat?</h3>
           <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-            Tim kami selalu menyiapkan rencana kontingensi (contingency plan). Seluruh venue rekanan kami memiliki pendopo/aula tertutup yang representatif sehingga permainan dapat dialihkan menjadi indoor dynamic games tanpa mengurangi esensi pembelajaran.
+            Tim kami selalu menyiapkan rencana kontingensi (*contingency plan*). Seluruh venue rekanan kami memiliki pendopo/aula tertutup yang representatif sehingga permainan dapat dialihkan menjadi indoor dynamic games tanpa mengurangi esensi pembelajaran.
           </p>
         </div>
 
@@ -415,27 +522,107 @@ const homeSchema = {
     </div>
   </section>
 
-  <!-- 14. CTA KONSULTASI WHATSAPP BOTTOM -->
-  <section class="py-16 bg-[#173D32] text-white text-center">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-      <span class="text-xs font-bold uppercase tracking-widest text-[#E8DFC9]">Mulai Rencanakan Sekarang</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
-        Siap Hadirkan Pengalaman Berkesan untuk Tim Anda?
-      </h2>
-      <p class="text-sm sm:text-base text-[#E8DFC9]/90 max-w-xl mx-auto leading-relaxed">
-        Konsultasikan tanggal dan rencana kegiatan Anda secara cuma-cuma. Dapatkan rekomendasi venue terbaik dan draft penawaran resmi dari tim profesional kami.
-      </p>
-      <div class="pt-2">
-        <a
-          href={getWhatsAppUrl("Halo Ruang Rimba, saya ingin berkonsultasi mengenai paket outbound.")}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-base shadow-xl transition"
-        >
-          <svg class="w-6 h-6 text-emerald-300" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-          Hubungi Konsultan Kami Sekarang
-        </a>
+  <!-- 11. CTA DENGAN KARTU TERSENDIRI (DEDICATED CARD) -->
+  <section class="py-16 bg-[#F8F7F2]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-[#173D32] rounded-3xl p-8 sm:p-12 lg:p-14 text-white shadow-2xl border-2 border-[#657A50]/40 relative overflow-hidden">
+        
+        <!-- Background accent subtle -->
+        <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-[#657A50]/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-16 -top-16 w-64 h-64 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 text-center max-w-2xl mx-auto space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#657A50]/40 border border-[#657A50] text-[#E8DFC9] text-xs font-semibold uppercase tracking-wider">
+            Konsultasi Rencana Kegiatan
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+            Siap Hadirkan Pengalaman Luar Ruang Berkesan untuk Tim Anda?
+          </h2>
+
+          <p class="text-xs sm:text-sm text-[#E8DFC9] leading-relaxed">
+            Dapatkan konsultasi gratis, rekomendasi venue alam terbaik, dan draft estimasi penawaran resmi langsung dari tim spesialis Ruang Rimba Outbound hari ini juga.
+          </p>
+
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={getWhatsAppUrl("Halo Ruang Rimba, saya ingin berkonsultasi mengenai paket kegiatan outbound.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-sm shadow-xl transition hover:scale-105 active:scale-95"
+            >
+              <svg class="w-5 h-5 text-emerald-300" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              Hubungi Konsultan via WhatsApp
+            </a>
+            <a
+              href="/kontak"
+              class="w-full sm:w-auto px-6 py-4 rounded-xl border border-[#E8DFC9] text-[#E8DFC9] hover:bg-white/10 font-bold text-sm transition text-center"
+            >
+              Form Permintaan Proposal
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 </Layout>
+
+<!-- Client Script untuk Slider Testimoni Otomatis di Versi Mobile -->
+<script>
+  let currentIndex = 0;
+  const track = document.getElementById('testimonial-track');
+  const dots = document.querySelectorAll('#testimonial-dots button');
+  const totalSlides = dots.length;
+  let autoplayInterval: any;
+
+  function updateSlide(index: number) {
+    if (window.innerWidth >= 768) {
+      if (track) track.style.transform = 'none';
+      return;
+    }
+    currentIndex = index;
+    if (track) {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    dots.forEach((dot, i) => {
+      if (i === currentIndex) {
+        dot.classList.remove('bg-white/40', 'w-2.5');
+        dot.classList.add('bg-[#E8DFC9]', 'w-6');
+      } else {
+        dot.classList.remove('bg-[#E8DFC9]', 'w-6');
+        dot.classList.add('bg-white/40', 'w-2.5');
+      }
+    });
+  }
+
+  function nextSlide() {
+    if (window.innerWidth < 768) {
+      const next = (currentIndex + 1) % totalSlides;
+      updateSlide(next);
+    }
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayInterval = setInterval(nextSlide, 3500);
+  }
+
+  function stopAutoplay() {
+    if (autoplayInterval) clearInterval(autoplayInterval);
+  }
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const idx = Number(dot.getAttribute('data-index') || 0);
+      updateSlide(idx);
+      startAutoplay();
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    updateSlide(currentIndex);
+  });
+
+  startAutoplay();
+</script>
