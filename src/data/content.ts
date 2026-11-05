@@ -639,63 +639,63 @@ export const galleryItems: GalleryItem[] = [
     id: "gal-1",
     title: "Sinergi Tim Eksekutif PT Petrokimia Nusantara",
     category: "Team Building",
-    imageUrl: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/img/sinergi-tim-eksekutif-pt-petrokimia-nusantara.webp",
     location: "Coban Rondo Pine Valley Batu"
   },
   {
     id: "gal-2",
     title: "Tawa Riang Family Gathering Bank Mandiri",
     category: "Family Gathering",
-    imageUrl: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/img/tawa-riang-family-gathering-bank-mandiri.webp",
     location: "Kusuma Agrowisata Kota Batu"
   },
   {
     id: "gal-3",
     title: "Arung Jeram Menantang Sungai Sahabat Air",
     category: "Adventure",
-    imageUrl: "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/img/arung-jeram-menantang-sungai-sahabat-air.webp",
     location: "Sungai Bumiaji Kota Batu"
   },
   {
     id: "gal-4",
     title: "LDKS Siswa SMA Unggulan Jawa Timur",
     category: "Outbound Sekolah",
-    imageUrl: "https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/img/ldks-siswa-sma-unggulan-jawa-timur.webp",
     location: "Bumi Perkemahan Coban Rondo"
   },
   {
     id: "gal-5",
     title: "Malam Kehangatan Api Unggun & Glamping Rimba",
     category: "Camping",
-    imageUrl: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/img/malam-kehangatan-api-unggun-glamping-rimba.webp",
     location: "Coban Talun Pine Camp Batu"
   },
   {
     id: "gal-6",
     title: "Gala Dinner Gathering BUMN di Kota Batu",
     category: "Corporate Gathering",
-    imageUrl: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/img/gala-dinner-gathering-bumn-di-kota-batu.webp",
     location: "Amarta Hills Resort Batu"
   },
   {
     id: "gal-7",
     title: "Aksi Melibas Jalur Lumpur Jeep 4x4",
     category: "Adventure",
-    imageUrl: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/img/aksi-melibas-jalur-lumpur-jeep-4x4.webp",
     location: "Trek Offroad Coban Talun Batu"
   },
   {
     id: "gal-8",
     title: "Edukasi Petik Buah Apel Siswa SD",
     category: "Outbound Sekolah",
-    imageUrl: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/img/edukasi-petik-buah-apel-siswa-sd.webp",
     location: "Kebun Apel Agro Kota Batu"
   },
   {
     id: "gal-9",
     title: "Simulasi Spider Web Problem Solving",
     category: "Team Building",
-    imageUrl: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800&auto=format&fit=crop",
+    imageUrl: "/img/simulasi-spider-web-problem-solving.webp",
     location: "Songgoriti Nature Park Batu"
   }
 ];
