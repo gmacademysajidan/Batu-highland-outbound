@@ -97,22 +97,45 @@ const articleSchema = {
     <div class="prose prose-emerald max-w-none text-[#242824] leading-relaxed text-sm sm:text-base space-y-4" set:html={post.content}>
     </div>
 
-    <!-- Bottom Article CTA -->
-    <div class="my-12 p-8 rounded-3xl bg-[#173D32] text-white space-y-4 text-center">
-      <h3 class="text-2xl font-bold">Rencanakan Outbound Terbaik Bersama Kami</h3>
-      <p class="text-xs sm:text-sm text-[#E8DFC9] max-w-xl mx-auto">
-        Diskusikan langsung kebutuhan tim dan perusahaan Anda dengan konsultan outbound Ruang Rimba.
-      </p>
-      <div class="pt-2">
-        <a
-          href={getWhatsAppUrl(`Halo Ruang Rimba, saya baru membaca artikel '${post.title}' dan ingin konsultasi lebih lanjut.`)}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-xs px-6 py-3 rounded-xl shadow transition"
-        >
-          Konsultasi Acara via WhatsApp
-        </a>
+    <!-- Bottom Article CTA Card -->
+    <div class="my-14 bg-[#173D32] rounded-3xl p-8 sm:p-12 text-white shadow-2xl border-2 border-[#657A50]/40 relative overflow-hidden">
+      
+      <!-- Background accent subtle -->
+      <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-[#657A50]/20 blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-16 -top-16 w-64 h-64 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 text-center max-w-2xl mx-auto space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#657A50]/40 border border-[#657A50] text-[#E8DFC9] text-xs font-semibold uppercase tracking-wider">
+          Konsultasi Program Outbound
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
+          Rencanakan Outbound Terbaik Bersama Kami
+        </h3>
+
+        <p class="text-xs sm:text-sm text-[#E8DFC9] leading-relaxed">
+          Diskusikan langsung kebutuhan tim dan perusahaan Anda dengan konsultan outbound Batu Highland untuk proposal dan penawaran terbaik.
+        </p>
+
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href={getWhatsAppUrl(`Halo Batu Highland Outbound, saya baru membaca artikel '${post.title}' dan ingin konsultasi lebih lanjut.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-xl bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-sm shadow-xl transition hover:scale-105 active:scale-95"
+          >
+            <svg class="w-5 h-5 text-emerald-300" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            Konsultasi via WhatsApp
+          </a>
+          <a
+            href="/paket"
+            class="w-full sm:w-auto px-6 py-3.5 rounded-xl border border-[#E8DFC9] text-[#E8DFC9] hover:bg-white/10 font-bold text-sm transition text-center"
+          >
+            Lihat Semua Paket
+          </a>
+        </div>
       </div>
+
     </div>
 
     <!-- Related Articles -->

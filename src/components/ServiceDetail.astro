@@ -262,27 +262,36 @@ const serviceSchema = {
         <div class="sticky top-28 space-y-6">
           
           <!-- CTA Card -->
-          <div class="bg-[#173D32] text-white p-6 rounded-2xl shadow-xl space-y-4">
-            <h3 class="font-bold text-lg text-white">Butuh Konsultasi & Proposal Cepat?</h3>
-            <p class="text-xs text-[#E8DFC9] leading-relaxed">
-              Hubungi tim marketing kami sekarang. Kami siap menghitungkan estimasi anggaran dan membuatkan rundown kustom hari ini juga.
-            </p>
-            <div class="space-y-3 pt-2">
-              <a
-                href={getWhatsAppUrl(`Halo Ruang Rimba, saya butuh penawaran paket: ${pkg.title}`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-full py-3 rounded-xl bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-xs flex items-center justify-center gap-2 transition"
-              >
-                <svg class="w-4 h-4 text-emerald-300" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Chat WhatsApp Sekarang
-              </a>
-              <a
-                href="/kontak"
-                class="w-full py-2.5 rounded-xl border border-[#E8DFC9] text-[#E8DFC9] hover:bg-white/10 font-bold text-xs flex items-center justify-center transition"
-              >
-                Lihat Kontak & Lokasi Kantor
-              </a>
+          <div class="bg-[#173D32] text-white p-6 rounded-2xl shadow-2xl border-2 border-[#657A50]/40 relative overflow-hidden space-y-4">
+            <!-- Background accent subtle -->
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-[#657A50]/20 blur-2xl pointer-events-none"></div>
+            <div class="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-emerald-500/10 blur-2xl pointer-events-none"></div>
+
+            <div class="relative z-10 space-y-4">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#657A50]/40 border border-[#657A50] text-[#E8DFC9] text-[10px] font-semibold uppercase tracking-wider">
+                Respon Cepat
+              </div>
+              <h3 class="font-bold text-lg text-white">Butuh Konsultasi & Proposal Cepat?</h3>
+              <p class="text-xs text-[#E8DFC9] leading-relaxed">
+                Hubungi tim marketing kami sekarang. Kami siap menghitungkan estimasi anggaran dan membuatkan rundown kustom hari ini juga.
+              </p>
+              <div class="space-y-3 pt-2">
+                <a
+                  href={getWhatsAppUrl(`Halo Batu Highland Outbound, saya butuh penawaran paket: ${pkg.title}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full py-3 rounded-xl bg-[#657A50] hover:bg-[#657A50]/90 text-white font-bold text-xs flex items-center justify-center gap-2 transition hover:scale-102 active:scale-98 shadow-lg"
+                >
+                  <svg class="w-4 h-4 text-emerald-300" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Chat WhatsApp Sekarang
+                </a>
+                <a
+                  href="/kontak"
+                  class="w-full py-2.5 rounded-xl border border-[#E8DFC9] text-[#E8DFC9] hover:bg-white/10 font-bold text-xs flex items-center justify-center transition text-center"
+                >
+                  Lihat Kontak & Lokasi Kantor
+                </a>
+              </div>
             </div>
           </div>
 
