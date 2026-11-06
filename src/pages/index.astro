@@ -44,40 +44,61 @@ const testimonials = [
   }
 ];
 
-const homeSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "name": siteConfig.name,
-      "url": `https://${siteConfig.domain}`,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": `https://${siteConfig.domain}/blog?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
+const homeFaqs = [
+  {
+    question: "Bagaimana prosedur pemesanan paket outbound di Ruang Rimba?",
+    answer: "Anda dapat menghubungi konsultan kami via WhatsApp atau form kontak. Kami akan mengonfirmasi jumlah peserta, preferensi lokasi, tujuan kegiatan, dan tanggal. Selanjutnya kami mengirimkan draft proposal resmi serta rincian biaya transparan untuk disetujui."
+  },
+  {
+    question: "Apakah biaya paket sudah termasuk akomodasi penginapan dan makan?",
+    answer: "Tergantung paket yang Anda pilih. Kami menyediakan opsi paket 1 Hari (One Day) dengan makan siang + snack, maupun paket menginap (2D1N / 3D2N) yang sudah mencakup kamar resort/villa/tenda, makan 3 kali, BBQ night, serta coffee break lengkap."
+  },
+  {
+    question: "Bagaimana jika saat kegiatan berlangsung turun hujan lebat?",
+    answer: "Tim kami selalu menyiapkan rencana kontingensi (contingency plan). Seluruh venue rekanan kami memiliki pendopo/aula tertutup yang representatif sehingga permainan dapat dialihkan menjadi indoor dynamic games tanpa mengurangi esensi pembelajaran."
+  },
+  {
+    question: "Apakah bisa meminta penyesuaian (custom) sesuai budget perusahaan?",
+    answer: "Tentu saja. Kami sangat fleksibel dalam menyesuaikan pilihan venue, menu katering, maupun jenis aktivitas pendukung agar tepat sasaran dengan alokasi anggaran yang dimiliki panitia."
+  }
+];
+
+const homeCustomSchema = [
+  {
+    "@type": "FAQPage",
+    "mainEntity": homeFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
       }
+    }))
+  },
+  ...testimonials.map(t => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": t.name
     },
-    {
-      "@type": "LocalBusiness",
-      "name": siteConfig.name,
-      "telephone": siteConfig.phone,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": siteConfig.address,
-        "addressLocality": "Kota Batu",
-        "addressRegion": "Jawa Timur",
-        "addressCountry": "ID"
-      },
-      "description": siteConfig.description
+    "reviewBody": t.quote,
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": t.rating,
+      "bestRating": 5,
+      "worstRating": 1
+    },
+    "itemReviewed": {
+      "@id": `https://${siteConfig.domain}/#organization`
     }
-  ]
-};
+  }))
+];
 ---
 
 <Layout
   title={`${siteConfig.name} - ${siteConfig.tagline}`}
   description={siteConfig.description}
-  schema={homeSchema}
+  schema={homeCustomSchema}
 >
   <!-- 1. HERO BANNER -->
   <section class="relative bg-[#173D32] text-white overflow-hidden py-20 lg:py-28">

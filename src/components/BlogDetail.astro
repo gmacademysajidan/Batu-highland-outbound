@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import { blogPosts, getWhatsAppUrl, siteConfig, type BlogPost } from '../data/content';
+import { getArticleSchema, SITE_URL } from '../utils/schema';
 
 interface Props {
   post: BlogPost;
@@ -10,27 +11,13 @@ interface Props {
 const { post } = Astro.props;
 
 const relatedPosts = blogPosts.filter(p => p.slug !== post.slug).slice(0, 2);
+const currentUrl = `${SITE_URL}/blog/${post.slug}`;
+const breadcrumbItems = [
+  { label: 'Blog', href: '/blog' },
+  { label: post.title }
+];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": post.title,
-  "description": post.summary,
-  "image": post.featuredImage,
-  "author": {
-    "@type": "Organization",
-    "name": post.author
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": siteConfig.name,
-    "logo": {
-      "@type": "ImageObject",
-      "url": `https://${siteConfig.domain}/logo.png`
-    }
-  },
-  "datePublished": "2026-10-24"
-};
+const articleNode = getArticleSchema(post, currentUrl);
 ---
 
 <Layout
@@ -38,14 +25,13 @@ const articleSchema = {
   description={post.summary}
   image={post.featuredImage}
   type="article"
-  schema={articleSchema}
+  pageType="ItemPage"
+  breadcrumbs={breadcrumbItems}
+  schema={articleNode}
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <Breadcrumb
-      items={[
-        { label: 'Blog', href: '/blog' },
-        { label: post.title }
-      ]}
+      items={breadcrumbItems}
     />
   </div>
 

@@ -1,17 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import { galleryItems, getWhatsAppUrl } from '../data/content';
+import { galleryItems, getWhatsAppUrl, siteConfig } from '../data/content';
 
 const categories = ['Semua', 'Corporate Gathering', 'Team Building', 'Family Gathering', 'Outbound Sekolah', 'Adventure', 'Camping'];
+const breadcrumbItems = [{ label: 'Galeri Dokumentasi' }];
+
+const gallerySchema = {
+  "@type": "ImageGallery",
+  "name": "Galeri Foto Kegiatan Batu Highland Outbound",
+  "description": "Dokumentasi foto kegiatan outbound, team building, rafting, dan adventure di Kota Batu Malang.",
+  "image": galleryItems.map(item => ({
+    "@type": "ImageObject",
+    "contentUrl": item.imageUrl.startsWith('http') ? item.imageUrl : `https://${siteConfig.domain}${item.imageUrl}`,
+    "caption": item.title,
+    "name": item.title
+  }))
+};
 ---
 
 <Layout
   title="Galeri Dokumentasi Kegiatan - Ruang Rimba Outbound"
   description="Kumpulan dokumentasi foto dan video asli kegiatan team building, family gathering, outbound sekolah, rafting, dan adventure offroad."
+  pageType="CollectionPage"
+  breadcrumbs={breadcrumbItems}
+  schema={gallerySchema}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <Breadcrumb items={[{ label: 'Galeri Dokumentasi' }]} />
+    <Breadcrumb items={breadcrumbItems} />
   </div>
 
   <section class="bg-[#173D32] text-white py-14">

@@ -5,6 +5,7 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 import ScrollToTop from '../components/ScrollToTop.astro';
 import '../styles/global.css';
 import { siteConfig } from '../data/content';
+import { buildPageSchemaGraph, type BreadcrumbItem, SITE_URL } from '../utils/schema';
 
 interface Props {
   title?: string;
@@ -12,58 +13,34 @@ interface Props {
   image?: string;
   canonicalUrl?: string;
   type?: 'website' | 'article';
-  schema?: Record<string, any>;
+  pageType?: string;
+  breadcrumbs?: BreadcrumbItem[];
+  schema?: Record<string, any> | Array<Record<string, any>>;
 }
 
 const {
   title = `${siteConfig.name} - ${siteConfig.tagline}`,
   description = siteConfig.description,
   image = '/img/tim_building_perusahaan.webp',
-  canonicalUrl = Astro.url.href,
+  canonicalUrl = `${SITE_URL}${Astro.url.pathname}`,
   type = 'website',
+  pageType = 'WebPage',
+  breadcrumbs,
   schema
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
+const ogImage = image.startsWith('http') ? image : `${SITE_URL}${image}`;
 
-// Default Organization & LocalBusiness JSON-LD schema
-const defaultOrgSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": `https://${siteConfig.domain}/#organization`,
-      "name": siteConfig.name,
-      "url": `https://${siteConfig.domain}`,
-      "logo": `https://${siteConfig.domain}/logo.png`,
-      "image": image,
-      "description": siteConfig.description,
-      "telephone": siteConfig.phone,
-      "email": siteConfig.email,
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": siteConfig.address,
-        "addressLocality": "Kota Batu",
-        "addressRegion": "Jawa Timur",
-        "addressCountry": "ID"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          "opens": "08:00",
-          "closes": "20:00"
-        }
-      ],
-      "sameAs": [
-        siteConfig.socials.instagram,
-        siteConfig.socials.facebook,
-        siteConfig.socials.youtube
-      ]
-    }
-  ]
-};
+// Generate unified Schema.org JSON-LD graph
+const pageSchema = buildPageSchemaGraph({
+  url: canonicalUrl,
+  title,
+  description,
+  pageType,
+  breadcrumbs,
+  customNodes: schema
+});
 ---
 
 <!doctype html>
@@ -90,7 +67,7 @@ const defaultOrgSchema = {
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content={siteConfig.name} />
 
     <!-- Twitter Card -->
@@ -98,10 +75,10 @@ const defaultOrgSchema = {
     <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={ogImage} />
 
-    <!-- JSON-LD Structured Data for AEO / GEO / Google Rich Results -->
-    <script type="application/ld+json" set:html={JSON.stringify(schema || defaultOrgSchema)} />
+    <!-- JSON-LD Structured Data for Schema.org / Google Rich Results / AEO / GEO -->
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema, null, 2)} />
   </head>
   <body class="bg-[#F8F7F2] text-[#242824] antialiased flex flex-col min-h-screen">
     <Header currentPath={currentPath} />

@@ -2,14 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import { siteConfig, getWhatsAppUrl } from '../data/content';
+
+const breadcrumbItems = [{ label: 'Kontak Kami' }];
+
+const contactSchema = {
+  "@type": "ContactPoint",
+  "telephone": siteConfig.phone,
+  "contactType": "customer service",
+  "email": siteConfig.email,
+  "availableLanguage": ["id", "en"],
+  "hoursAvailable": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "08:00",
+    "closes": "20:00"
+  }
+};
 ---
 
 <Layout
   title="Hubungi Kami - Batu Highland Outbound Kota Batu"
   description="Kontak resmi Batu Highland Outbound: nomor WhatsApp operasional, alamat kantor Kota Wisata Batu Malang, email, jam layanan, dan peta lokasi."
+  pageType="ContactPage"
+  breadcrumbs={breadcrumbItems}
+  schema={contactSchema}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <Breadcrumb items={[{ label: 'Kontak Kami' }]} />
+    <Breadcrumb items={breadcrumbItems} />
   </div>
 
   <section class="bg-[#173D32] text-white py-14">

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import { servicePackages, getWhatsAppUrl } from '../data/content';
+import { getItemListSchema } from '../utils/schema';
 
 const categories = [
   { id: 'perusahaan', title: 'A. Outbound Perusahaan', desc: 'Program sinergi tim, kepemimpinan manajerial, fun games stres release, dan corporate gathering tahunan.' },
@@ -9,14 +10,31 @@ const categories = [
   { id: 'sekolah', title: 'C. Outbound Sekolah', desc: 'Aktivitas motorik siswa, character building anti-bullying, LDKS OSIS, dan edukasi konservasi alam rimba.' },
   { id: 'wisata', title: 'D. Outbound Wisata', desc: 'Petualangan memacu adrenalin: arung jeram sungai Sahabat Air Batu, offroad 4x4 Coban Talun, hingga camping pinus.' }
 ];
+
+const breadcrumbItems = [{ label: 'Paket Outbound' }];
+
+const catalogSchema = getItemListSchema(
+  servicePackages.map(p => ({
+    title: p.title,
+    slug: p.slug,
+    desc: p.shortDesc,
+    image: p.heroImage,
+    pricing: p.pricingNote
+  })),
+  "Katalog Paket Outbound Kota Batu Malang",
+  "Pilihan lengkap program outbound perusahaan, family gathering, outbound sekolah, dan wisata petualangan alam di Kota Wisata Batu."
+);
 ---
 
 <Layout
   title="Daftar Paket Outbound Lengkap - Batu Highland Outbound"
   description="Katalog lengkap 16 paket outbound Kota Batu: Team Building, Fun Games, Family Gathering, Outbound Sekolah, Rafting Sahabat Air, Offroad Coban Talun, dan Camping Pegunungan."
+  pageType="CollectionPage"
+  breadcrumbs={breadcrumbItems}
+  schema={catalogSchema}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <Breadcrumb items={[{ label: 'Paket Outbound' }]} />
+    <Breadcrumb items={breadcrumbItems} />
   </div>
 
   <!-- Hero Header -->

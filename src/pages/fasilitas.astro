@@ -71,14 +71,30 @@ const facilityCategories = [
     image: "/img/tenda_camping_matahari_terbit.webp"
   }
 ];
+const breadcrumbItems = [{ label: 'Fasilitas' }];
+
+const facilitiesSchema = {
+  "@type": "ItemList",
+  "name": "Daftar Fasilitas & Sarana Outbound",
+  "description": "Fasilitas lengkap area outbound, aula indoor, sound system, standar keselamatan, hingga basecamp rafting.",
+  "numberOfItems": facilityCategories.length,
+  "itemListElement": facilityCategories.map((f, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": f.title,
+    "description": f.desc
+  }))
+};
 ---
 
 <Layout
   title="Fasilitas Kegiatan Outbound - Ruang Rimba Outbound"
   description="Standar fasilitas lengkap Ruang Rimba Outbound: lapangan terbuka luas, aula indoor cadangan hujan, sound system konser, perlengkapan safety bersertifikat, dan sanitasi bersih."
+  breadcrumbs={breadcrumbItems}
+  schema={facilitiesSchema}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <Breadcrumb items={[{ label: 'Fasilitas' }]} />
+    <Breadcrumb items={breadcrumbItems} />
   </div>
 
   <!-- Header Banner -->

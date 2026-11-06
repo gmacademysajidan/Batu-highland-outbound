@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import { servicePackages, getWhatsAppUrl, siteConfig, type ServicePackage } from '../data/content';
+import { getServiceSchema, getFaqSchema, SITE_URL } from '../utils/schema';
 
 interface Props {
   pkg: ServicePackage;
@@ -9,59 +10,30 @@ interface Props {
 
 const { pkg } = Astro.props;
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": pkg.title,
-      "serviceType": pkg.categoryLabel,
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": siteConfig.name,
-        "telephone": siteConfig.phone,
-        "url": `https://${siteConfig.domain}`
-      },
-      "description": pkg.fullDesc,
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "IDR",
-        "availability": "https://schema.org/InStock",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "description": pkg.pricingNote
-        }
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": pkg.faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
-    }
-  ]
-};
+const currentUrl = `${SITE_URL}/${pkg.slug}`;
+const breadcrumbItems = [
+  { label: 'Paket Outbound', href: '/paket' },
+  { label: pkg.categoryLabel, href: `/paket#${pkg.category}` },
+  { label: pkg.title }
+];
+
+const serviceNodes = [
+  getServiceSchema(pkg, currentUrl),
+  getFaqSchema(pkg.faqs)
+];
 ---
 
 <Layout
   title={`${pkg.title} - ${siteConfig.name}`}
   description={`${pkg.shortDesc} Pelajari rundown, sasaran pelatihan, fasilitas, dan konsultasi paket melalui WhatsApp.`}
   image={pkg.heroImage}
-  schema={serviceSchema}
+  breadcrumbs={breadcrumbItems}
+  schema={serviceNodes}
 >
   <!-- Top Breadcrumb -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <Breadcrumb
-      items={[
-        { label: 'Paket Outbound', href: '/paket' },
-        { label: pkg.categoryLabel, href: `/paket#${pkg.category}` },
-        { label: pkg.title }
-      ]}
+      items={breadcrumbItems}
     />
   </div>
 

@@ -2,14 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import { siteConfig, getWhatsAppUrl } from '../data/content';
+
+const breadcrumbItems = [{ label: 'Tentang Kami' }];
 ---
 
 <Layout
   title="Tentang Kami - Ruang Rimba Outbound"
   description="Mengenal Ruang Rimba Outbound: profil fasilitator profesional, nilai perusahaan, metodologi experiential learning, dan dedikasi pada keselamatan kegiatan outdoor."
+  pageType="AboutPage"
+  breadcrumbs={breadcrumbItems}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <Breadcrumb items={[{ label: 'Tentang Kami' }]} />
+    <Breadcrumb items={breadcrumbItems} />
   </div>
 
   <!-- Hero Profil -->

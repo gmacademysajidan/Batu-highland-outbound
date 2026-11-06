@@ -2,16 +2,36 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import { servicePackages, getWhatsAppUrl } from '../data/content';
+import { getItemListSchema } from '../utils/schema';
 
 const packages = servicePackages.filter(p => p.category === 'perusahaan');
+const breadcrumbItems = [
+  { label: 'Paket Outbound', href: '/paket' },
+  { label: 'Outbound Perusahaan' }
+];
+
+const categorySchema = getItemListSchema(
+  packages.map(p => ({
+    title: p.title,
+    slug: p.slug,
+    desc: p.shortDesc,
+    image: p.heroImage,
+    pricing: p.pricingNote
+  })),
+  "Paket Outbound Perusahaan & Corporate Gathering",
+  "Pilihan paket team building dinamis, fun games ice breaking, dan leadership camp korporat."
+);
 ---
 
 <Layout
   title="Paket Outbound Perusahaan & Corporate Gathering - Ruang Rimba Outbound"
   description="Layanan outbound perusahaan terbaik: Team Building dinamis, Fun Games ice breaking, Leadership Camp eksekutif, dan perayaan Corporate Gathering tahunan."
+  pageType="CollectionPage"
+  breadcrumbs={breadcrumbItems}
+  schema={categorySchema}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <Breadcrumb items={[{ label: 'Paket Outbound', href: '/paket' }, { label: 'Outbound Perusahaan' }]} />
+    <Breadcrumb items={breadcrumbItems} />
   </div>
 
   <section class="bg-[#173D32] text-white py-14">
