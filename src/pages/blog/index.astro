@@ -27,7 +27,7 @@ const categories = ['Semua', 'Corporate Gathering', 'Team Building', 'Destinasi 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
     <!-- Featured Article (First Post) -->
     {blogPosts[0] && (
-      <div class="mb-14 bg-white rounded-3xl overflow-hidden border border-[#E8DFC9] shadow-md hover:shadow-xl transition group">
+      <div id="featured-post" class="mb-14 bg-white rounded-3xl overflow-hidden border border-[#E8DFC9] shadow-md hover:shadow-xl transition group">
         <div class="grid grid-cols-1 lg:grid-cols-12">
           <div class="lg:col-span-7 h-72 lg:h-auto overflow-hidden">
             <img src={blogPosts[0].featuredImage} alt={blogPosts[0].title} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
@@ -56,16 +56,42 @@ const categories = ['Semua', 'Corporate Gathering', 'Team Building', 'Destinasi 
       </div>
     )}
 
-    <!-- Category Header -->
-    <div class="mb-8 flex items-center justify-between border-b border-[#E8DFC9] pb-4">
-      <h2 class="text-xl font-bold text-[#173D32]">Semua Artikel & Wawasan</h2>
-      <span class="text-xs text-gray-500">Menampilkan {blogPosts.length} artikel terkurasi</span>
+    <!-- Search Bar Feature -->
+    <div class="mb-10">
+      <div class="relative max-w-xl">
+        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+          <svg class="w-5 h-5 text-[#657A50]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Cari artikel, tips, atau panduan outbound..."
+          class="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white border border-[#E8DFC9] text-sm text-[#242824] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#173D32]/20 focus:border-[#173D32] transition shadow-xs"
+        />
+        <button
+          id="clear-search-btn"
+          type="button"
+          aria-label="Hapus pencarian"
+          class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 hidden"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Article Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
       {blogPosts.map((post) => (
-        <article class="bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-md transition flex flex-col group">
+        <article
+          class="article-card bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-md transition flex flex-col group"
+          data-title={post.title.toLowerCase()}
+          data-summary={post.summary.toLowerCase()}
+          data-category={post.category.toLowerCase()}
+        >
           <div class="h-48 overflow-hidden">
             <img src={post.featuredImage} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
           </div>
@@ -92,5 +118,85 @@ const categories = ['Semua', 'Corporate Gathering', 'Team Building', 'Destinasi 
         </article>
       ))}
     </div>
+
+    <!-- Empty State Result -->
+    <div id="no-results" class="hidden text-center py-16 px-4 bg-white rounded-3xl border border-[#E8DFC9] my-4">
+      <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[#E8DFC9]/40 text-[#173D32] flex items-center justify-center">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-[#173D32] mb-1">Artikel Tidak Ditemukan</h3>
+      <p class="text-xs text-gray-500 max-w-sm mx-auto mb-4">
+        Tidak ada artikel yang cocok dengan kata kunci pencarian Anda. Coba gunakan kata kunci lainnya.
+      </p>
+      <button
+        id="reset-search-btn"
+        type="button"
+        class="text-xs font-semibold px-4 py-2 rounded-xl bg-[#173D32] text-[#E8DFC9] hover:bg-[#657A50] transition cursor-pointer"
+      >
+        Reset Pencarian
+      </button>
+    </div>
   </div>
 </Layout>
+
+<script>
+  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+  const clearBtn = document.getElementById('clear-search-btn');
+  const resetBtn = document.getElementById('reset-search-btn');
+  const articles = document.querySelectorAll('.article-card');
+  const noResults = document.getElementById('no-results');
+  const featuredPost = document.getElementById('featured-post');
+
+  function filterArticles() {
+    const query = searchInput?.value.toLowerCase().trim() || '';
+    let matchCount = 0;
+
+    if (query.length > 0) {
+      clearBtn?.classList.remove('hidden');
+      featuredPost?.classList.add('hidden');
+    } else {
+      clearBtn?.classList.add('hidden');
+      featuredPost?.classList.remove('hidden');
+    }
+
+    articles.forEach((card) => {
+      const el = card as HTMLElement;
+      const title = el.dataset.title || '';
+      const summary = el.dataset.summary || '';
+      const category = el.dataset.category || '';
+
+      if (!query || title.includes(query) || summary.includes(query) || category.includes(query)) {
+        el.classList.remove('hidden');
+        matchCount++;
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+
+    if (matchCount === 0 && query.length > 0) {
+      noResults?.classList.remove('hidden');
+    } else {
+      noResults?.classList.add('hidden');
+    }
+  }
+
+  searchInput?.addEventListener('input', filterArticles);
+
+  clearBtn?.addEventListener('click', () => {
+    if (searchInput) {
+      searchInput.value = '';
+      filterArticles();
+      searchInput.focus();
+    }
+  });
+
+  resetBtn?.addEventListener('click', () => {
+    if (searchInput) {
+      searchInput.value = '';
+      filterArticles();
+      searchInput.focus();
+    }
+  });
+</script>
