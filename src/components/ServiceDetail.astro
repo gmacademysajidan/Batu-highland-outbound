@@ -40,7 +40,7 @@ const serviceNodes = [
   <!-- Hero Section -->
   <section class="relative bg-[#173D32] text-white py-16 lg:py-24 overflow-hidden">
     <div class="absolute inset-0 opacity-20 mix-blend-overlay">
-      <img src={pkg.heroImage} alt={pkg.title} class="w-full h-full object-cover" />
+      <img src={pkg.heroImage} alt={pkg.title} width="1200" height="600" loading="eager" fetchpriority="high" decoding="async" class="w-full h-full object-cover" />
     </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,7 +122,7 @@ const serviceNodes = [
         <!-- Tujuan & Manfaat -->
         <section class="bg-white p-8 rounded-2xl border border-[#E8DFC9] space-y-4">
           <h2 class="text-2xl font-bold text-[#173D32] flex items-center gap-2">
-            <svg class="w-6 h-6 text-[#657A50]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <svg class="w-6 h-6 text-[#4D633C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             Tujuan & Manfaat Kegiatan
           </h2>
           <ul class="space-y-3 pt-2">
@@ -205,7 +205,7 @@ const serviceNodes = [
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {pkg.galleryImages.map((img) => (
                 <div class="aspect-[4/3] rounded-xl overflow-hidden border border-[#E8DFC9]">
-                  <img src={img} alt={pkg.title} class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+                  <img src={img} alt={pkg.title} width="400" height="300" loading="lazy" decoding="async" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
                 </div>
               ))}
             </div>
@@ -277,8 +277,8 @@ const serviceNodes = [
                 .filter(p => p.category === pkg.category && p.slug !== pkg.slug)
                 .map(other => (
                   <a href={`/${other.slug}`} class="block p-2 rounded-lg hover:bg-[#F8F7F2] transition group">
-                    <div class="font-bold text-xs text-[#173D32] group-hover:text-[#657A50]">{other.title}</div>
-                    <div class="text-[11px] text-gray-500 line-clamp-1 mt-0.5">{other.shortDesc}</div>
+                    <div class="font-bold text-xs text-[#173D32] group-hover:text-[#4D633C]">{other.title}</div>
+                    <div class="text-[11px] text-gray-600 line-clamp-1 mt-0.5">{other.shortDesc}</div>
                   </a>
                 ))
               }

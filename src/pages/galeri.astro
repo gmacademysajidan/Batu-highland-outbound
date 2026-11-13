@@ -94,7 +94,7 @@ const gallerySchema = {
 
   <!-- Lightbox Modal -->
   <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4">
-    <button id="lightbox-close" class="absolute top-6 right-6 text-white text-3xl font-bold hover:text-gray-300">&times;</button>
+    <button id="lightbox-close" aria-label="Tutup tampilan gambar" class="absolute top-6 right-6 text-white text-3xl font-bold hover:text-gray-300 w-12 h-12 flex items-center justify-center cursor-pointer">&times;</button>
     <div class="max-w-4xl max-h-[90vh] flex flex-col items-center">
       <img id="lightbox-img" src="" alt="Popup Preview" class="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl" />
       <div class="text-center mt-4 text-white">

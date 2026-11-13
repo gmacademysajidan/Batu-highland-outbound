@@ -66,10 +66,10 @@ const navItems = [
     <div class="flex items-center justify-between h-18 lg:h-20 py-2 lg:py-0">
       
       <!-- Brand Logo -->
-      <a href="/" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3 group shrink-0" aria-label="Batu Highland Outbound - Beranda">
         <img
           src="/favicon.webp"
-          alt="Batu Highland"
+          alt="Batu Highland Logo"
           class="w-10 h-10 lg:w-11 lg:h-11 rounded-xl object-contain shadow-sm group-hover:scale-105 transition-transform duration-200"
           width="44"
           height="44"
@@ -78,7 +78,7 @@ const navItems = [
           <span class="text-lg sm:text-xl lg:text-2xl font-extrabold tracking-tight text-[#173D32] block leading-tight">
             BATU HIGHLAND
           </span>
-          <span class="text-[9px] sm:text-[10px] tracking-wider lg:tracking-widest uppercase font-semibold text-[#657A50] block mt-0.5">
+          <span class="text-[9px] sm:text-[10px] tracking-wider lg:tracking-widest uppercase font-semibold text-[#4D633C] block mt-0.5">
             OUTBOUND & ADVENTURE
           </span>
         </div>
@@ -117,7 +117,7 @@ const navItems = [
                               <div class="font-semibold text-xs text-[#242824] group-hover/item:text-[#173D32]">
                                 {sub.name}
                               </div>
-                              <div class="text-[11px] text-gray-500 line-clamp-1 mt-0.5">
+                              <div class="text-[11px] text-gray-600 line-clamp-1 mt-0.5">
                                 {sub.desc}
                               </div>
                             </a>
@@ -174,8 +174,10 @@ const navItems = [
       <div class="flex lg:hidden">
         <button
           id="mobile-menu-btn"
-          aria-label="Toggle menu"
-          class="p-2.5 rounded-xl text-[#173D32] hover:bg-[#E8DFC9] transition"
+          aria-label="Toggle menu navigasi"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="p-3 min-w-[48px] min-h-[48px] flex items-center justify-center rounded-xl text-[#173D32] hover:bg-[#E8DFC9] transition"
         >
           <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
           <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -209,6 +211,9 @@ const navItems = [
       <div>
         <button
           id="mobile-paket-btn"
+          aria-label="Buka kategori paket outbound"
+          aria-expanded="false"
+          aria-controls="mobile-paket-dropdown"
           class={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition ${
             currentPath.startsWith('/paket') ? 'text-[#173D32] bg-[#E8DFC9]/40 font-bold' : 'text-[#242824] hover:bg-[#E8DFC9]/40'
           }`}
@@ -374,12 +379,14 @@ const navItems = [
   const paketDropdown = document.getElementById('mobile-paket-dropdown');
 
   menuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+    const isHidden = mobileMenu?.classList.toggle('hidden');
     hamburger?.classList.toggle('hidden');
     closeIcon?.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
   });
 
   paketBtn?.addEventListener('click', () => {
-    paketDropdown?.classList.toggle('hidden');
+    const isHidden = paketDropdown?.classList.toggle('hidden');
+    paketBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
   });
 </script>

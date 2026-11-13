@@ -107,6 +107,9 @@ const homeCustomSchema = [
         src="/img/gathering_perusahaan_lapangan.webp"
         alt="Suasana Alam Batu Highland Outbound"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1080"
+        fetchpriority="high"
       />
     </div>
     
@@ -155,6 +158,8 @@ const homeCustomSchema = [
                 src="/img/tim_building_perusahaan.webp"
                 alt="Kegiatan Team Building Batu Highland"
                 class="w-full h-full object-cover"
+                width="800"
+                height="600"
               />
             </div>
             <div class="absolute -bottom-6 -left-6 bg-white text-[#173D32] p-4 rounded-2xl shadow-xl border border-[#E8DFC9] flex items-center gap-4">
@@ -163,7 +168,7 @@ const homeCustomSchema = [
               </div>
               <div>
                 <div class="font-bold text-lg leading-tight">100% Fleksibel</div>
-                <div class="text-xs text-gray-500">Sesuaikan Anggaran & Target Tim</div>
+                <div class="text-xs text-gray-600">Sesuaikan Anggaran & Target Tim</div>
               </div>
             </div>
           </div>
@@ -183,6 +188,10 @@ const homeCustomSchema = [
               src="/img/profesional_tertawa_kegiatan.webp"
               alt="Profil Fasilitator Batu Highland"
               class="w-full h-[380px] object-cover"
+              width="600"
+              height="380"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="absolute -bottom-5 -right-5 bg-[#173D32] text-white p-5 rounded-2xl shadow-xl border border-[#657A50]/50 max-w-xs hidden sm:block">
@@ -192,7 +201,7 @@ const homeCustomSchema = [
         </div>
 
         <div class="lg:col-span-6 space-y-5">
-          <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block">Tentang Ruang Rimba</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#4D633C] block">Tentang Ruang Rimba</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight leading-tight">
             Partner Terpercaya Penyelenggaraan Outbound & Pengembangan Tim.
           </h2>
@@ -202,7 +211,7 @@ const homeCustomSchema = [
           <div class="pt-2 flex flex-wrap gap-4 items-center">
             <a
               href="/tentang-kami"
-              class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#173D32] hover:text-[#657A50] underline underline-offset-4 transition"
+              class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#173D32] hover:text-[#4D633C] underline underline-offset-4 transition"
             >
               Pelajari Profil & Legalitas Kami &rarr;
             </a>
@@ -218,19 +227,19 @@ const homeCustomSchema = [
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div class="p-5 rounded-2xl bg-white border border-[#E8DFC9]/80 shadow-sm">
           <div class="text-3xl sm:text-4xl font-extrabold text-[#173D32] mb-1">16+</div>
-          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Pilihan Modul Outbound</div>
+          <div class="text-xs font-semibold uppercase text-gray-600 tracking-wider">Pilihan Modul Outbound</div>
         </div>
         <div class="p-5 rounded-2xl bg-white border border-[#E8DFC9]/80 shadow-sm">
           <div class="text-3xl sm:text-4xl font-extrabold text-[#173D32] mb-1">5+</div>
-          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Kawasan Venue Terverifikasi</div>
+          <div class="text-xs font-semibold uppercase text-gray-600 tracking-wider">Kawasan Venue Terverifikasi</div>
         </div>
         <div class="p-5 rounded-2xl bg-white border border-[#E8DFC9]/80 shadow-sm">
           <div class="text-3xl sm:text-4xl font-extrabold text-[#173D32] mb-1">100%</div>
-          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Standard Safety & P3K</div>
+          <div class="text-xs font-semibold uppercase text-gray-600 tracking-wider">Standard Safety & P3K</div>
         </div>
         <div class="p-5 rounded-2xl bg-white border border-[#E8DFC9]/80 shadow-sm">
           <div class="text-3xl sm:text-4xl font-extrabold text-[#173D32] mb-1">24/7</div>
-          <div class="text-xs font-semibold uppercase text-gray-500 tracking-wider">Konsultasi Respon Cepat</div>
+          <div class="text-xs font-semibold uppercase text-gray-600 tracking-wider">Konsultasi Respon Cepat</div>
         </div>
       </div>
     </div>
@@ -240,7 +249,7 @@ const homeCustomSchema = [
   <section class="py-16 lg:py-20 bg-white border-b border-[#E8DFC9]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Mengapa Memilih Kami</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#4D633C] block mb-2">Mengapa Memilih Kami</span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight">
           Keunggulan Layanan Ruang Rimba
         </h2>
@@ -288,12 +297,12 @@ const homeCustomSchema = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Sarana & Prasarana</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#4D633C] block mb-2">Sarana & Prasarana</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight">
             Fasilitas & Layanan Pendukung
           </h2>
         </div>
-        <a href="/fasilitas" class="text-xs font-bold text-[#173D32] hover:text-[#657A50] transition mt-4 md:mt-0">
+        <a href="/fasilitas" class="text-xs font-bold text-[#173D32] hover:text-[#4D633C] transition mt-4 md:mt-0">
           Lihat Seluruh Fasilitas &rarr;
         </a>
       </div>
@@ -302,10 +311,10 @@ const homeCustomSchema = [
         {destinations.slice(0, 3).map((dest) => (
           <div class="bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-md transition">
             <div class="h-48 overflow-hidden">
-              <img src={dest.image} alt={dest.name} class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+              <img src={dest.image} alt={dest.name} class="w-full h-full object-cover hover:scale-105 transition duration-500" width="400" height="300" loading="lazy" decoding="async" />
             </div>
             <div class="p-5 space-y-3">
-              <div class="text-[10px] uppercase font-bold text-[#657A50] tracking-wider">{dest.region}</div>
+              <div class="text-[10px] uppercase font-bold text-[#4D633C] tracking-wider">{dest.region}</div>
               <h3 class="font-bold text-base text-[#173D32]">{dest.name}</h3>
               <p class="text-xs text-gray-600 line-clamp-2">{dest.description}</p>
               <div class="text-xs font-semibold text-gray-700 pt-2 border-t border-[#E8DFC9]">
@@ -321,7 +330,7 @@ const homeCustomSchema = [
   <!-- 6. PROGRAM OUTBOUND DIMINATI -->
   <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-14">
-      <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Katalog Terfavorit</span>
+      <span class="text-xs font-bold uppercase tracking-widest text-[#4D633C] block mb-2">Katalog Terfavorit</span>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-[#173D32] tracking-tight">
         Program Outbound Paling Diminati
       </h2>
@@ -338,6 +347,10 @@ const homeCustomSchema = [
               src={pkg?.heroImage}
               alt={pkg?.title}
               class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              width="400"
+              height="300"
+              loading="lazy"
+              decoding="async"
             />
             <div class="absolute top-3 left-3 bg-[#173D32]/85 backdrop-blur-xs text-[#E8DFC9] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
               {pkg?.categoryLabel}
@@ -345,7 +358,7 @@ const homeCustomSchema = [
           </div>
           <div class="p-5 flex-grow flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-base text-[#173D32] mb-2 group-hover:text-[#657A50] transition">
+              <h3 class="font-bold text-base text-[#173D32] mb-2 group-hover:text-[#4D633C] transition">
                 <a href={`/${pkg?.slug}`}>{pkg?.title}</a>
               </h3>
               <p class="text-xs text-gray-600 line-clamp-3 mb-4 leading-relaxed">
@@ -355,7 +368,7 @@ const homeCustomSchema = [
             <div class="pt-4 border-t border-[#E8DFC9]/60 flex items-center justify-between">
               <a
                 href={`/${pkg?.slug}`}
-                class="text-xs font-bold text-[#173D32] hover:text-[#657A50] transition"
+                class="text-xs font-bold text-[#173D32] hover:text-[#4D633C] transition"
               >
                 Lihat Detail &rarr;
               </a>
@@ -376,7 +389,7 @@ const homeCustomSchema = [
     <div class="mt-10 text-center">
       <a
         href="/paket"
-        class="inline-flex items-center gap-2 text-sm font-bold text-[#173D32] hover:text-[#657A50] transition underline underline-offset-4"
+        class="inline-flex items-center gap-2 text-sm font-bold text-[#173D32] hover:text-[#4D633C] transition underline underline-offset-4"
       >
         Lihat Seluruh 16 Pilihan Paket Outbound &rarr;
       </a>
@@ -387,13 +400,13 @@ const homeCustomSchema = [
   <section class="py-16 bg-[#F8F7F2] border-t border-[#E8DFC9]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Dokumentasi Asli</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#4D633C] block mb-2">Dokumentasi Asli</span>
         <h2 class="text-3xl font-extrabold text-[#173D32] tracking-tight">Galeri Dokumentasi Kegiatan</h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
         {galleryItems.slice(0, 6).map((item) => (
           <div class="group relative rounded-xl overflow-hidden aspect-square border border-[#E8DFC9]">
-            <img src={item.imageUrl} alt={item.title} class="w-full h-full object-cover group-hover:scale-110 transition duration-300" />
+            <img src={item.imageUrl} alt={item.title} class="w-full h-full object-cover group-hover:scale-110 transition duration-300" width="300" height="300" loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-[#173D32]/75 opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-2.5 text-white">
               <span class="text-[9px] uppercase font-bold text-[#E8DFC9]">{item.category}</span>
               <span class="text-[11px] font-semibold line-clamp-1">{item.title}</span>
@@ -413,10 +426,10 @@ const homeCustomSchema = [
   <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
       <div>
-        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Pusat Informasi</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#4D633C] block mb-2">Pusat Informasi</span>
         <h2 class="text-3xl font-extrabold text-[#173D32] tracking-tight">Artikel & Tips Outbound</h2>
       </div>
-      <a href="/blog" class="text-xs font-bold text-[#173D32] hover:text-[#657A50] transition mt-4 md:mt-0">
+      <a href="/blog" class="text-xs font-bold text-[#173D32] hover:text-[#4D633C] transition mt-4 md:mt-0">
         Baca Semua Panduan &rarr;
       </a>
     </div>
@@ -425,15 +438,15 @@ const homeCustomSchema = [
       {blogPosts.map((post) => (
         <article class="bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-md transition flex flex-col">
           <div class="h-44 overflow-hidden">
-            <img src={post.featuredImage} alt={post.title} class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+            <img src={post.featuredImage} alt={post.title} class="w-full h-full object-cover hover:scale-105 transition duration-300" width="400" height="250" loading="lazy" decoding="async" />
           </div>
           <div class="p-5 flex-grow flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between text-[11px] text-gray-500 mb-2">
-                <span class="font-bold text-[#657A50]">{post.category}</span>
+              <div class="flex items-center justify-between text-[11px] text-gray-600 mb-2">
+                <span class="font-bold text-[#4D633C]">{post.category}</span>
                 <span>{post.date}</span>
               </div>
-              <h3 class="font-bold text-sm text-[#173D32] hover:text-[#657A50] transition leading-snug mb-2">
+              <h3 class="font-bold text-sm text-[#173D32] hover:text-[#4D633C] transition leading-snug mb-2">
                 <a href={`/blog/${post.slug}`}>{post.title}</a>
               </h3>
               <p class="text-xs text-gray-600 line-clamp-2 leading-relaxed">
@@ -477,7 +490,7 @@ const homeCustomSchema = [
                   </p>
                 </div>
                 <div class="pt-4 border-t border-white/15 flex items-center gap-3">
-                  <img src={t.avatar} alt={t.name} class="w-10 h-10 rounded-full object-cover border border-white/40" />
+                  <img src={t.avatar} alt={t.name} class="w-10 h-10 rounded-full object-cover border border-white/40" width="40" height="40" loading="lazy" decoding="async" />
                   <div>
                     <h3 class="font-bold text-xs text-white leading-tight">{t.name}</h3>
                     <div class="text-[10px] text-[#E8DFC9]">{t.role}</div>
@@ -489,14 +502,16 @@ const homeCustomSchema = [
           ))}
         </div>
 
-        <!-- Slider Dots for Mobile Indicator -->
-        <div class="flex justify-center items-center gap-2 mt-6 md:hidden" id="testimonial-dots">
+        <!-- Slider Dots for Mobile Indicator (Touch Target Compliant) -->
+        <div class="flex justify-center items-center gap-1 mt-6 md:hidden" id="testimonial-dots">
           {testimonials.map((_, i) => (
             <button
-              class={`w-2.5 h-2.5 rounded-full transition-all ${i === 0 ? 'bg-[#E8DFC9] w-6' : 'bg-white/40'}`}
-              aria-label={`Slide ke-${i + 1}`}
+              class="relative flex items-center justify-center p-3 -m-1 focus:outline-hidden"
+              aria-label={`Slide testimoni ke-${i + 1}`}
               data-index={i}
-            ></button>
+            >
+              <span class={`dot-indicator h-2.5 rounded-full transition-all block ${i === 0 ? 'bg-[#E8DFC9] w-6' : 'bg-white/40 w-2.5'}`}></span>
+            </button>
           ))}
         </div>
       </div>
@@ -507,7 +522,7 @@ const homeCustomSchema = [
   <section class="py-16 bg-white border-b border-[#E8DFC9]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block mb-2">Tanya Jawab</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#4D633C] block mb-2">Tanya Jawab</span>
         <h2 class="text-3xl font-extrabold text-[#173D32] tracking-tight">Pertanyaan yang Sering Diajukan (FAQ)</h2>
       </div>
 
@@ -593,8 +608,9 @@ const homeCustomSchema = [
 <script>
   let currentIndex = 0;
   const track = document.getElementById('testimonial-track');
-  const dots = document.querySelectorAll('#testimonial-dots button');
-  const totalSlides = dots.length;
+  const dotButtons = document.querySelectorAll('#testimonial-dots button');
+  const dotIndicators = document.querySelectorAll('#testimonial-dots .dot-indicator');
+  const totalSlides = dotButtons.length;
   let autoplayInterval: any;
 
   function updateSlide(index: number) {
@@ -606,7 +622,7 @@ const homeCustomSchema = [
     if (track) {
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
-    dots.forEach((dot, i) => {
+    dotIndicators.forEach((dot, i) => {
       if (i === currentIndex) {
         dot.classList.remove('bg-white/40', 'w-2.5');
         dot.classList.add('bg-[#E8DFC9]', 'w-6');
@@ -633,7 +649,7 @@ const homeCustomSchema = [
     if (autoplayInterval) clearInterval(autoplayInterval);
   }
 
-  dots.forEach((dot) => {
+  dotButtons.forEach((dot) => {
     dot.addEventListener('click', () => {
       const idx = Number(dot.getAttribute('data-index') || 0);
       updateSlide(idx);

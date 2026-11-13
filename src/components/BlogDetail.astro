@@ -49,7 +49,7 @@ const articleNode = getArticleSchema(post, currentUrl);
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#173D32] leading-tight">
             {post.title}
           </h1>
-          <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-gray-500 border-b border-[#E8DFC9] pb-4">
+          <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-gray-600 border-b border-[#E8DFC9] pb-4">
             <span>Ditulis oleh: <strong class="text-[#173D32]">{post.author}</strong></span>
             <span>•</span>
             <span>{post.date}</span>
@@ -60,7 +60,7 @@ const articleNode = getArticleSchema(post, currentUrl);
 
         <!-- Featured Image -->
         <div class="rounded-3xl overflow-hidden shadow-lg border border-[#E8DFC9] aspect-[16/9]">
-          <img src={post.featuredImage} alt={post.title} class="w-full h-full object-cover" />
+          <img src={post.featuredImage} alt={post.title} width="800" height="450" loading="lazy" decoding="async" class="w-full h-full object-cover" />
         </div>
 
         <!-- MOBILE TOC (Hanya muncul di versi Mobile di bawah gambar: block lg:hidden) -->
@@ -84,7 +84,7 @@ const articleNode = getArticleSchema(post, currentUrl);
                   {post.toc.map((item, idx) => (
                     <li>
                       <a href={`#${item.id}`} class="hover:text-[#173D32] hover:font-bold hover:translate-x-1 transition-all flex items-start gap-2.5 group/item">
-                        <span class="w-5 h-5 rounded-md bg-[#F8F7F2] group-hover/item:bg-[#173D32] group-hover/item:text-white text-[#657A50] font-bold flex items-center justify-center text-[10px] shrink-0 transition">
+                        <span class="w-5 h-5 rounded-md bg-[#F8F7F2] group-hover/item:bg-[#173D32] group-hover/item:text-white text-[#4D633C] font-bold flex items-center justify-center text-[10px] shrink-0 transition">
                           {idx + 1}
                         </span>
                         <span class="leading-snug">{item.text}</span>
@@ -148,10 +148,10 @@ const articleNode = getArticleSchema(post, currentUrl);
             <h3 class="text-xl font-bold text-[#173D32]">Artikel Terkait Lainnya</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {relatedPosts.map((rel) => (
-                <a href={`/blog/${rel.slug}`} class="block p-4 rounded-xl bg-white border border-[#E8DFC9] hover:border-[#657A50] transition">
-                  <span class="text-[10px] font-bold text-[#657A50] uppercase">{rel.category}</span>
+                <a href={`/blog/${rel.slug}`} class="block p-4 rounded-xl bg-white border border-[#E8DFC9] hover:border-[#4D633C] transition">
+                  <span class="text-[10px] font-bold text-[#4D633C] uppercase">{rel.category}</span>
                   <h4 class="font-bold text-sm text-[#173D32] mt-1">{rel.title}</h4>
-                  <p class="text-xs text-gray-500 line-clamp-2 mt-1">{rel.summary}</p>
+                  <p class="text-xs text-gray-600 line-clamp-2 mt-1">{rel.summary}</p>
                 </a>
               ))}
             </div>
@@ -183,7 +183,7 @@ const articleNode = getArticleSchema(post, currentUrl);
                 {post.toc.map((item, idx) => (
                   <li>
                     <a href={`#${item.id}`} class="hover:text-[#173D32] hover:font-bold hover:translate-x-1 transition-all flex items-start gap-2.5 group/item py-1">
-                      <span class="w-5 h-5 rounded-md bg-[#F8F7F2] group-hover/item:bg-[#173D32] group-hover/item:text-white text-[#657A50] font-bold flex items-center justify-center text-[10px] shrink-0 transition">
+                      <span class="w-5 h-5 rounded-md bg-[#F8F7F2] group-hover/item:bg-[#173D32] group-hover/item:text-white text-[#4D633C] font-bold flex items-center justify-center text-[10px] shrink-0 transition">
                         {idx + 1}
                       </span>
                       <span class="leading-snug">{item.text}</span>

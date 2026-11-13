@@ -65,7 +65,7 @@ const catalogSchema = getItemListSchema(
               href={getWhatsAppUrl(`Halo Ruang Rimba, saya ingin berkonsultasi seputar kategori ${cat.title}`)}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-xs font-bold text-[#657A50] hover:text-[#173D32] transition mt-2 md:mt-0 flex items-center gap-1"
+              class="text-xs font-bold text-[#4D633C] hover:text-[#173D32] transition mt-2 md:mt-0 flex items-center gap-1"
             >
               Konsultasi Kategori Ini &rarr;
             </a>
@@ -78,6 +78,10 @@ const catalogSchema = getItemListSchema(
                   <img
                     src={pkg.heroImage}
                     alt={pkg.title}
+                    width="400"
+                    height="220"
+                    loading="lazy"
+                    decoding="async"
                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                   />
                   <div class="absolute top-2.5 right-2.5 bg-white/90 backdrop-blur-xs text-[#173D32] text-[10px] font-bold px-2 py-0.5 rounded shadow">
@@ -87,7 +91,7 @@ const catalogSchema = getItemListSchema(
 
                 <div class="p-5 flex-grow flex flex-col justify-between">
                   <div>
-                    <h3 class="font-bold text-base text-[#173D32] group-hover:text-[#657A50] transition mb-2">
+                    <h3 class="font-bold text-base text-[#173D32] group-hover:text-[#4D633C] transition mb-2">
                       <a href={`/${pkg.slug}`}>{pkg.title}</a>
                     </h3>
                     <p class="text-xs text-gray-600 line-clamp-3 mb-4 leading-relaxed">
@@ -95,10 +99,10 @@ const catalogSchema = getItemListSchema(
                     </p>
 
                     <!-- Bullet Highlights -->
-                    <ul class="text-[11px] text-gray-500 space-y-1 mb-4">
+                    <ul class="text-[11px] text-gray-600 space-y-1 mb-4">
                       {pkg.highlights.slice(0, 2).map((h) => (
                         <li class="flex items-start gap-1.5">
-                          <span class="text-emerald-600 font-bold">✓</span>
+                          <span class="text-emerald-700 font-bold">✓</span>
                           <span>{h}</span>
                         </li>
                       ))}
@@ -108,7 +112,7 @@ const catalogSchema = getItemListSchema(
                   <div class="pt-3 border-t border-[#E8DFC9]/70 flex items-center justify-between">
                     <a
                       href={`/${pkg.slug}`}
-                      class="text-xs font-bold text-[#173D32] hover:text-[#657A50] transition"
+                      class="text-xs font-bold text-[#173D32] hover:text-[#4D633C] transition"
                     >
                       Lihat Detail &rarr;
                     </a>

@@ -114,7 +114,7 @@ const facilitiesSchema = {
       {facilityCategories.map((item) => (
         <div class="bg-white rounded-2xl overflow-hidden border border-[#E8DFC9] shadow-sm hover:shadow-xl transition flex flex-col group">
           <div class="h-48 overflow-hidden relative">
-            <img src={item.image} alt={item.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <img src={item.image} alt={item.title} width="400" height="200" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           </div>
 
@@ -126,11 +126,11 @@ const facilitiesSchema = {
               </p>
 
               <div class="bg-[#F8F7F2] p-3.5 rounded-xl border border-[#E8DFC9] space-y-2">
-                <span class="text-[11px] font-bold text-[#657A50] uppercase block">Termasuk Fasilitas:</span>
+                <span class="text-[11px] font-bold text-[#4D633C] uppercase block">Termasuk Fasilitas:</span>
                 <ul class="space-y-1.5 text-xs text-gray-700">
                   {item.points.map((p) => (
                     <li class="flex items-start gap-2">
-                      <span class="text-emerald-600 font-bold shrink-0 mt-0.5">✓</span>
+                      <span class="text-emerald-700 font-bold shrink-0 mt-0.5">✓</span>
                       <span>{p}</span>
                     </li>
                   ))}
@@ -145,7 +145,7 @@ const facilitiesSchema = {
     <!-- Fasilitas di Lokasi Venue Rekanan -->
     <section class="bg-white p-8 sm:p-10 rounded-3xl border border-[#E8DFC9] shadow-sm space-y-6">
       <div class="border-b border-[#E8DFC9] pb-4">
-        <span class="text-xs font-bold uppercase tracking-widest text-[#657A50] block">Dukungan Venue Rekanan</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#4D633C] block">Dukungan Venue Rekanan</span>
         <h2 class="text-2xl font-bold text-[#173D32] mt-1">Fasilitas di Lokasi & Venue Kegiatan</h2>
         <p class="text-xs text-gray-600 mt-1">Seluruh venue binaan kami di Kota Batu (Coban Rondo, Kusuma Agro, Songgoriti, Coban Talun, dan Bumiaji) telah dilengkapi sarana:</p>
       </div>
@@ -154,10 +154,10 @@ const facilitiesSchema = {
         {destinations.map((venue) => (
           <div class="p-4 rounded-xl bg-[#F8F7F2] border border-[#E8DFC9] space-y-2">
             <h3 class="font-bold text-sm text-[#173D32]">{venue.name}</h3>
-            <div class="text-[11px] text-gray-500 flex items-center gap-1">
+            <div class="text-[11px] text-gray-600 flex items-center gap-1">
               <span>Wilayah:</span> <strong class="text-gray-700">{venue.region}</strong>
             </div>
-            <div class="text-[11px] text-gray-500 flex items-center gap-1">
+            <div class="text-[11px] text-gray-600 flex items-center gap-1">
               <span>Kapasitas:</span> <strong class="text-[#173D32]">{venue.capacity}</strong>
             </div>
             <div class="pt-2 border-t border-[#E8DFC9]/70 flex flex-wrap gap-1">
